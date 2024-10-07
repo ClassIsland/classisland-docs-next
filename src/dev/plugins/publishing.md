@@ -50,9 +50,9 @@ Compress-Archive -Path "（你的插件编译输出目录，如 E:\xxx\MyPlugin\
 
 | 属性名 | 类型 | 必填？ | 说明 |
 | -- | -- | -- | -- |
-| RepoOwner | `string` | **是** | 插件的 GitHub 仓库所有者 |
-| RepoName | `string` | **是** | 插件的 GitHub 仓库名称 |
-| AssetsRoot | `string` | **是** | 插件的资源根目录，格式为`<默认分支>/<插件项目相对存储库的路径>`，例如`master/ExamplePlugin`。 |
+| repoOwner | `string` | **是** | 插件的 GitHub 仓库所有者 |
+| repoName | `string` | **是** | 插件的 GitHub 仓库名称 |
+| assetsRoot | `string` | **是** | 插件的资源根目录，格式为`<默认分支>/<插件项目相对存储库的路径>`，例如`master/ExamplePlugin`。 |
 
 例如：
 
