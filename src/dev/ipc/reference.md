@@ -10,7 +10,7 @@
 | --- | --- |
 | IPublicLessonsService | 向其它进程公开的课程服务，用于存储当前课表状态与信息。 |
 | IPublicProfileService | 向其它进程公开的档案服务，用于管理 ClassIsland 档案信息。 |
-| IPublicUriNavigationService | 向其它进程公开的 Uri 导航服务，用于在 ClassIsland 内部和外部通过 uri 进行导航。 |
+| IPublicUriNavigationService | 向其它进程公开的 Url 导航服务，用于在 ClassIsland 内部和外部通过 url 进行导航。~~别问为什么是接口名里的`Uri`不是`Url`~~ |
 | ~~IFooService~~ | 用于测试 IPC 功能的测试服务 !!_低情商：没啥用_!! | 
 
 ## 事件 ID

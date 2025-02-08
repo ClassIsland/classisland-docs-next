@@ -22,7 +22,7 @@ You can quickly get started with this application by reading this help document.
     - [Time Layout](profile/time-layout.md)
     - [Subjects](profile/subject.md)
 - [Notifications](notifications.md)
-- [Uri Navigation](uri-navigation.md)
+- [Url Navigation](url-navigation.md)
 
 After learning the above content, you will have mastered the basic functions of this software. In addition, most of the buttons in this application have tooltips. You can view the explanation of the button's function by hovering the mouse over the button. Most of the options on the application settings page also have corresponding explanations. These explanations can help you further understand the application.
 
