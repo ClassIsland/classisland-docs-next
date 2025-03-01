@@ -20,7 +20,7 @@ category:
 
 您可以手动编写集控配置文件，并将其托管到静态网站上。
 
-[🚀入门教程](tutorial-create-management-config.md)
+[🚀入门教程](tutorial-create-management-config/tutorial-create-management-config.md)
 
 [📖参考文档](configure.md)
 
