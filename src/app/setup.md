@@ -17,7 +17,7 @@ tag:
 
 - Windows 10 及以上版本的系统，x86_64 架构
 > [!caution]
-> 建议Windows 10版本不低于1803，在1709及以前的希沃系统上会遇到EdgeTTS引发程序卡死，详细请见[#163](https://github.com/ClassIsland/ClassIsland/issues/163)
+> 建议Windows 10版本不低于1803，在1709及以前的希沃系统上会遇到EdgeTTS引发程序卡死，详细请见[#163](https://github.com/ClassIsland/ClassIsland/issues/163)和[#926](https://github.com/ClassIsland/ClassIsland/issues/926)
 - 已安装 [.NET 8.0 桌面运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.1-windows-x64-installer)
 - 4GB 及以上的运行内存
 
