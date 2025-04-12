@@ -1,5 +1,5 @@
 ---
-icon:  fa-scroll
+icon: fa-solid fa-scroll
 category:
   - 使用指南
 tag:
