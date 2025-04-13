@@ -33,9 +33,8 @@ tag:
 > [!warning]
 > 自动化允许自动修改 ClassIsland 的各项设置，并调用外部程序，可能有一定安全风险。
 > 不当的自动化编写可能对正常教学造成影响，请勿滥用。
-
-> [!important]
-> 自动化目前正在早期开发中，不建议用于生产环境。此功能在未来可能会产生较大的变动，并且**可能无法保证配置文件完全向下兼容**。欢迎在 [ClassIsland/ClassIsland#119](https://github.com/ClassIsland/ClassIsland/issues/119/) 讨论此功能。
+>
+> 欢迎在 [ClassIsland/ClassIsland#119](https://github.com/ClassIsland/ClassIsland/issues/119/) 讨论此功能。
 
 ## 概述
 
