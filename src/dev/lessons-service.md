@@ -23,3 +23,8 @@
 | IsClassPlanEnabled | `bool` | 是否启用课表。|
 | IsClassPlanLoaded | `bool` | 是否已加载课表。|
 | IsLessonConfirmed | `bool` | 是否已确定当前时间点。|
+
+## 了解更多
+
+- [ILessonsService 接口](https://api.docs.classisland.tech/api/ClassIsland.Core.Abstractions.Services.ILessonsService.html)
+- [IPublicLessonsService 接口](https://api.docs.classisland.tech/api/ClassIsland.Shared.IPC.Abstractions.Services.IPublicLessonsService.html)

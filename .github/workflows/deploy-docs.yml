@@ -10,6 +10,17 @@ permissions:
 
 jobs:
   build:
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    
+    concurrency:
+      group: "web-deploy"
+      cancel-in-progress: false
+    environment:
+      name: classisland-web
+    name: "Build & Deploy"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,34 +51,24 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
         run: |-
           pnpm run docs:build
-          > src/.vuepress/dist/.nojekyll
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@main
         with:
-          path: ./src/.vuepress/dist/
-  
-  deploy:
-    # Add a dependency to the build job
-    needs: build
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_WEB_PRIVATEKEY }}
+          # 复制操作的参数。"-avzr --delete"意味部署时清空服务器目标目录下的文件
+          ARGS: "-avz --delete --no-times --no-perms"
+          # 源目录
+          SOURCE: "./src/.vuepress/dist/"
+          # 部署目标主机
+          REMOTE_HOST: ${{ secrets.DEPLOY_WEB_IP }}
+          # 部署目标主机端口
+          REMOTE_PORT: ${{ secrets.DEPLOY_WEB_PORT }}
+          # 登录用户
+          REMOTE_USER: ${{ secrets.DEPLOY_WEB_USERNAME }}
+          # 部署目标目录
+          TARGET: ${{ secrets.DEPLOY_WEB_TARGET }}
 
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-
-    # Deploy to the github-pages environment
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    # Specify runner + deployment step
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-      
       - name: 提交 IndexNow
         uses: bojieyang/indexnow-action@v1
         with:
@@ -79,3 +80,4 @@ jobs:
           limit: 100
           key: ${{ secrets.INDEXNOW_KEY }}
           key-location: ${{ secrets.INDEXNOW_KEY_LOCATION }}
+  

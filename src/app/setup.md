@@ -39,7 +39,7 @@ tag:
     - KB3063858 [64 位](https://www.microsoft.com/download/details.aspx?id=47442) / [32 位](https://www.microsoft.com/download/details.aspx?id=47409)
 
 2. 安装 [.NET 6 桌面运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-6.0.33-windows-x64-installer)。
-3. 前往 [.NET 6 兼容版仓库](https://github.com/ClassIsland/ClassIsland-net6/releases)下载 ClassIsland。
+3. 前往 [ClassIsland 官网](https://classisland.tech/download)下载 Windows 7 兼容版的 ClassIsland。
 
 关于此兼容版的详细信息，请参阅下文。
 
@@ -49,16 +49,8 @@ tag:
 
 对于普通用户，可以在以下渠道下载到本软件，请根据自身网络环境选择合适的渠道。
 
-::: warning
-测试版包含最新的功能，但也可能包含未完善和不稳定的功能，请谨慎使用。
-
-| 下载渠道/通道 | **🚀正式版** <br/>[![GitHub Release](https://img.shields.io/github/v/release/HelloWRC/ClassIsland?style=flat-square&logo=GitHub&color=%233fb950)](https://github.com/HelloWRC/ClassIsland/releases/latest)  | 🚧测试版<br/>[![GitHub Release](https://img.shields.io/github/v/release/HelloWRC/ClassIsland?include_prereleases&style=flat-square&logo=GitHub&label=BETA)](https://github.com/HelloWRC/ClassIsland/releases/) |
-| -- | -- | -- |
-| ClassIsland官网 **（推荐）** | [**ClassIsland官网**](https://classisland.tech/download) | [ClassIsland官网](https://classisland.tech/download) |
-| GitHub | [**GitHub 下载**](https://github.com/HelloWRC/ClassIsland/releases/latest) | [GitHub 下载](https://github.com/HelloWRC/ClassIsland/releases) |
-| AppCenter | [**AppCenter 下载**](https://install.appcenter.ms/users/hellowrc/apps/classisland/distribution_groups/public/releases/latest) | [AppCenter 下载](https://install.appcenter.ms/users/hellowrc/apps/classisland/distribution_groups/publicbeta/releases/latest) |
-
-:::
+- [**ClassIsland 官网（推荐）**](https://classisland.tech/download)
+- [GitHub Releases](http://github.com/ClassIsland/ClassIsland/releases/latest)
 
 <a id="third-party-downloads"></a>
 ::: info 其它下载渠道
