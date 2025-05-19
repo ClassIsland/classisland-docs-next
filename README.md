@@ -19,7 +19,7 @@
     pnpm run docs:dev
     ```
 
-启动 VuePress 服务器后，在浏览器中打开终端输出的链接（默认是[http://localhost:8080/classisland-docs-next/](http://localhost:8080/classisland-docs-next/)）即可浏览文档。当本地文档做出更改时，浏览器中的文档将自动刷新。
+启动 VuePress 服务器后，在浏览器中打开终端输出的链接（默认是[http://localhost:8080/](http://localhost:8080/)）即可浏览文档。当本地文档做出更改时，浏览器中的文档将自动刷新。
 
 本文档使用了 vuepress-plugin-md-enhance
  的一些扩展语法，请尽量直接编辑 Markdown 文件，而不是使用可视化 Markdown 编辑器。建议使用 [Visual Studio Code](https://code.visualstudio.com/) 编辑文档。
