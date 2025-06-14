@@ -88,6 +88,7 @@ export const zhSidebar = sidebar({
           ],
           icon: "fa-solid fa-book"
         },
+        "cims.py.md",
       ],
     },
   ],
