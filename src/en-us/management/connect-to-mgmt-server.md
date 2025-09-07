@@ -1,12 +1,12 @@
-# 连接/退出集控
+# Connect/Exit Centralized Management
 
-在部署好配置文件/集控服务器后，您还需要将 ClassIsland 实例连接到集控服务器。
+After deploying the configuration file/management server, you still need to connect the ClassIsland instance to the centralized management server.
 
 <a id="from-settings"></a>
 
-## 从设置中加入
+## Join from Settings
 
-ClassIsland 从[集控配置文件](configure.md#mgmt-configure)加载集控的相关设置。在编写好集控配置文件后，在【应用设置】->【更多选项（右上角三个点）】->【加入管理…】即可加载配置文件并连接到集控服务。
+ClassIsland loads centralized management settings from the [Management Configuration File](configure.md#mgmt-configure). After writing the configuration file, go to App Settings → More Options (three dots in the top right) → Join Management… to load the configuration file and connect to the centralized management service.
 
 ![image](https://github.com/HelloWRC/ClassIsland/assets/55006226/07d32ffc-a7a7-45e2-844e-58ae3f998d47)
 
@@ -14,24 +14,23 @@ ClassIsland 从[集控配置文件](configure.md#mgmt-configure)加载集控的�
 
 <a id="from-wizard"></a>
 
-## 在初始化应用时加入
+## Join During App Initialization
 
-您也可以在首次运行应用时，点击欢迎向导首页右下角【加入管理】按钮打开加入集控的界面。
+You can also connect during the first run of the app by clicking the Join Management button at the bottom right of the welcome wizard home page.
 
 ![image](https://github.com/HelloWRC/ClassIsland/assets/55006226/6e0f2c6d-5bff-4677-bf3a-caa4319a990e)
 
 ::: tip
-将集控配置后重命名为`ManagementPreset.json`，并放置于应用目录下，即可在加入集控时自动选择并加载集控配置文件。
+If you rename the management configuration file to `ManagementPreset.json` and place it in the app directory, it will be automatically selected and loaded when joining centralized management.
 :::
 
 <a id="exit"></a>
 
-## 退出集控
+## Exit Centralized Management
 
-要退出集控，点击【应用设置】->【更多选项（右上角三个点）】->【退出集控…】即可退出集控。
-
+To exit centralized management, go to App Settings → More Options (three dots in the top right) → Exit Management….
 ![image](https://github.com/HelloWRC/ClassIsland/assets/55006226/b354b1fa-7347-4204-9546-effe0045c56e)
 
 ::: note
-如果要禁用集控退出功能，可以在集控策略中将`AllowExitManagement`设置为`false`。[详细信息](policy.md#allowexitmanagement)
+If you want to disable the option to exit centralized management, set `AllowExitManagement` to `false` in the management policy. [More Details](policy.md#allowexitmanagement)
 :::

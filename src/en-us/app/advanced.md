@@ -1,60 +1,60 @@
-# 进阶功能
+# Advanced Features
 
-本应用还有一部分的进阶操作，如果您对此感兴趣，可以继续了解。
+This application also provides some advanced operations. If you are interested, you can continue exploring them.
 
-## 附加设置
+## Additional Settings
 
-应用中的一些设置可以在科目、时间点、课表和时间表中单独设置。在这些地方的设置会按照科目、时间点、课表、时间表的顺序应用。排在前面的项目的设置会最优先被使用。您可以进入这些元素的编辑页面，在【更多设置】一栏中编辑相关的设置。
+Some settings in the application can be configured separately for subjects, time points, timetables, and time layouts. These settings are applied in the following order: Subject → Time Point → Timetable → Time Layout. The earlier items take priority. You can edit these settings in the More Settings section of each element’s editing page.
 
-以下是具有附加设置的设置，在对应处打“√”即意味着这个设置可以在这个元素上单独进行设置。
+The following settings support additional configuration. A “√” means this setting can be applied individually to that element:
 
-| 设置名 | 科目 | 时间点 | 课表 | 时间表 |
+| Setting Name | Subject | Time Points | Timetable | Time Layout |
 | -- | -- | -- | -- | -- |
-| 上下课提醒 | √ | √ | √ | √ |
-| 时间点附加信息 | √ | √ | √ | √ |
-| 时间点结束倒计时 | √ | √ | √ | √ |
-| 放学提醒 |  |  | √ | √ |
-| 气象预警提醒、天气预报 | | √ | |  |
+| Class Start/End Notification | √ | √ | √ | √ |
+| Extra Info for Time Points | √ | √ | √ | √ |
+| End-of-Time-Point Countdown | √ | √ | √ | √ |
+| School End Notification |  |  | √ | √ |
+| Weather Alerts & Forcasts | | √ | |  |
 
-## 上下课提醒
+## Class Start/End Notification
 
-本应用会在上课和下课时发出提醒。您可以在[【应用设置】→【提醒】→【上课提醒】](classisland://app/settings/notification/08F0D9C3-C770-4093-A3D0-02F3D90C24BC)中调整上下课提醒的设置。
+The app issues notifications at the start and end of classes. You can adjust these in [App Settings -> Notification -> Class Notifications](classisland://app/settings/notification/08F0D9C3-C770-4093-A3D0-02F3D90C24BC).
 
-此外，您也可以为每个科目、时间点、课表和时间表单独设置上下课提醒的设置。
+In addition, you can configure class notices separately for each subject, time point, timetable, and time layout.
 
-## 天气
+## Weather
 
-本应用可以获取当地的天气信息，并在快速信息上显示。您可以在[【应用设置】→【天气】](classisland://app/settings/weather)中调整相关设置。
+The app can fetch local weather information and display it in quick info. You can adjust settings in [App Settings -> Weather](classisland://app/settings/weather).
 
-在设置好城市等相关设置后，您可以在[【应用设置】→【提醒】](classisland://app/settings/notification/7625DE96-38AA-4B71-B478-3F156DD9458D)中开启天气预报和气象预警功能。
+After setting the city and related information, you can enable weather forecasts and weather alerts in [App Settings -> Notification](classisland://app/settings/notification/7625DE96-38AA-4B71-B478-3F156DD9458D).
 
 ::: tip
-天气相关的提醒也支持附加设置，因此您也可以为特定的时间点开启或者关闭天气预报的提醒。建议默认关闭天气预报提醒，并为特定的时间点开启天气预报提醒。
+Weather-related reminders also support additional settings. This means you can enable or disable weather forecast reminders for specific time points. It is recommended to keep weather forecasts off by default and only enable them for specific time points.
 :::
 
-## 从壁纸提取主题色
+## Extract Theme Color from Wallpaper
 
-本应用可以从壁纸提取应用的主题色。此功能默认开启。您可以在[【应用设置】→【外观】](classisland://app/settings/appearance)中进一步调整。
+The app can extract its theme color from the wallpaper. This feature is enabled by default. You can adjust it further in [App Settings -> Appearance](classisland://app/settings/appearance).
 
-### 动态壁纸兼容
+### Dynamic Wallpaper Compatibility
 
-理论上本应用可以提取动态壁纸的主题色。以下是启用此功能的步骤：
+In theory, the app can extract theme colors from dynamic wallpapers. Here are the steps to enable this:
 
 ::: note
-在兼容模式下，应用会从注册表获取系统当前使用的壁纸。关闭后应用会从对应的壁纸窗口截图来提取壁纸主题色。
+In compatibility mode, the app fetches the current wallpaper from the registry. If disabled, the app will take a screenshot of the wallpaper window to extract its theme color.
 :::
 
-1. 关闭兼容模式
-2. 点击【壁纸窗口类名】选项右侧的【浏览…】按钮，打开窗口选择界面
-3. 选择动态壁纸软件的壁纸层窗口，然后点击【确定】。
-4. 应用会使用这个窗口的截图来提取主题色。您也可以点击【预览提取结果】来检查应用是否正确对壁纸窗口截图。
+1. Disable compatibility mode.
+2. Click Browse… next to the Wallpaper Window Class Name option to open the window selection screen.
+3. Select the wallpaper layer window of your dynamic wallpaper software, then click OK.
+4. The app will use this window’s screenshot to extract the theme color. You can also click Preview Extraction Result to check if it is working correctly.
 
-如果使用的动态壁纸自带颜色变换效果，可以开启【自动提取壁纸主题色】功能。
+If the dynamic wallpaper has built-in color-changing effects, you can enable Automatically Extract Wallpaper Theme Color.
 
-## 调试菜单
+## Debug Menu
 
-在[【应用设置】→【关于】](classisland://app/settings/about)中连续点击应用图标 10 次，即可开启[调试](classisland://app/settings/debug)和[笔刷](classisland://app/settings/debug_brushes)界面。
+In [App Settings -> About](classisland://app/settings/about), click the app icon 10 times to unlock the [Debug](classisland://app/settings/debug) and [Brushes](classisland://app/settings/debug_brushes) interfaces.
 
-::: danger 注意！
-调试菜单中的功能仅供测试使用，如果您不知道您在做什么，请不要随意使用
+::: danger Warning!
+The features in the debug menu are for testing only. Do not use them if you don’t know what you are doing.
 :::

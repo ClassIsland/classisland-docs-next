@@ -1,60 +1,59 @@
-# 发布插件
+# Publishing Plugins
 
-您可以将插件打包、并通过上传到插件插件仓库或私下分享等方式分发您的插件。
+You can package your plugin and distribute it by uploading it to the plugin repository or sharing it privately.
 
-## 打包插件
+## Packaging the Plugin
 
 :::tabs#pack_method
 
 @tab Powershell Core
 
-在 Powershell Core 中使用以下命令将插件输出/发布目录打包到一个扩展名为`.cipx`的`zip`压缩文件中。
+Use the following command in Powershell Core to package the plugin output/publish directory into a `.zip` compressed file with the extension `.cipx.`
 
 ``` powershell
-Compress-Archive -Path "（你的插件编译输出目录，如 E:\xxx\MyPlugin\bin\Release\net8.0-windows\）" -DestinationPath ./myplugin.cipx
+Compress-Archive -Path "(Your plugin's build output directory, e.g., E:\xxx\MyPlugin\bin\Release\net8.0-windows\)" -DestinationPath ./myplugin.cipx
 ```
 
-@tab 手动打包
+@tab Manual Packaging
 
-1. 将您的插件加载到 ClassIsland 中。
-2. 在 ClassIsland 中打开[【应用设置】->【插件】](classisland://app/settings/classisland.plugins)。
-3. 选择要打包的插件，点击插件详细界面的【更多选项…（右上角三个点）】，点击【打包插件…】
+1. Load your plugin into ClassIsland.
+2. Open [App Settings -> Plugins](classisland://app/settings/classisland.plugins) in ClassIsland.
+3. Select the plugin you want to package, click 【More options… (three dots in the upper right corner)】 in the plugin details interface, and click 【Package Plugin…】
 
     ![1722514478099](image/publishing/1722514478099.png)
 
     ![1722514515956](image/publishing/1722514515956.png)
 
-4. 选择保存插件包的位置。
-5. 打包完成。
+4. Choose the location to save the plugin package.
+5. Packaging complete.
 :::
 
-## 上架到插件市场
-
-[插件源仓库]: https://github.com/ClassIsland/PluginIndex
+## Publishing to the Plugin Marketplace
+[Plugin Index Repository]: https://github.com/ClassIsland/PluginIndex
 
 :::info
-这里的插件市场指应用内置的插件源。
+The plugin marketplace here refers to the built-in plugin source within the application.
 :::
 
-**上架插件市场的插件必须满足以下条件：**
+**Plugins published to the marketplace must meet the following conditions:**
 
-- 插件内容符合相关法律法规，无涉黄、涉政等敏感内容。
-- 插件是符合[开源定义](https://opensource.org/osd)，并有开源许可证的开源项目。
-- 代码存储库托管于 GitHub 上。
+- The plugin content complies with relevant laws and regulations and contains no sensitive content such as pornography or politics.
+- The plugin is an open-source project that conforms to the [OSD](https://opensource.org/osd) and has an open-source license.
+- The code repository is hosted on GitHub.
 
-不符合以上条件的插件仍然能在本项目的开源许可（LGPLv3）下以其它形式自由分发，但不能上架插件市场。
+Plugins that do not meet the above conditions can still be freely distributed under this project's open-source license (LGPLv3) in other forms but cannot be published on the plugin marketplace.
 
-要将插件上架到插件市场，您需要在在原来的插件清单的基础上，补充相关信息，并将补充后的插件清单文件上传到[插件源仓库]中。
+To publish your plugin to the marketplace, you need to supplement the original plugin manifest with additional information and upload the updated manifest file to the [Plugin Index Repository](https://github.com/ClassIsland/PluginIndex).
 
-以下是需要补充的信息：
+The following information needs to be added:
 
-| 属性名 | 类型 | 必填？ | 说明 |
+| Property | Name | Type | Description |
 | -- | -- | -- | -- |
-| RepoOwner | `string` | **是** | 插件的 GitHub 仓库所有者 |
-| RepoName | `string` | **是** | 插件的 GitHub 仓库名称 |
-| AssetsRoot | `string` | **是** | 插件的资源根目录，格式为`<默认分支>/<插件项目相对存储库的路径>`，例如`master/ExamplePlugin`。 |
+| RepoOwner | `string` | **Yes** | The GitHub repository owner of the plugin |
+| RepoName | `string` | **Yes** | The GitHub repository name of the plugin |
+| AssetsRoot | `string` | **Yes** | The asset root directory of the plugin, formatted as `<default branch>/<relative path of the plugin project in the repo>`, e.g., `master/ExamplePlugin.` |
 
-例如：
+For example:
 
 ```yaml title="classisland.example.yml" hl_lines="6-8"
 id: classisland.example
@@ -68,30 +67,30 @@ assetsRoot: master/HelloWorldPlugin
 
 ```
 
-您还需要将打包后的插件上传到**您的插件的仓库**的 Release 中，并添加 MD5 校验信息。
+You also need to upload the packaged plugin to a Release in **your plugin's repository** and add MD5 checksum information.
 
 :::tabs#pack_method
 
-@tab 通过 Powershell
+@tab via Powershell
 
-1. 在[此处](https://github.com/ClassIsland/ClassIsland/raw/master/tools/generate-md5.ps1)下载 MD5 计算 Powershell 脚本，并重命名为 `generate-md5.ps1`
-2. 运行以下命令：
+1.Download the MD5 calculation PowerShell script from [here](https://github.com/ClassIsland/ClassIsland/raw/master/tools/generate-md5.ps1) and rename it as `generate-md5.ps1`
+2. Run the following command:
     ```powershell
     ./generate-md5.ps1 打包输出目录
     ```
-    此命令将运行 MD5 计算脚本，并将符合格式要求的 MD5 校验信息输出到文件 `checksums.md` 中。
-3. 上传插件包到 Releases，并在发行日志中填入 `checksums.md` 的内容。
+    This command will run the MD5 calculation script and output the MD5 checksum information in the required format to the file `checksums.md`.
+3. Upload the plugin package to Releases and paste the contents of `checksums.md` into the release notes.
 
-@tab 手动添加
+@tab Manual Addition
 
-1. 利用 7z 等工具计算插件包的 MD5。
-2. 上传插件包到 Releases，并按以下格式在发行日志中加入校验信息：
+1.Use a tool like 7z to calculate the MD5 of the plugin package.
+2. Upload the plugin package to Releases and add the checksum information to the release notes in the following format:
    ```markdown
-   <!-- CLASSISLAND_PKG_MD5 {"插件包文件名": "得到的 MD5"} -->
+   <!-- CLASSISLAND_PKG_MD5 {"PluginPackageFileName": "CalculatedMD5"} -->
    ```
-   其中被注释标签包裹的 json 对象是一个以文件名为键，MD5 值为值的字典。如果有多个文件，可以扩充此字典。
+   The JSON object enclosed within the comment tags is a dictionary where the keys are filenames and the values are MD5 hashes. You can expand this dictionary if there are multiple files.
 :::
 
-补充后的插件清单文件需要重命名为插件 id，并上传到[插件源仓库]根目录下的[`index`](https://github.com/ClassIsland/PluginIndex/tree/main/index)文件夹中。
+The supplemented plugin manifest file needs to be renamed to the plugin ID and uploaded to the [`index`](https://github.com/ClassIsland/PluginIndex/tree/main/index) folder in the root directory of the [Plugin Index Repository](https://github.com/ClassIsland/PluginIndex).
 
-上传完成后，需要向源仓库发起 PR。您的插件将被审核，插件审核通过后即可进入插件市场。相关的下载信息将根据插件清单中的信息添加到插件源中。
+After uploading, you need to submit a PR to the index repository. Your plugin will be reviewed, and once approved, it will be added to the plugin marketplace. The relevant download information will be added to the plugin source based on the details in the plugin manifest.

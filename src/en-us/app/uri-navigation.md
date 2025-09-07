@@ -1,85 +1,86 @@
-# Uri 导航
+# URI Navigation
 
 ::: info
-本文章主要讲述用户如何使用 Uri 导航。如果您想了解在 ClassIsland 注册自定义 Uri 的方法，请参阅[开发 Uri 导航](../dev/uri-navigation.md)。
+This article explains how users can use URI navigation. If you want to learn how to register custom URIs in ClassIsland, please refer to [Developing URI Navigations](../dev/uri-navigation.md)。
 :::
 
-ClassIsland 支持在应用内通过 Uri 进行导航，同时也在系统注册 Url 协议，从外部调用 ClassIsland 的各项功能。
+ClassIsland supports navigation within the app using URIs, and also registers a URL protocol in the system so that ClassIsland functions can be called externally.
 
-ClassIsland 默认的 Uri 导航协议是 `classisland://`。应用内置的导航路径在 `classisland://app/` 下，插件扩展的导航路径一般在 `classisland://plugins/` 下。
+The default URI navigation protocol for ClassIsland is `classisland://`. Built-in navigation paths are under `classisland://app/`, while plugin extension paths are generally under `classisland://plugins/`.
 
-## 注册 Url 协议
+## Register URI Protocol
 
-您可以在[【应用设置】->【基本】](classisland://app/settings/general) 中启用【注册 Url 协议】选项以注册 Url 导航协议。
+You can enable the Register URL Protocol option in [App Settings -> General](classisland://app/settings/general) to register the URL navigation protocol.
 
 ![1721609023773](image/uri-navigation/1721609023773.png)
 
 ::: warning
-在有些情况下，部分杀毒软件可能会将【注册 Url 协议】视为敏感行为进行拦截。如果在开启此功能时出现这种情况，请点击【允许】。
+In some cases, certain antivirus software may treat Register URL Protocol as a sensitive behavior and block it. If this happens when enabling the feature, please click Allow.
 :::
 
-注册完成后，您可以通过在【运行】中调用[`classisland://app/test`](classisland://app/test)来测试注册是否成功。
+Once registered, you can test whether it works by running [`classisland://app/test`](classisland://app/test) in App Test.
 
-## 支持的功能
+## Supported Features
 
-您可以通过 Url 协议调用以下功能：
+You can call the following features via the URL protocol:
 
-### 应用设置
+### App Settings
 
 ``` plaintext
 classisland://app/settings/{page}/[...]
 ```
 
-打开应用设置。
+Opens the app settings
 
-**参数**
+**Parameters**
 
-| 参数 | 类型 | 说明 |
+| Parameter | Type | Description |
 | -- | -- | -- |
-| page | `string` | 要导航到的设置页面 id |
+| page | `string` | The ID of the settings page to navigate to |
 
-您可以通过修改 `page` 参数导航到指定的设置页面。以下为 ClassIsland 内置的设置页面以及其对应的 `category` 参数值。
+By modifying the `page` parameter, you can navigate to a specific settings page.
+Below are the built-in settings pages in ClassIsland and their corresponding `category` values:
 
-| 页面 | 值 | 类型 |
+| Page | Value | Type |
 | -- | -- | -- |
-| 基本 | general | 内置 |
-| 组件 | components | 内置 |
-| 外观 | appearance | 内置 |
-| 提醒 | notification | 内置 |
-| 窗口 | window | 内置 |
-| 天气 | weather | 内置 |
-| 更新 | update | 内置 |
-| 隐私 | privacy | 内置 |
-| 插件 | classisland.plugins | 扩展 |
-| 关于 ClassIsland | about | 关于 |
-| 测试页面 | test-settings-page | 调试 |
-| 调试 | debug | 调试 |
-| 笔刷 | debug_brushes | 调试 |
+| General | general | Built-in |
+| Components | components | Built-in |
+| Appearence | appearance | Built-in |
+| Notifications | notification | Built-in |
+| Window | window | Built-in |
+| Weather | weather | Built-in |
+| Updates | update | Built-in |
+| Privacy | privacy | Built-in |
+| Plugins | classisland.plugins | Extension |
+| About ClassIsland | about | About |
+| Test Page | test-settings-page | Debug |
+| Debug | debug | Debug |
+| Brushes | debug_brushes | Debug |
 
-### 档案设置
+### Profile Settings
 
 ``` plaintext
 classisland://app/profile/
 ```
 
-打开档案设置窗口。
+Opens the profile settings window.
 
-### 换课
+### Class Swap
 
 ``` plaintext
 classisland://app/class-swap
 ```
 
-打开换课窗口。
+Opens the class swap window.
 
 ::: note
-在当前没有加载课表时，此 Uri 不起作用。
+This URI does not work if there are no timetable loaded currently.
 :::
 
-### 测试导航
+### Test Navigation
 
 ``` plaintext
 classisland://app/test
 ```
 
-打开测试导航窗口。
+Opens the test navigation window.

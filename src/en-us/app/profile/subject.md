@@ -1,18 +1,18 @@
-﻿# 科目
+﻿# Subjects
 
 ![1690343413399](../image/Subject/1690343413399.png)
 
-科目包含了对应科目的名称、授课教师等信息，可以被课程安排使用。本应用内置了一些科目，您也可以根据实际需要进行调整。以下是可以调整的信息及其说明：
+Subjects contain information such as the subject name, teacher, and other details, which can be used in course scheduling. The application comes with some built-in subjects, and you can also adjust them as needed. Below are the adjustable fields and their descriptions:
 
-| 项目 | 说明 |
+| Field | Description |
 | -- | -- |
-| 科目名 | 一个科目的**全称**，会在处于对应时间点时在主界面上展开显示。|
-| 简称 | 一个科目的**简称**，会在主界面对应时间点折叠时显示。 |
-| 科任老师 | 对应科目的授课老师。 |
-| 是否为户外课程 | 该科目是否需要到户外上课。 |
+| Subject Name | The **full name** of the subject. It will be expanded and displayed on the main interface when the corresponding time point is active. |
+| Abbreviation | The **Abbreviation** of the subject. It will be displayed when the corresponding time point is collapsed in the main interface. | 
+| Teacher | The teacher responsible for the corresponding subject |
+| Outdoor Course | Whether the subject needs to be taught outdoors. |
 
-## 编辑科目
+## Editing Subjects
 
-您可以直接在科目编辑界面左侧的表格中录入科目，也可以选中科目后在右侧编辑科目的详细信息。
+You can enter subjects directly in the table on the left side of the subject editing interface, or select a subject and edit its details on the right side.
 
-您可以同时选中多个科目，进行复制、删除等操作。
+You can also select multiple subjects at once to perform operations such as copy or delete.

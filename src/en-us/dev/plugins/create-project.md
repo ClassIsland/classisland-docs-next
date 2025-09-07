@@ -1,43 +1,38 @@
-# 开始编写插件
+# Getting Started with Plugin Development
 
-本文章将介绍如何创建、调试并运行 ClassIsland 的插件项目。
+This article will guide you through creating, debugging, and running a ClassIsland plugin project.
 
 ::: warning
-本文章所涉及内容仍在开发中，随时可能发生变动。请注意关注文档更变。
+The content covered in this article is still under development and may change at any time. Please pay attention to documentation updates.
 :::
 
-在开始之前，您需要按照[设置 ClassIsland 插件开发环境](../get-started/devlopment-plugins.md)的指引设置插件开发环境。
+Before starting, you need to set up the plugin development environment according to the instructions in [Setting up the ClassIsland Plugin Development Environment.](../get-started/devlopment-plugins.md)
 
-## 使用模板
+## Using a Template
 
-您可以使用项目模板快速开始开发。
+You can use a project template to quickly start development.
 
-::: info 待补充。
+::: info To be added.
 :::
 
-## 手动创建项目
+## Manually Creating a Project
 
-以下步骤以在 Visual Studio 2022 中的操作为例。
+The following steps use Visual Studio 2022 as an example.
 
-1. 创建一个模板为【WPF 类库】的项目，选择【.NET 8】目标框架
-2. 项目创建完成后，在【解决方案资源管理器】中右键项目，在弹出的操作菜单中点击【管理 Nuget 程序包…】操作。
-
+1. Create a project with the template 【WPF Class Library】, selecting the 【.NET 8】 target framework.
+2. After the project is created, right-click the project in 【Solution Explorer】, and click 【Manage NuGet Packages…】 in the context menu.
     ![1721876643763](image/create-project/1721876643763.png)
-
-3. 搜索并安装包【ClassIsland.PluginSdk】。
-
+3. Search for and install the package 【ClassIsland.PluginSdk】.
     ![1721876680236](image/create-project/1721876680236.png)
-
-    ::: info 使用预览版 SDK
-    您可以通过添加 GitHub Packages 源来获取从 GitHub Actions 构建的最新的 SDK 包。您需要按照[此文章](https://docs.github.com/zh/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)的方法创建 GitHub 个人访问令牌（classic），并至少赋予 `read:packages` 权限。然后使用以下命令添加 ClassIsland 的 GitHub Packages Nuget 源：
+   ::: info Using Preview SDK
+You can obtain the latest SDK packages built from GitHub Actions by adding the GitHub Packages source. You need to create a GitHub personal access token (classic) following [this passage](https://docs.github.com/zh/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens), granting at least `read:packages` permissions. Then use the following command to add ClassIsland's GitHub Packages NuGet source:
 
     ``` shell
     dotnet nuget add source --username（你的用户名） --password（你的 GitHub 个人访问令牌） --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ClassIsland/index.json"
     ```
     :::
 
-4. 打开项目文件，添加 `EnableDynamicLoading` 属性以允许插件被动态加载，并在 `ClassIsland.PluginSdk` 的引用项上设置`ExcludeAssets` 属性为 `runtime` 以阻止插件 SDK 相关依赖项流入构建结果。
-
+4. Open the project file, add the `EnableDynamicLoading property` to allow the plugin to be dynamically loaded, and set the `ExcludeAssets` property to runtime on the `ClassIsland.PluginSdk` reference to prevent plugin SDK dependencies from flowing into the build output.
     ```xml title="MyPlugin.csproj" hl_lines="9 13"
     <Project Sdk="Microsoft.NET.Sdk">
 
@@ -58,45 +53,45 @@
 
     ```
 
-## 插件清单文件
+## Plugin Manifest File
 
-插件清单文件包含了插件的基本信息，如插件入口程序集等。
+The plugin manifest file contains basic information about the plugin, such as the plugin entry assembly.
 
-在项目目录下创建名为 `manifest.yml` 的文件，并在【属性】中将【复制到输出目录】属性设置为【如果较新则复制】。这样在构建时插件清单文件会被自动复制到输出目录。
+Create a file named `manifest.yml` in the project directory, and in its 【Properties】, set the 【Copy to Output Directory】 property to 【Copy if newer】. This ensures the plugin manifest file is automatically copied to the output directory during build.
 
-清单文件具有以下属性：
+The manifest file has the following properties:
 
-| 属性名 | 类型 | 必填？ | 说明 |
+| Property Name | Type | Required? | Description |
 | -- | -- | -- | -- |
-| id | `string` | **是** | 插件的唯一 id |
-| entranceAssembly | `string` | **是** | 插件入口程序集。在加载插件时将从这个程序集中查找插件入口点。 |
-| apiVersion | `Version` | **是** | 此插件面向的 ClassIsland 版本。此插件将只能在高于此版本的 ClassIsland 上工作。 |
-| name | `string` | 否 | 插件显示名称 |
-| description | `string` | 否 | 插件描述 |
-| url | `string` | 否 | 插件主页 Url |
-| author | `string` | 否 | 插件作者 |
-| version | `Version` | 否 | 插件版本，如`1.0.0.0` |
-| icon | `string` | 否 | 插件图标文件名，默认值为`icon.png` |
-| readme | `string` | 否 | 插件自述文件文件名，默认为`README.md` |
+| id | `string` | **Yes** | The unique id of the plugin |
+| entranceAssembly | `string` | **Yes** | The plugin entry assembly. The plugin entry point will be searched for here when loading the plugin. |
+| apiVersion | `Version` | **Yes** | The ClassIsland version this plugin targets. This plugin will only work on ClassIsland versions equal to or higher than this. |
+| name | `string` | No | The display name of the plugin |
+| description | `string` | No | Description of the plugin |
+| url | `string` | No | The plugin homepage URL |
+| author | `string` | No | The plugin author |
+| version | `Version` | No | The plugin version, e.g., `1.0.0.0` |
+| icon | `string` | No | The plugin icon filename. Default value is `icon.png` |
+| readme | `string` | No | The plugin readme filename. Default is `README.md` |
 
-以下是一个清单文件的示例：
+Here is an example of a manifest file:
 
 ```yaml title="manifest.yml"
-id: examples.helloworld  # 插件 id
-name: Hello world!  # 插件名称
-apiVersion: 1.4.2.0  # 插件面向的 ClassIsland 版本
-description: 在启动时弹出一个“Hello world”提示框。  # 插件描述
-entranceAssembly: "HelloWorldPlugin.dll"  # 插件入口程序集
-url: https://github.com/ClassIsland/ExamplePlugins  # 插件 Url
-author: HelloWRC  # 插件作者
-version: 1.0.0.0  # 插件版本
+id: examples.helloworld  # Plugin ID
+name: Hello world!  # Plugin name
+apiVersion: 1.4.2.0  # Targeted ClassIsland version
+description: Displays a "Hello world" prompt on startup.  # Plugin description
+entranceAssembly: "HelloWorldPlugin.dll"  # Plugin entry assembly
+url: https://github.com/ClassIsland/ExamplePlugins  # Plugin URL
+author: HelloWRC  # Plugin author
+version: 1.0.0.0  # Plugin version
 ```
 
-## 插件入口点
+## Plugin Entry Point
 
-加载插件时，将从清单文件标记的入口程序集中查找以 `ClassIsland.Core.Abstractions.PluginBase` 为基类，且带有 `ClassIsland.Core.Attributes.PluginEntrance` 属性的类作为插件入口点，并调用 `Initialize` 方法运行插件自定义的初始化函数。
+When loading the plugin, the entry assembly marked in the manifest file will be searched for a class that inherits from `ClassIsland.Core.Abstractions.PluginBase` and is decorated with the `ClassIsland.Core.Attributes.PluginEntrance` attribute. This class will be used as the plugin entry point, and its `Initialize` method will be called to run the plugin's custom initialization function.
 
-创建一个名为 `Plugin` 的类，继承 `ClassIsland.Core.Abstractions.PluginBase` ，并为类添加 `ClassIsland.Core.Attributes.PluginEntrance` 属性。
+Create a class named `Plugin` that inherits from `ClassIsland.Core.Abstractions.PluginBase`, and add the `ClassIsland.Core.Attributes.PluginEntrance` attribute to the class.
 
 ```csharp title="Plugin.cs"
 using ClassIsland.Core.Abstractions;
@@ -116,7 +111,7 @@ public class Plugin : PluginBase
 }
 ```
 
-然后为初始化方法 `Initialize` 方法添加如下语句，以在加载插件时显示“Hello world!”提示框。
+Then add the following statement to the `Initialize` method to display a "Hello world!" prompt when the plugin is loaded.
 
 ```csharp title="Plugin.cs" hl_lines="9"
 // ...
@@ -135,16 +130,16 @@ public class Plugin : PluginBase
 ```
 
 ::: tip
-您还可以在 `Initialize` 中完成相关服务的注册，详细信息请见[此文章](./basics.md#依赖注入)。
+You can also register related services in `Initialize`. For details, please refer to [this article](./basics.md#依赖注入)。
 :::
 
-关于插件入口类的详细用法，可以参考文档[插件入口类](./plugin-base.md)。
+For detailed usage of the plugin entry class, you can refer to the documentation [Plugin entry class](./plugin-base.md)。
 
-## 配置主题
+## Configuring Themes
 
-在插件中引入控件样式需要指定默认主题字典。
+Introducing control styles in the plugin requires specifying the default theme dictionary.
 
-新建 `AssemblyInfo.cs`，并写入以下内容，指定主题资源字典的位于当前程序集：
+Create a new `AssemblyInfo.cs` and write the following content to specify that the theme resource dictionary is located in the current assembly:
 
 ``` csharp title="AssemblyInfo.cs"
 using System.Windows;
@@ -156,10 +151,10 @@ using System.Windows;
 ```
 
 ::: note
-关于此属性的详细用法，请见[文档](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.themeinfoattribute?view=windowsdesktop-8.0)。
+For detailed usage of this attribute, please refer to the [Docs](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.themeinfoattribute?view=windowsdesktop-8.0)。
 :::
 
-创建 `Themes/Generic.xaml`，并写入以下内容，引用主题资源字典：
+Create `Themes/Generic.xaml` and write the following content to reference the theme resource dictionary:
 
 ``` xml title="Themes/Generic.xaml"
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -170,30 +165,29 @@ using System.Windows;
 </ResourceDictionary>
 ```
 
-## 配置启动项目
+## Configuring the Startup Project
 
-需要以 ClassIsland 本体为载体以运行和调试插件。
-
+The ClassIsland core executable is required as a host to run and debug the plugin.
 
 :::tabs
 @tab Visual Studio
 
-1. 进入【调试】->【（项目名）调试属性】，打开【启动配置文件】窗口。
+1. Go to 【Debug】 -> 【(Project Name) Debug Properties】 to open the 【Launch Profiles】 window.
 ![1721876856393](image/create-project/1721876856393.png)
-2. 新建【可执行文件】启动项目。
+2. Create a new 【Executable】 launch profile.
 ![1721876883260](image/create-project/1721876883260.png)
-3. 在【可执行文件】一栏中填写在[配置插件开发环境](../get-started/devlopment-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径
-4. 将【工作目录】一栏设置为 ClassIsland 可执行文件路径的文件夹。
-5. 在【命令行参数】一栏填入以下命令行参数，让 ClassIsland 启动时从当前插件的输出目录中加载插件：
+3. In the 【Executable】 field, enter the path to the ClassIsland executable built in [Setting up the Plugin Development Environment](../get-started/devlopment-plugins.md#克隆并构建-classisland)
+4. Set the 【Working Directory】 field to the folder containing the ClassIsland executable.
+5. In the 【Command Line Arguments】 field, enter the following argument to make ClassIsland load plugins from the current plugin's output directory on startup: 
 ```plaintext
--epp（你当前插件项目的输出目录，如 E:\Coding\ExamplePlugins\HelloWorldPlugin\bin\Debug\net8.0-windows）
+-epp（Your current plugin project's output directory, e.g., E:\Coding\ExamplePlugins\HelloWorldPlugin\bin\Debug\net8.0-windows）
 ```
 
 ![1721876903698](image/create-project/1721876903698.png)
 
-@tab 手动编辑 `launchSettings.json`
+@tab Manually editing `launchSettings.json`
 
-向 `launchSettings.json` 中添加下述内容：
+Add the following content to `launchSettings.json`:
 
 ```json {4-9} title="launchSettings.json"
 {
@@ -209,17 +203,18 @@ using System.Windows;
 }
 ```
 
-1. 将这里替换为在[配置插件开发环境](../get-started/devlopment-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径。
-2. 将参数替换为你当前插件项目的输出目录，如 `E:\\Coding\\ExamplePlugins\\HelloWorldPlugin\\bin\\Debug\\net8.0-windows`
-3. 将这里替换为[配置插件开发环境](../get-started/devlopment-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径的文件夹。
+1. Replace this with the path to the ClassIsland executable built in [Setting up the Plugin Development Environment](../get-started/devlopment-plugins.md#clone-and-build-classisland).
+2. Replace the argument with your current plugin project's output directory, e.g., `E:\\Coding\\ExamplePlugins\\HelloWorldPlugin\\bin\\Debug\\net8.0-windows`
+3. Replace this with the folder containing the ClassIsland executable built in [Setting up the Plugin Development Environment](../get-started/devlopment-plugins.md#clone-and-build-classisland).
+
 :::
 
-以上配置步骤完成后，关闭【启动配置文件】窗口，然后切换到刚刚添加的启动配置文件，启动调试。如果没有差错，您可以看到 ClassIsland 正常启动，并弹出了由插件显示的提示框。
+After completing the above configuration steps, close the 【Launch Profiles】 window, switch to the newly added launch profile, and start debugging. If everything is correct, you should see ClassIsland start normally and display the prompt box shown by the plugin.
 
 ![1721874637367](image/create-project/1721874637367.png)
 
-🎉恭喜！您成功创建了您的第一个插件！
+🎉Congratulations! You have successfully created your first plugin!
 
-## 继续深入
+## Next Steps
 
-您可以继续阅读文章来进一步了解相关 API 的用法，或者查看 GitHub 上的 [插件示例](https://github.com/ClassIsland/ExamplePlugins)。
+You can continue reading articles to learn more about the relevant API usage, or check out the [plugin examples](https://github.com/ClassIsland/ExamplePlugins) on Github.

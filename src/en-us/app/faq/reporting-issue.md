@@ -1,63 +1,63 @@
-# 如何获取调试信息
+# How to Collect Debug Information
 
-当您在使用 ClassIsland 的过程中遇到问题时，您可以[向开发者反馈](https://github.com/ClassIsland/ClassIsland/issues)，或者在[Discussions](https://github.com/ClassIsland/ClassIsland/discussions)和[QQ 群](https://qm.qq.com/q/7BWNv3FcjK)向其它用户和开发者求助。在这时，您可能会被要求提供日志、崩溃报告或运行环境等信息。本文档主要讲述如何获取这些信息，以便诊断问题。
+If you encounter issues while using ClassIsland, you can [Report them to the Developers](https://github.com/ClassIsland/ClassIsland/issues), or ask for help in the [Discussions](https://github.com/ClassIsland/ClassIsland/discussions) section or the [QQ Group](https://qm.qq.com/q/7BWNv3FcjK). At such times, you may be asked to provide logs, crash reports, or environment information. This document explains how to collect these details to help diagnose problems.
 
-::: warning 在此之前……
-您应当先在[应用帮助](../README.md)和[常见问题（FAQ）](faq.md)等文档查找您遇到的问题。在向别人寻求帮助或向开发者反馈前，不妨先看看这些文档，尝试自己解决问题。
+::: warning Before You Proceed…
+You should check [App Help](../README.md) and [FAQ](faq.md) for your issue. Before asking others for help or reporting to developers, it’s worth checking these documents and attempting to resolve the problem yourself.
 :::
 
-## 收集日志
+## Collecting Logs
 
-### 收集当前运行的日志
+### Collect Logs from Current Session
 
-您可以通过以下方法打开日志窗口：
+You can open the log window using the following steps:
 
-1. 打开[【应用设置】](classisland://app/settings)。
+1. Open [App Settings](classisland://app/settings)。
     ![1722675858382](../image/reporting-issue/1722675858382.png)
-2. 点击【更多选项…（右上角三个点）】->【日志…】即可打开日志窗口。
+2. Click More Options… (three dots in the top right) → Logs… to open the log window.
     ![1722675865242](../image/reporting-issue/1722675865242.png)
 
-日志窗口会显示当前运行的最近 1000 条日志。默认情况下仅显示【警告】及以上级别的日志。您可以通过勾选日志等级筛选条件中的其它日志等级来查看其它等级的日志。您也可以在【搜索日志…】中输入要筛选的文本或类别来快速查看某一级别的日志。
+The log window displays the most recent 1000 logs of the current session. By default, only Warning and higher-level logs are shown. You can check other log levels in the filter to display them. You can also use Search Logs… to quickly filter logs by text or category.
 
 ![1722676362150](../image/reporting-issue/1722676362150.png)
 
-点击日志条目可以选中对应的日志，按住<kbd>Ctrl</kbd>或<kbd>Shift</kbd>可以多选日志。选中日志后，点击【复制选中】可以将选择的日志复制到剪贴板。
+Click a log entry to select it. Hold <kbd>Ctrl</kbd> or <kbd>Shift</kbd> to select multiple logs. After selecting logs, click Copy Selected to copy them to the clipboard.
 
-### 收集以前的日志
+### Collect Previous Logs
 
 ::: note
-使用此方法只能收集【警告】以及以上等级的日志。
+This method can only collect logs at the Warning level or higher.
 :::
 
-您可以使用以下方法收集之前运行的日志：
+You can collect logs from previous sessions as follows:
 
-1. 在运行输入以下命令打开【事件查看器】：
+1. Open Run and enter the following command to open Event Viewer:
 
     ```shell
     eventvwr.msc
     ```
 
-2. 在左侧的导航栏中依次进入【Windows 日志】->【应用程序】
+2. In the left navigation bar, go to Windows Logs → Application.
     ![1722676552576](../image/reporting-issue/1722676552576.png)
-3. 点击右侧操作栏【筛选当前日志…】
+3. In the right action panel, click Filter Current Log….
     ![1722676611278](../image/reporting-issue/1722676611278.png)
-4. 在【事件来源】条件中选择“.NET Runtime”，然后点击【确定】关闭筛选窗口。
+4. In the Event sources filter, select .NET Runtime, then click OK to close the filter window.
     ![1722676738332](../image/reporting-issue/1722676738332.png)
-5. 此时视图中仅显示来自 .NET 运行时的日志信息。您可以在这些日志中查找 ClassIsland 相关的日志。
+5. The view will now only show log entries from the .NET Runtime. Look for logs related to ClassIsland here.
     ![1722676851711](../image/reporting-issue/1722676851711.png)
 
-## 导出诊断数据
+## Exporting Diagnostic Data
 
 ::: warning
-诊断信息可能包含敏感数据，在分享时请注意检查。
+Diagnostic data may contain sensitive information. Please review it carefully before sharing.
 :::
 
-诊断数据包含了应用设置、当前加载的档案、集控配置（如有）、系统环境和当前运行的日志（最多 1000 条）等信息。您可以按照以下的步骤导出诊断信息。
+Diagnostic data includes app settings, currently loaded profiles, centralized control configurations (if any), system environment, and up to 1000 recent logs. Follow these steps to export diagnostic data:
 
-1. 打开[【应用设置】](classisland://app/settings)。
+1. Open [App Settings](classisland://app/settings)。
     ![1722675858382](../image/reporting-issue/1722675858382.png)
-2. 点击【更多选项…（右上角三个点）】->【导出诊断数据…】
+2. Click More Options… (three dots in the top right) → Export Diagnostic Data…
     ![1722676341109](../image/reporting-issue/1722676341109.png)
-3. 选择保存诊断数据的位置。
+3. Choose a location to save the diagnostic data.
     ![1722676336906](../image/reporting-issue/1722676336906.png)
-4. 稍等片刻，导出完成后应用会自动打开保存诊断数据的位置。
+4. Wait a moment. Once export is complete, the application will automatically open the folder where the diagnostic data was saved.

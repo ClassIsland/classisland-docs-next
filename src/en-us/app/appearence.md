@@ -1,3 +1,3 @@
-# 外观设置
+# Appearance Settings
 
-您可以在【设置】中的【外观】选项卡下调整本应用的外观设置。
+You can adjust the appearance of the application under Settings → Appearance.

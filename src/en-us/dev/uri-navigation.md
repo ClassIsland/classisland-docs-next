@@ -1,24 +1,24 @@
-# 开发 Uri 导航
+# Developing Uri Navigation
 
 ::: info
-本文章主要讲述开发人员如何注册自定义的 Uri 导航。如果您想了解应用内置的 Uri 导航路径，请参阅[Uri 导航](../app/uri-navigation.md)。
+This article primarily explains how developers can register custom Uri navigation. If you want to learn about the built-in Uri navigation paths within the application, please refer to [Uri Navigation](../app/uri-navigation.md).
 :::
 
-ClassIsland 支持通过 Uri 进行应用内导航，同时也支持注册系统 Url 协议，从应用外部打开特定的 Uri。
+ClassIsland supports in-app navigation via Uri and also allows registering system URL protocols to open specific Uris from outside the application.
 
-本文将介绍如何通过 `UriNavigationService` 来注册您自定义的 Uri 和导航事件处理方法来处理导航，以及如何在 UI 上通过命令和直接调用导航服务进行导航。
+This article describes how to use the `UriNavigationService` to register your custom Uris and navigation event handlers, and how to perform navigation in the UI through commands or by directly calling the navigation service.
 
-ClassIsland 的 Uri 导航协议是 `classisland://`。
+The Uri navigation protocol for ClassIsland is `classisland://`.
 
-## 注册导航
+## Registering Navigation
 
-要注册导航，您首先需要获取服务 `ClassIsland.Core.Abstractions.Services.IUriNavigationService`。获取服务的详细方法见[基础知识](basics.md#dependency-injection)。
+To register navigation, you first need to obtain the service `ClassIsland.Core.Abstractions.Services.IUriNavigationService`. For detailed methods on obtaining services, see [Basics](basics.md#dependency-injection).
 
 ::: info
-在本文的代码中，我们假定将获取到的服务存储在了属性 `UriNavigationService` 中。
+In the code examples in this article, we assume the obtained service is stored in a property named `UriNavigationService`.
 :::
 
-接下来我们注册路径 `foo/bar` 的处理程序：
+Next, we register a handler for the path `foo/bar`:
 
 ```cs
 UriNavigationService.HandlePluginsNavigation(
@@ -29,36 +29,36 @@ UriNavigationService.HandlePluginsNavigation(
 );
 ```
 
-在上面的代码中，我们使用 `HandlePluginsNavigation` 方法注册了处理导航到路径 `foo/bar` 的处理程序。当导航到这个 Uri `classisland://plugins/foo/bar` 时，会运行传入的处理程序，显示对话框。在事件处理程序中可以通过参数 `args` 获取原始导航的 Uri 和原始 Uri 相对当前注册的路径的子路径。
+In the code above, we used the `HandlePluginsNavigation` method to register a handler for navigating to the path `foo/bar`. When navigating to the Uri `classisland://plugins/foo/bar`, the provided handler will run, displaying a dialog. Within the event handler, you can access the originally navigated Uri and the subpath relative to the currently registered path via the args parameter.
 
-使用 `HandlePluginsNavigation` 方法注册的 Uri 的主机是 `plugins`，也就是专门为插件预留的导航主机。如果要注册到 `app` 或其他主机下，请使用 `HandleAppNavigation` 方法。
+Uris registered using the `HandlePluginsNavigation` method have the host plugins, which is a navigation host specifically reserved for plugins. To register under the app host or other custom hosts, use the `HandleAppNavigation` method.
 
 ::: note
-`HandleAppNavigation`等方法具有 `internal` 保护，只有从 ClassIsland 内部才能注册到 `app` 和自定义主机下。插件中只能使用 `HandlePluginsNavigation` 方法注册到 `plugins` 主机下。
+Methods like `HandleAppNavigation` have internal protection; only code within ClassIsland can register under the app host or custom hosts. Plugins can only use the `HandlePluginsNavigation` method to register under the plugins host.
 :::
 
-## 导航
+## Navigation
 
-在导航到某个 Uri 时，ClassIsland 会首先尝试导航到指定的路径下。如果这个路径下没有注册处理方法，会逐步向上级导航，直到根目录。
+When navigating to a specific Uri, ClassIsland first attempts to navigate to the exact specified path. If no handler is registered for that path, it will progressively navigate up to parent directories until it reaches the root.
 
 ``` mermaid
 flowchart LR
-    BeginNavigation["开始导航"] --> IsExist{"目标路径是否存在？"}  -->|"存在"| Navigated["导航成功"] 
-    IsExist -->|"不存在"| Back["尝试导航到上级目录"] --> IsRoot{"到达根目录？"} -->|"是"| Failed["导航失败"]
-    IsRoot --> |"否"| IsExist
+    BeginNavigation["Start Navigation"] --> IsExist{"Does the target path exist?"}  -->|"Yes"| Navigated["Navigation Successful"]
+    IsExist -->|"No"| Back["Attempt to navigate to parent directory"] --> IsRoot{"Reached root directory?"} -->|"Yes"| Failed["Navigation Failed"]
+    IsRoot --> |"No"| IsExist
 ```
 
-::: info 举个栗子
-假设我们注册到了路径 `hello_world/hello_world`。当向 `hello_world/hello_world/foo_bar` 导航时，由于这个路径还未被注册，会导航到上一级 `hello_world/hello_world`，并触发对应的事件处理程序。
+::: info For example:
+Suppose we registered a handler for the path `hello_world/hello_world`. When navigating to `hello_world/hello_world/foo_bar`, since this path is not registered, it will navigate up to the parent directory `hello_world/hello_world` and trigger the corresponding event handler.
 :::
 
-以下有几种进行导航的方式：
+There are several ways to perform navigation:
 
-### 通过 `NavHyperlink`
+### Via `NavHyperlink`
 
-`NavHyperlink` 继承于 `Hyerlink`，具有后者类似的外观与体验，可以插入到 `TextBlock` 或 `FlowDocument` 等中，实现 Uri 导航。
+`NavHyperlink` inherits from `Hyperlink` and has a similar appearance and experience. It can be inserted into `TextBlock` or `FlowDocument`, etc., to implement Uri navigation.
 
-要使用 `NavHyperlink` 导航，需要将 `NavigateTarget` 属性设置为要导航到的 Uri，例如：
+To use `NavHyperlink` for navigation, set the `NavigateTarget` property to the Uri you want to navigate to, for example:
 
 ``` xml
 <TextBlock>
@@ -67,20 +67,20 @@ flowchart LR
 </TextBlock>
 ```
 
-### 通过代码导航
+### Navigating via Code
 
-调用 `IUriNavigationService.Navigate` 方法可以导航到指定的 Uri。如果要导航的 Uri 协议不是 `classisland://`，ClassIsland 会自动调用系统中最合适的应用处理这个 Uri。
+Calling the `IUriNavigationService.Navigate` method navigates to the specified Uri. If the Uri protocol is not `classisland://`, ClassIsland will automatically call the most appropriate system application to handle the Uri.
 
 ```cs
-// 打开导航测试窗口
+// Open the navigation test window
 UriNavigationService.Navigate(new Uri("classisland://app/test"));
 
-// 在系统浏览器中打开 ClassIsland 官网
+// Open the ClassIsland website in the system browser
 UriNavigationService.Navigate(new Uri("https://classisland.tech"));
 ```
 
-### 从外部调用
+### Calling from External Applications
 
-如果 ClassIsland 在系统上注册了 `classisland://` 链接的打开方式，那么在浏览器等地方打开这种协议的链接时，ClassIsland 可以在应用中导航到对应的 Uri 处理程序上。
+If ClassIsland has registered the `classisland://` link handling on the system, then opening links with this protocol in browsers or other places will allow ClassIsland to navigate to the corresponding Uri handler within the application.
 
-例如：[classisland://app/test](classisland://app/test)
+For example: [classisland://app/test](classisland://app/test)

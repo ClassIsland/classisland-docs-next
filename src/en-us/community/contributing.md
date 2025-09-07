@@ -1,24 +1,26 @@
-# 向 ClassIsland 文档做贡献
+# Contributing to the ClassIsland Documentation
 
-::: warning 注意
-本文章是面向 _**ClassIsland 文档**_ 贡献者的贡献指南。如果您要为 **ClassIsland 本体** 做出贡献，请参阅 [ClassIsland 贡献指南](https://github.com/ClassIsland/ClassIsland/blob/master/CONTRIBUTING.md)。
+::: warning Note
+This article is a contribution guide for the _**ClassIsland Documentation**_.
+If you want to contribute to the _**ClassIsland project itself**_, please refer to the [ClassIsland Contribution Guide](https://github.com/ClassIsland/ClassIsland/blob/master/CONTRIBUTING.md)。
 :::
 
 <img src="./image/contributing/Firefly_Sticker_01.png"
     width="85"
     alt="流萤 - 比心"/>
 
-本文档的建设离不开广大用户的支持，感谢您考虑为本文档做出贡献❤️！在为本文档贡献之前，请先阅读本指南。
+The growth of this documentation would not be possible without the support of the community. Thank you for considering contributing ❤️!
+Before contributing to this documentation, please read this guide first.
 
-本文档基于 [VuePress](https://vuepress.vuejs.org/) 搭建。了解 [VuePress](https://vuepress.vuejs.org/) 的用法对编写本文档很有帮助。
+This documentation is built with [VuePress](https://vuepress.vuejs.org/). Understanding how [VuePress](https://vuepress.vuejs.org/) works will be very helpful for writing documentation.
 
-本文档目前托管在 [GitHub Pages](https://pages.github.com/) 上。
+The documentation is currently hosted on [GitHub Pages](https://pages.github.com/) 上。
 
-## 贡献准则
+## Contribution Guidelines
 
-- 使用小写文件名
+- Use lowercase filenames
 
-    VuePress 对 URL 链接大小写敏感，使用包含大写字母的文件名可能会出现一些问题。在命名文档和文件夹时请使用小写字母，并用`-`分割每个单词，例如：
+    VuePress is case-sensitive with URLs. Using filenames with uppercase letters may cause issues. When naming documents and folders, use lowercase letters and separate words with -, for example:
 
     ``` plaintext
     example-doc.md
@@ -26,9 +28,9 @@
         |- another-doc.md
     ```
 
-- 将图片放置在仓库文件中
+- Place images in the repository
 
-    插入图片时请尽量直接将源文件插入到仓库文件中，不使用额外的 CDN / 图床承载图片，以便发布文档时自动将图片等文件打包到 GitHub Pages 上。插入的图片请放置在 `(文档目录)/image/(文档文件名)`下，例如：
+    When inserting images, please include the source files directly in the repository instead of using external CDNs or image hosts. This ensures images and other files are automatically bundled into GitHub Pages when the documentation is published. Inserted images should be placed under `(document-directory)/image/(document-filename)`, for example:
 
     ``` plaintext
     example-doc.md
@@ -42,16 +44,16 @@
             |- image2.png
     ```
 
-- 编写简单易读的文档
+- Write simple and readable documentation
 
-    在编写文档时请尽量做到简单易读。必要时可以插入图片、Mermaid 图表等便于读者理解。
+    When writing documentation, keep it as simple and readable as possible. When necessary, insert images, Mermaid diagrams, or other visual aids to help readers understand.
 
-## 合并更改
+## Merging Changes
 
-您可以向本项目发起 [Pull Request](https://github.com/ClassIsland/classisland-docs-next/pulls) 来合并您的更改。在发起 Pull Request 时，请简要地描述您做的更改。
+You can submit a [Pull Request](https://github.com/ClassIsland/classisland-docs-next/pulls) to merge your changes into this project. When creating a Pull Request, please briefly describe the changes you’ve made.
 
-更改合并以后，您可以在 [最新版文档](https://classisland.github.io/classisland-docs-next/) 中看到您的更改。
+After your changes are merged, you can view them in the [latest documentation](https://classisland.github.io/classisland-docs-next/)
 
-## 还有疑问？
+## Still Have Questions?
 
-您可以[加入 QQ 群](https://qm.qq.com/q/4NsDQKiAuQ)与开发者和其他用户讨论。
+You can [Join the QQ Group](https://qm.qq.com/q/4NsDQKiAuQ) to discuss with developers and other users.

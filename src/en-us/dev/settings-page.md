@@ -1,10 +1,10 @@
-# 设置页面
+# Settings Page
 
-ClassIsland 允许插件在设置窗口注册自定义的设置页面。本文将主要介绍如何创建和注册自定义的设置页面。
+ClassIsland allows plugins to register custom settings pages in the settings window. This article mainly introduces how to create and register a custom settings page.
 
-## 创建设置页面
+## Creating a Settings Page
 
-设置页面基于 WPF 内置的页面类型，所以我们需要先创建一个页面。创建好页面之后，更改以下高亮内容，将页面的基类修改为 `SettingsPageBase`。
+Settings pages are based on WPF’s built-in page type, so we first need to create a page. After creating the page, change the highlighted parts below to modify the base class of the page to `SettingsPageBase`.
 
 ```xml title="ExampleSettingsPage.xaml" hl_lines="1 4"
 <ci:SettingsPageBase 
@@ -36,7 +36,7 @@ public partial class ExampleSettingsPage : SettingsPageBase
 }
 ```
 
-为了应用主题样式，还要向设置页面添加下方高亮的属性：
+To apply theme styles, you also need to add the highlighted attributes to the settings page:
 
 ```xml title="ExampleSettingsPage.xaml" hl_lines="11-17"
 <ci:SettingsPageBase x:Class="PluginWithSettingsPage.Views.SettingsPages.ExampleSettingsPage"
@@ -61,16 +61,16 @@ public partial class ExampleSettingsPage : SettingsPageBase
 </ci:SettingsPageBase>
 ```
 
-## 声明页面信息
+## Declaring Page Information
 
-此外，为了声明设置页面信息，我们还需要向设置页面的后端代码中添加 `SettingsPageInfo` 属性：
+In addition, to declare settings page information, we need to add the `SettingsPageInfo` attribute to the backend code of the settings page:
 
 ```cs title="ExampleSettingsPage.xaml.cs" hl_lines="5"
 using ClassIsland.Core.Attributes;
 
 namespace PluginWithSettingsPage.Views.SettingsPages;
 
-[SettingsPageInfo("examples.exampleSettingsPage", "示例设置页面")]
+[SettingsPageInfo("examples.exampleSettingsPage", "Example Settings Page")]
 public partial class ExampleSettingsPage : SettingsPageBase
 {
     public ExampleSettingsPage()
@@ -80,39 +80,39 @@ public partial class ExampleSettingsPage : SettingsPageBase
 }
 ```
 
-您可以在 `SettingsPageInfo` 属性中为设置页面指定图标、类别等信息，例如：
+You can specify icons, categories, and other information for the settings page in the `SettingsPageInfo` attribute, for example:
 
 ```cs
 [SettingsPageInfo(
-    "examples.exampleSettingsPage",   // 设置页面 id
-    "示例设置页面",  // 设置页面名称
-    PackIconKind.CogOutline,   // 未选中时设置页面图标
-    PackIconKind.Cog,  // 选中时设置页面图标
-    SettingsPageCategory.External  // 设置页面类别
+    "examples.exampleSettingsPage",   // Settings page id
+    "Example Settings Page",  // Settings page name
+    PackIconKind.CogOutline,   // Icon when not selected
+    PackIconKind.Cog,  // Icon when selected
+    SettingsPageCategory.External  // Settings page category
 )]
 ```
 
-您也可以在 `SettingsPageInfo` 属性中指定设置页面的类别。不同的设置页面类别的设置页面会在分组后按一定的顺序显示。设置页面具有以下类别：
+You can also specify the category of the settings page in the `SettingsPageInfo` attribute. Settings pages of different categories will be grouped and displayed in a certain order. The settings page has the following categories:
 
-| 值 | 类别 | 说明 |
+| Values | Type | Description |
 | -- | -- | -- |
-| SettingsPageCategory.Internal | 内部设置页面 | ClassIsland 内置的设置页面，不建议插件注册的设置页面使用此类别。 |
-| SettingsPageCategory.External | 扩展设置页面 | 一般用于插件注册设置页面。 |
-| SettingsPageCategory.About | 关于页面 | 显示关于信息的设置页面。 |
-| SettingsPageCategory.Debug | 调试页面 | 用于调试的页面，当调试菜单关闭时，不会显示这些界面。 |
+| SettingsPageCategory.Internal | Internal Settings Page | Built-in settings pages of ClassIsland. It is not recommended for plugin-registered settings pages to use this category. |
+| SettingsPageCategory.External | External Settings Page | Usually used for plugin-registered settings pages. |
+| SettingsPageCategory.About | About Page | Settings page showing about information. |
+| SettingsPageCategory.Debug | Debug Page | Pages used for debugging. When the debug menu is closed, these pages will not be displayed. |
 
-这些类别在设置界面上显示的位置如下示意图所示：
+The positions of these categories in the settings interface are shown in the diagram below:
 
 ![1722560691778](image/settings-page/1722560691778.png)
 
-## 注册设置页面
+## Registering a Settings Page
 
-编写完设置界面之后，还需要在初始化方法中把设置页面注册到应用上。
+After writing the settings page, you also need to register it in the initialization method.
 
 :::tabs
-@tab 在插件中注册
+@tab Registering in a Plugin
 
-在插件的入口点添加以下高亮代码：
+Add the highlighted code below in the entry point of the plugin:
 
 ```cs title="Plugin.cs" hl_lines="11"
 // ...
@@ -134,11 +134,11 @@ public class Plugin : PluginBase
 }
 ```
 
-上面高亮的代码利用 `AddSettingsPage` 扩展方法将设置页面注册到了应用主机上。
+The highlighted code above uses the `AddSettingsPage` extension method to register the settings page with the application host.
 
-@tab 在应用中注册
+@tab Registering in the application
 
-在应用的初始化方法中添加以下高亮代码：
+Add the highlighted code below in the initialization method of the application:
 
 ```cs title="App.xaml.cs" hl_lines="15"
 // ...
@@ -166,6 +166,6 @@ class App : AppBase {
 ```
 :::
 
-注册完成后，打开【应用设置】，您可以在设置界面的导航栏中看到您注册的设置页面。
+After registration, open App Settings, and you can see your registered settings page in the navigation bar of the settings interface.
 
-您可以查看[设置界面示例](https://github.com/ClassIsland/ExamplePlugins/tree/master/PluginWithSettingsPage)项目来了解更多信息。
+You can check[Settings Page Example](https://github.com/ClassIsland/ExamplePlugins/tree/master/PluginWithSettingsPage) for more information.

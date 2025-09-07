@@ -1,22 +1,22 @@
-# 配置 ClassIsland **本体**开发环境
+# Setting up the ClassIsland Core Development Environment
 
-## 开发环境
+## Development Environment
 
-**首先确保您的系统满足以下要求：**
+**First, ensure your system meets the following requirements:**
 
-- Windows 10 1803 及以上的操作系统，x86_64 架构
+- Windows 10 version 1803 or later, x86_64 architecture
 
-要在本地进行开发，**您需要安装以下负载和工具**：
+To develop locally, you need to install **the following workloads and tools**:
 
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
-- [Visual Studio 2022](https://visualstudio.microsoft.com/)，包括【.NET 桌面开发】工作负载
+- [Visual Studio 2022](https://visualstudio.microsoft.com/), including the [.NET Desktop Development] workload
 - [Git](https://git-scm.com/)
 
-## 拉取代码
+## Pulling the Code
 
-您可以在 Fork 了本仓库后，通过 Git 将代码克隆到本地，然后开始开发。
+After forking this repository, you can clone the code to your local machine using Git and begin development.
 
-要克隆仓库，您可以直接在 Visual Studio 中克隆，也可以通过命令行克隆。
+To clone the repository, you can either clone directly within Visual Studio or use the command line.
 
 ::: tabs#clonemethod
 @tab HTTP
@@ -39,11 +39,11 @@ gh repo clone ClassIsland/ClassIsland
 :::
 
 ::: warning
-仓库名仅供参考，具体的仓库名请以您的 Fork 为准。
+The repository name is for reference only; please use the name of your own Fork.
 :::
 
-## 编译与运行
+## Compilation and Running
 
-1. 在 Visual Studio 中打开解决方案 `ClassIsland.sln`
-2. 将项目 `ClassIsland` 设置为启动项目
-3. 点击【启动】即可编译项目，并开始调试。
+1. Open the solution `ClassIsland.sln` in Visual Studio.
+2. Set the project `ClassIsland` as the startup project.
+3. Click 【Start】 to compile the project and begin debugging.

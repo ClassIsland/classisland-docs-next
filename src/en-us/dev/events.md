@@ -1,29 +1,29 @@
-# 事件
+# Events
 
-事件是相应 ClassIsland 生命周期变化和课表状态改变的重要方式。
+Events are an important way to respond to ClassIsland's lifecycle changes and class schedule state changes.
 
-.NET 通用主机和 ClassIsland 提供了一系列的事件，您可以通过调取对应的服务等方式订阅这些事件。
+The .NET Generic Host and ClassIsland provide a series of events that you can subscribe to by accessing corresponding services.
 
-## 生命周期
+## Lifecycle
 
-:::details 生命周期事件示意图
+:::details Lifecycle Event Diagram
 
-以下是 ClassIsland 的生命周期及事件触发的示意图：
+The following diagram illustrates ClassIsland's lifecycle and event triggering:
 
 ```mermaid
 flowchart TD
-    Startup(["应用启动"])
-    --> ConfigureHost["配置通用主机"]
-    --> HostStartup["主机启动"]
-    --> LaunchMainLoop["启动主循环"]
+    Startup(["Application Startup"])
+    --> ConfigureHost["Configure Generic Host"]
+    --> HostStartup["Host Startup"]
+    --> LaunchMainLoop["Launch Main Loop"]
     --> AppStarted{{"AppStarted"}}
     --> PreMainTimerTick{{"PreMainTimerTick"}}
-    --> ProcessLessons["处理课表"]
+    --> ProcessLessons["Process Schedule"]
     --> PostMainTimerTick{{"PostMainTimerTick"}}
     --> PreMainTimerTick
 
     PostMainTimerTick
-    --> Exiting["应用正在退出"]
+    --> Exiting["Application Exiting"]
     --> AppStopping{{"AppStopping"}}
 ```
 
@@ -31,101 +31,101 @@ flowchart TD
 
 [[TOC]]
 
-## 应用生命周期事件
+## Application Lifecycle Events
 
-这些事件会在应用生命周期发生改变时触发。要订阅这些事件，需要通过以下代码获取当前应用的实例：
+These events are triggered when the application lifecycle changes. To subscribe to these events, you need to obtain the current application instance using the following code:
 
 ```csharp
 var app = AppBase.Current;
 
-// 注册应用启动完成事件
+// Register application startup completion event
 app.AppStarted += (o, e) => Console.WriteLine("AppStarted");
 ```
 
-### 应用启动完成 `AppStarted`
+### Application Startup Completed `AppStarted`
 
-在应用启动完成之后触发。
+Triggered after the application has finished starting up.
 
-**事件名：** `AppStarted`
+**Event Name:** `AppStarted`
 
-**参数：** _无_
+**Params:** _None_
 
-### 应用正在停止 `AppStopping`
+### Application Stopping `AppStopping`
 
-在应用正在退出时触发。
+Triggered when the application is exiting.
 
 ::: warning
-不要在此事件的事件处理器上进行异步操作。
+Do not perform asynchronous operations in the event handler for this event.
 :::
 
-**事件名：** `AppStopping`
+**Event Name"** `AppStopping`
 
-**参数：** _无_
+**Params** _None_
 
-## 主计时器事件
+## Main Timer Events
 
-这些事件会每隔 50ms 触发一次，适用于进行轮询操作。要订阅这些事件，需要按照[基础知识](./basics.md#依赖注入)文档中关于依赖注入的文档获取 `ClassIsland.Core.Abstractions.Services.ILessonService` 服务。
+These events are triggered every 50ms and are suitable for polling operations. To subscribe to these events, you need to obtain the `ClassIsland.Core.Abstractions.Services.ILessonService` service as described in the dependency injection section of the [Basics](./basics.md#依赖注入) documentation.
 
-### 课表处理前事件
+### Pre-Lesson Processing Event
 
-在主计时器开始处理课表信息前触发。
+Triggered before the main timer starts processing class schedule information.
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**Service:** `ClassIsland.Core.Abstractions.Services.ILessonService`
 
-**事件名：** `PreMainTimerTicked`
+**Event Name:** `PreMainTimerTicked`
 
-**参数：** _无_
+**Params:** _None_
 
-### 课表处理后事件
+### Post-Lesson Processing Event
 
-在主计时器完成处理课表信息后触发。
+Triggered after the main timer finishes processing class schedule information.
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**Service:** `ClassIsland.Core.Abstractions.Services.ILessonService`
 
-**事件名：** `PostMainTimerTick`
+**Event Name:** `PostMainTimerTick`
 
-**参数：** _无_
+**Params:** _None_
 
-## 课表事件
+## Class Schedule Events
 
-以下事件会在课表的对应状态触发。
+The following events are triggered when the corresponding state of the class schedule occurs.
 
-### 上课事件
+### Class Start Event
 
-当进入上课类型的时间点时触发。
+Triggered when entering a time point of the class type.
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**Service：** `ClassIsland.Core.Abstractions.Services.ILessonService`
 
-**事件名：** `OnClass`
+**Event Name：** `OnClass`
 
-**参数：** _无_
+**Params：** _None_
 
-### 下课事件
+### Break Time Event
 
-当进入课间休息类型的时间点时触发。
+Triggered when entering a time point of the break type.
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**Service：** `ClassIsland.Core.Abstractions.Services.ILessonService`
 
-**事件名：** `OnBreakingTime`
+**Event Name：** `OnBreakingTime`
 
-**参数：** _无_
+**Params：** _None_
 
-### 放学事件
+### End of School Event
 
-当放学（当前时间超出今天的时间表的最后一个时间点）时触发。
+Triggered after school (when the current time exceeds the last time point of today's schedule).
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**Service：** `ClassIsland.Core.Abstractions.Services.ILessonService`
 
-**事件名：** `OnAfterSchool`
+**Event Name：** `OnAfterSchool`
 
-**参数：** _无_
+**Params：** _None_
 
-### 时间状态改变事件
+### Time State Changed Event
 
-当当前时间状态改变时触发。
+Triggered when the current time state changes.
 
-**服务：** `ClassIsland.Core.Abstractions.Services.ILessonService`
+**Service：** `ClassIsland.Core.Abstractions.Services.ILessonService`
 
-**事件名：** `CurrentTimeStateChanged`
+**Event Name：** `CurrentTimeStateChanged`
 
-**参数：** _无_
+**Params：** _None_

@@ -1,30 +1,30 @@
-# 配置 ClassIsland **插件**开发环境
+# Setting up the ClassIsland Plugin Development Environment
 
 ::: warning
-本文档待补充。
+This documentation is pending completion.
 :::
 
-## 开发环境
+## Development Environment
 
-**首先确保您的系统满足以下要求：**
+**First, ensure your system meets the following requirements:**
 
-- Windows 10 1803 及以上的操作系统，x86_64 架构
+- Windows 10 version 1803 or later, x86_64 architecture
 
-要在本地进行开发，**您需要安装以下负载和工具**：
+To develop locally, you need to **install the following workloads and tools**:
 
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
-- [Visual Studio 2022](https://visualstudio.microsoft.com/)，包括【.NET 桌面开发】工作负载
+- [Visual Studio 2022](https://visualstudio.microsoft.com/), including the [.NET Desktop Development] workload
 - [Git](https://git-scm.com/)
 
-## 克隆并构建 ClassIsland
+## Clone and Build ClassIsland
 
-开发插件的过程中需要使用 ClassIsland 源码以构建 ClassIsland 本体的可执行文件，以用于运行和调试插件。
+The ClassIsland source code is required during plugin development to build the ClassIsland core executable, which is used for running and debugging plugins.
 
-::: note 为什么不使用 Releases 中发布的可执行文件
-Release 版本的构建无法使用热重载（包括 XAML 热重载）功能，调试起来很麻烦。
+::: note Why not use the executable released in Releases?
+Release builds cannot utilize hot reload (including XAML hot reload) functionality, making debugging cumbersome.
 :::
 
-以下是克隆仓库的命令行：
+Below are the command lines to clone the repository:
 
 ::: tabs#clonemethod
 @tab HTTP
@@ -46,31 +46,31 @@ gh repo clone ClassIsland/ClassIsland
 ```
 :::
 
-克隆完成后，运行以下命令进入 ClassIsland 源代码目录。
+After cloning, run the following command to enter the ClassIsland source code directory.
 
 ``` shell
 cd ClassIsland
 ```
 
-目前插件功能还未下放到 `master` 分支上，需要签出开发分支 `dev`。如果您想签出到特定版本上，请使用对应版本的标签名（如 `1.4.3.0`）：
+Currently, the plugin feature has not been released to the `master` branch; you need to check out the development branch `dev`. If you wish to check out a specific version, use the corresponding version tag (e.g., `1.4.3.0`):
 
 ``` shell
-git checkout dev    # 签出到 dev 分支
-# 如果要签出到某个版本上，请使用标签名：
+git checkout dev    # Check out to the dev branch
+# To check out a specific version, use the tag name:
 # git checkout 1.4.3.0
 ```
 
-然后在 Powershell 运行以下命令构建 ClassIsland：
+Then, run the following command in PowerShell to build ClassIsland:
 
 ``` powershell
 dotnet build -c Debug -p:Version=$(git describe --tags --abbrev=0)
 ```
 
-这样就获得了 ClassIsland 的 Debug 构建。构建默认输出在 `（项目文件夹\ClassIsland\bin\Debug\net8.0-windows）`下。
+This will give you a Debug build of ClassIsland. The build output is by default located in `(Project Folder)\ClassIsland\bin\Debug\net8.0-windows`.
 
-## 更新
+## Updating
 
-如果 ClassIsland 发布了新版本，或您更新了插件 SDK，在这种情况下需要更新 ClassIsland 仓库。要更新仓库，请先拉取，然后重新进行构建。
+If ClassIsland releases a new version, or if you update the plugin SDK, you need to update the ClassIsland repository. To update the repository, first pull the latest changes, then rebuild.
 
 ``` shell
 git pull
@@ -78,6 +78,6 @@ dotnet clean
 dotnet build -c Debug
 ```
 
-## 开始开发插件
+## Start Developing Plugins
 
-一切准备工作就绪后，继续阅读文章[开始编写插件](../plugins/create-project.md)，开始您的插件开发之旅吧！
+With all preparations complete, continue reading the article [Start Developing Plugins](../plugins/create-project.md) to begin your plugin development journey!

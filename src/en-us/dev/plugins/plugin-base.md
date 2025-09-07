@@ -1,6 +1,6 @@
-# 插件入口类
+# Plugin Entry Class
 
-ClassIsland 的插件需要定义一个插件入口类，插件入口类需要继承`PluginBase`抽象类，并添加`PluginEntrance`属性。下面是一个插件入口的示例：
+A ClassIsland plugin needs to define a plugin entry class. This class must inherit from the PluginBase abstract class and be decorated with the PluginEntrance attribute. Below is an example of a plugin entry point:
 
 ```csharp title="Plugin.cs"
 using ClassIsland.Core.Abstractions;
@@ -20,13 +20,13 @@ public class Plugin : PluginBase
 }
 ```
 
-在上面的代码中，我们定义了一个名为`Plugin`的类，并继承了 `PluginBase`抽象类。同时为`Plugin`类添加了`PluginEntrance`属性，以声明这个类是插件入口类。
+In the code above, we defined a class named Plugin that inherits from the `PluginBase` abstract class. The `PluginEntrance` attribute is added to the Plugin class to declare it as the plugin entry class.
 
-这个插件入口类也会在初始化时添加到 IoC 主机上，您可以在插件注册的服务中通过依赖注入获取插件入口类实例。
+This plugin entry class is also added to the IoC host during initialization. You can obtain an instance of the plugin entry class via dependency injection in services registered by the plugin.
 
-## 初始化方法
+## Initialization Method
 
-其中的`Initialize`初始化方法会在插件加载后马上执行。您可以在这个方法中完成插件初始化操作。下面的代码会在初始化时显示一个“Hello world!”弹窗。
+The `Initialize` method is executed immediately after the plugin is loaded. You can perform plugin initialization operations within this method. The following code displays a "Hello world!" dialog during initialization.
 
 ```csharp title="Plugin.cs" hl_lines="9"
 // ...
@@ -44,7 +44,7 @@ public class Plugin : PluginBase
 }
 ```
 
-初始化方法传入了主机构造时所需的相关参数，注册[组件](../components.md)、提醒提供方、服务等操作需要在这个方法完成。下面的代码会在初始化时注册一个名为 `ExampleSettingsPage` 的设置页面，和一个名为 `ExampleCompent` 的组件。
+The initialization method receives parameters required for host construction. Operations such as registering [components](../components.md), notification providers, services, etc., need to be completed within this method. The following code registers a settings page named `ExampleSettingsPage` and a component named `ExampleComponent` during initialization.
 
 ```cs title="Plugin.cs" hl_lines="11-12"
 // ...
@@ -65,9 +65,9 @@ public class Plugin : PluginBase
 ```
 
 ::: note
-有些注册操作需要在主机启动后进行，由于初始化方法在主机启动前执行，所以可以通过订阅[`AppBase.AppStarted`](../events.md#应用启动完成-appstarted)事件，在应用启动完成后进行注册。
+Some registration operations need to be performed after the host has started. Since the initialization method executes before the host starts, you can subscribe to the [`AppBase.AppStarted`](../events.md#应用启动完成-appstarted) event to perform registrations after the application has fully started.
 :::
 
-## 获取插件信息
+## Obtaining Plugin Information
 
-您可以通过访问`Info`来获取这个插件的相关信息，比如插件清单等。您也可以通过访问`PluginConfigFolder`来获取插件配置目录路径。
+You can access the `Info` property to get information about this plugin, such as the plugin manifest. You can also access the `PluginConfigFolder` property to get the path to the plugin's configuration directory.

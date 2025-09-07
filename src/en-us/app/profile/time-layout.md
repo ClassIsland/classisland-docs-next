@@ -1,71 +1,70 @@
-﻿# 时间表
+﻿# Time Layout
 
-时间表规定了在一天中各个时间点，如上课、课间休息等。课表将根据此时间表显示对应的课程。
+The time layout defines the different time points in a day, such as class periods, breaks, etc. Timetables will display the corresponding courses based on this time layout.
 
-当使用了该时间表的课表启用时，会在主界面上显示所有的时间点，并根据系统时间展开显示当前的时间点。
+When a timetable using this time layout is enabled, all the defined time points will appear on the main interface, and the current time point will expand automatically based on the system time.
 
 ![1690343735712](../image/TimeLayout/1690343735712.png)
 
-时间点具有以下类型：
+Time points have the following types:
 
-| 类型 | 说明 |
+| Type | Description |
 | -- | -- |
-| 上课 | 代表上课时间。此类型的时间点会在对应时间表的课表中显示，可以编辑在此时间点上的授课科目。 |
-| 课间休息 | 代表下课时间。此类型时间点在折叠时会完全隐藏，不在主界面上显示。 |
-| 分割线 | 此时间点仅会在主界面上显示一条分割线，用于在视觉上将不同时段的课程分割开来。|
+| Class | Represents class time. This type of time point will be shown in the timetable for the corresponding time layout, and you can assign a subject to it.|
+| Break | Represents break time. This type of time point will be completely hidden when collapsed and will not be shown on the main interface. |
+| Divider | This time point only displays a divider line on the main interface, visually separating courses in different time periods.|
 
-此外，对于`上课`类型的时间点，可以设置是否默认隐藏。若启用默认隐藏，那么仅有处于此时间点时，此时间点才会显示。
+In addition, for `Class` type time points, you can set whether they are hidden by default. If default hidden is enabled, the time point will only be shown when the current time falls within it.
 
-## 编辑时间表
+## Editing a Time Layout
 
 ::: note
-**你无法编辑已启用的课表使用的活动的时间表。**
+**You cannot edit a time layout currently being used by an active timetable.**
 :::
 
 ![1690343828036](../image/TimeLayout/1690343828036.png)
 
-我们来了解如何编辑时间表。
+Let’s go through how to edit a time layout.
 
-在界面左侧可以选择要编辑的时间表，在中间可以编辑时间表。时间表编辑器具有列表和时间轴两种视图模式，您可以点击下方的按钮来进行切换。建议您使用时间轴视图进行编辑。
+On the left side of the interface, you can select the time layout to edit. In the middle, you can modify the time layout. The editor has two view modes: list and timeline. You can switch between them using the buttons below. It is recommended to use the timeline view when editing.
 
-### 新建时间表
+### Create a New Time Layout
 
-点击【新建时间表】可以新建一个时间表。您也可以点击界面右上角的【从表格导入…】按钮来直接从表格导入时间表。
+Click New Time Layout to create one. You can also click Import from Table… at the top-right corner to directly import a time layout from a table.
 
 ![1704962385766](../image/TimeLayout/1704962385766.png)
 
-### 添加时间点
+### Add Time Points
 
-点击工具栏中添加时间点的按钮可以直接添加对应类型的时间点。默认情况下，添加的时间点的开始和结束时间会被设定为当前时间。如果选中了时间点，那么添加的时间点会被插入到选中的时间点后方。
+Click the add button on the toolbar to directly add a time point of the selected type. By default, the start and end times of the new time point are set to the current time. If a time point is selected, the new time point will be inserted right after it.
 
 ![1704962437551](../image/TimeLayout/1704962437551.png)
 
-新插入的上课类型时间点默认长 40 分钟，课间休息时间点默认长 10 分钟。您可以在应用设置中修改这个默认值。
-
+Newly inserted Class time points are 40 minutes long by default, while Break time points are 10 minutes long by default. You can change these defaults in the app settings.
 ![1707463956987](../image/TimeLayout/1707463956987.png)
 
-### 编辑时间点
+### Edit Time Points
 
-选中的时间点详细信息会显示在视图右侧，您可以在此处修改选中的时间点的详细信息。
+The details of the selected time point are shown on the right side of the view, where you can modify its settings.
 
-在使用时间轴视图时，您可以在选中时间点后，直接拖动开始和结束处的把柄来修改对应的时间。您可以点击右下角处的按钮来缩放视图。
+When using the timeline view, you can adjust times by dragging the handles at the start and end of the selected time point. You can also use the bottom-right buttons to zoom the view.
 
-每个上课类型的时间点，在对应的课表中对应一节课程，可以设置上课的科目。在主界面上，默认会显示所有上课类型的时间点，而课间休息类型的时间点只会在处于该时间点时才会显示。您可以为这个时间点设置该时间点的默认科目，也可以一键覆盖所有课表中对应时间点的科目。
+Each Class type time point corresponds to a course in the timetable. You can set the subject for that time point. In the main interface, all Class time points are displayed by default, while Break time points are only shown when the current time is within them. You can also assign a default subject for a time point, or apply it to override the same time point across all timetables with one click.
 
-此外，你可以使上课类型的时间点默认隐藏，这样就像课间休息类型的时间点一样，只有在处于该时间点时才会显示。
+Additionally, you can set a Class type time point to be hidden by default, making it behave like a Break time point, only showing when it is active.
 
-除了添加上课类型时间点，您还需要在每个上课类型时间点间添加课间休息类型的时间点，以告诉软件这段时间是课间休息。
+Besides adding Class time points, you should also add Break time points between them to indicate break times to the software.
 
-按照学校实际安排添加好时间点后，就完成了时间表编辑。
+After adding all time points according to the school’s actual schedule, the time layout editing is complete.
 
-### 查看时间表信息
+### View Time Layout Information
 
-您可以通过【时间表信息】按钮查看并编辑时间表的基本信息，如名称等（如下图）。
+You can click Time Layout Information to view and edit the basic information of the layout, such as its name (as shown below).
 
 ![1690344105820](../image/TimeLayout/1690344105820.png)
 
-### 删除时间表
+### Deleting Time Layouts
 
-点击工具栏中【删除时间表】按钮即可删除时间表。删除时间表时，时间表必须没有被任何课表使用，否则将无法删除。
+Click the Delete Time Layout button in the toolbar to remove a time layout. To delete a layout, it must not be used by any timetable; otherwise, it cannot be deleted.
 
 ![1707455170854](../image/TimeLayout/1707455170854.png)

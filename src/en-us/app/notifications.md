@@ -1,10 +1,10 @@
-# 提醒
+# Notifications
 
 ::: note
-如果您想了解如何开发提醒，请参考[开发文档](../dev/notifications/index.md)。
+If you want to learn how to develop reminders, please refer to the [Developers Documentation](../dev/notifications/index.md)。
 :::
 
-应用在一些特定时间点会发出醒目提醒。如会在上课前指定的时间发出上课准备提醒，及在下课时发出提醒并预告下节课程。（如下图）
+The application will issue prominent notifications at certain time points. For example, it can remind you to prepare for class a specified time before it starts, and remind you when class ends while also previewing the next class (as shown below).
 
 ![1690357490894](image/basic/1690357490894.png)
 
@@ -14,30 +14,30 @@
 
 ![1690357548114](image/basic/1690357548114.png)
 
-您可以点击主菜单中【清除所有提醒】按钮来清除当前显示的提醒（如图）。
+You can click Clear All Notifications in the main menu to clear all currently displayed reminders (as shown).
 
 ![1694923928375](image/Notifications/1694923928375.png)
 
-## 提醒设置
+## Notification Settings
 
-您可以在[【设置】->【提醒】](classisland://app/settings/notification)中调整相关提醒的设置。
+You can adjust related notification settings in [Settings -> Notifications](classisland://app/settings/notification)。
 
 ![1694923983253](image/Notifications/1694923983253.png)
 
-## 提醒优先级
+## Notification Priority
 
-在发出提醒时，应用会按照提醒提供方列表中的排序，优先展示来自靠前的提醒提供方的提醒。
+When issuing notifications, the app will display notices from providers earlier in the list before those later in the list.
 
-## 强调提醒
+## Emphasized Notifications
 
-在发出提醒时，ClassIsland 会全屏播放提醒特效，并且可以播放提示音效，增强提醒效果，置顶 ClassIsland 主界面。提醒音效默认禁用，您可以自定义要播放的提示音效。您还可以给每个提醒来源单独设置音效。
+When an emphasized notification is issued, ClassIsland will display a full-screen notice effect and can also play a sound effect, enhancing the notification and bringing the ClassIsland main interface to the top. Notification sound effects are disabled by default, but you can customize which sound effect to play. You can also set different sound effects for each notification source.
 
-您可以在[【设置】->【提醒】->【高级设置】](classisland://app/settings/notification)调整相关设置。
+You can adjust these settings in [Settings -> Notifications -> Advanced Settings](classisland://app/settings/notification).
 
 ![1712379341205](image/ChangeLog/1712379341205.png)
 
-您也可以为每个提醒提供方设置单独的设置。设置时需要启用【对此提醒来源启用特殊高级设置】。这些设置会按照【在设置界面为每个提醒提供方设置】->【提醒提供方在发送提醒时要求的设置】->【全局设置】的顺序应用。
+You can also set individual settings for each notification provider. To do so, you need to enable “Enable special advanced settings for this notification source”. These settings are applied in the following order: Per-provider settings in the settings interface → Settings requested by the provider when sending notifications → Global settings.
 
-## 朗读提醒内容
+## Reading the Notice Content Aloud
 
-在发出提醒时，ClassIsland 可以大声读出提醒的内容。此功能默认禁用，您可以前往[【设置】->【提醒】->【高级设置】](classisland://app/settings/notification)调整相关设置。
+When a reminder is issued, ClassIsland can read the reminder content aloud. This feature is disabled by default, but you can enable it in [Settings -> Notifications -> Advanced Settings](classisland://app/settings/notification).

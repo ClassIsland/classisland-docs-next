@@ -1,29 +1,30 @@
-# 应用数据备份
+# Application Data Backup
 
-本文章主要描述 ClassIsland 内置的备份功能，以及如何手动备份和恢复应用数据。
+This article mainly describes the built-in backup feature of ClassIsland, as well as how to manually back up and restore application data.
 
 ![1724066299317](image/backup/1724066299317.png)
 
-ClassIsland 内置了应用数据备份功能，可以在[【应用设置】->【存储】](classisland://app/settings/storage)中查看和调整相关设置。
+ClassIsland has a built-in backup function, which can be viewed and configured in [App Settings -> Storage](classisland://app/settings/storage).
 
-进行备份时，会将以下文件和文件夹复制到`./Backups/Backup_<时间>`文件夹下：
+When performing a backup, the following files and folders are copied to the `./Backups/Backup_<time>` folder:
 
-- `Settings.json` - 应用设置
-- `Config/` - 应用其它配置
-- `Profiles/` - [档案](./profile/README.md)信息（包括课表、时间表、科目等）
+- `Settings.json` - App Settings;
+- `Config/` - Other app configurations;
+- `Profiles/` - [Profile](./profile/README.md) information (including timetables, time layouts, subjects, etc.)
 
 ::: note
-为了您的数据安全，在使用应用内置的备份功能的同时，也建议您手动将相关配置文件备份到其它地方。
+For your data security, it is recommended that you also manually back up the related configuration files to another location, in addition to using the built-in backup function.
 :::
 
-## 自动备份
+## Automatic Backup
 
-ClassIsland 默认会每隔 7 天进行一次自动备份，并将备份文件保存到`./Backups/Auto_Backup_<时间>`文件夹下。默认仅保留最近 16 次自动备份，手动备份和更新备份产生的备份文件不受影响。
+By default, ClassIsland performs an automatic backup every 7 days, saving backup files to the `./Backups/Auto_Backup_<time>` folder.
+Only the latest 16 automatic backups are kept by default. Manual backups and update backups are not affected.
 
-## 更新备份
+## Update Backup
 
-ClassIsland 在版本更新时，会自动把应用数据被分到`./Backups/Update_Backup_<应用版本>_<时间>`文件夹下。
+When the app is updated, ClassIsland automatically saves the application data into the `./Backups/Update_Backup_<app_version>_<time>` folder.
 
-## 恢复备份
+## Restore Backup
 
-如果出现配置文件损坏/丢失等情况，您可以在**应用退出的情况下**，将备份的数据文件覆盖到应用目录下恢复数据。
+If configuration files become corrupted or lost, you can restore data by **exiting the application** and then copying the backup data files back into the app directory.

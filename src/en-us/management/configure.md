@@ -1,39 +1,39 @@
-# 集控配置文件
+# Centralized Management Configuration File
 
-ClassIsland 集控配置文件的参考文档。
+Reference documentation for ClassIsland centralized management configuration files.
 
-## 目录
+## Table of Contents
 
-### 类型
+### Types
 
-| 类型 | 说明 |
+| Type | Description |
 | -- | -- |
-| [`ReVersionString`](#reversionstring) | 一种存储了字符串和其版本信息的类型。 |
+| [`ReVersionString`](#reversionstring) | A type that stores a string along with its version information. |
 
-### 配置文件
+### Configuration Files
 
-| 文件 | 说明 |
+| File | Description |
 | -- | -- |
-| [集控配置](#mgmt-configure) | 客户端集控配置，存储了集控服务器/集控清单 url 的相关信息。 |
-| [集控清单](#mgmt-manifest) | 包含了要拉取的集控相关文件的信息和组织的相关信息。 |
-| [策略文件](#mgmt-policy) | 控制 ClassIsland 行为的各个策略。 |
-| 应用设置 | ClassIsland 的设置。 |
-| [课表、时间表与科目文件](#mgmt-profile) | 存储课表、时间表与科目信息的文件。 |
+| [Management Configuration](#mgmt-configure) | Client configuration for centralized management. Stores information such as management server/manifest URLs. |
+| [Management Manifest](#mgmt-manifest) | Contains information about centralized management files to be fetched, as well as organizational info. |
+| [Policy File](#mgmt-policy) | Controls various ClassIsland behaviors. |
+| Application Settings | Settings of ClassIsland. |
+| [Timetable, Time Layout, and Subject Files](#mgmt-profile) | Files that store timetable, time layout, and subject information. |
 
 <a id="ReVersionString"></a>
 
 ## ReVersionString
 
-`ReVersionString`是一种存储了字符串和其版本信息的类型。
+`ReVersionString` is a type that stores a string along with its version information.
 
-### 成员
+### Members
 
-| 属性 | 类型 | 必填？ | 说明 | 示例 |
+| Property | Type | Required? | Description | Example |
 | -- | -- | -- | -- | -- |
-| `Version` | `int` | **是** | 当前字符串的版本序号 | `1` |
-| `Value` | `string?` | 否 | 字符串内容 | `Hello world!` |
+| `Version` | `int` | **Yes** | Version number of the string | `1` |
+| `Value` | `string?` | No | String content | `Hello world!` |
 
-### 示例
+### Example
 
 ```json
 {
@@ -44,21 +44,21 @@ ClassIsland 集控配置文件的参考文档。
 
 <a id="mgmt-configure"></a>
 
-## 集控配置
+## Management Configuration
 
-客户端集控配置，存储了集控服务器/集控清单 url 的相关信息。
+Client configuration for centralized management. Stores information such as management server/manifest URLs.
 
 ### 属性
 
-| 属性 | 类型 | 必填？ | 说明 | 示例 |
+| Property | Type | Required? | Description | Example |
 | -- | -- | -- | -- | -- |
-| `ManagementServerKind` | `int` | **是** | 集控服务器类型。（`0`：静态托管的配置文件；`1`：集控服务器） | `0` |
-| `ManagementServer` | `string` | 仅当`ManagementServerKind`为 1 时必填 | 集控服务器地址 | `https://example.com:23333` |
-| `ManagementServerGrpc` | `string` | 仅当`ManagementServerKind`为 1 时必填 | 集控服务器Grpc通讯地址 | `https://example.com:23333` |
-| `ManifestUrlTemplate` | `string` | 仅当`ManagementServerKind`为 0 时必填 | 集控清单 url 模板 | `https://example.com/manifest.json` |
-| `ClassIdentity` | `string` | 否 | 班级标识符 | `1-101` |
+| `ManagementServerKind` | `int` | **Yes** | Type of management server. (`0`: statically hosted configuration file; `1`: management server) | `0` |
+| `ManagementServer` | `string` | Yes if `ManagementServerKind` is 1 | Management server address | `https://example.com:23333` |
+| `ManagementServerGrpc` | `string` | Yes if `ManagementServerKind` is 1 | Management server gRPC address | `https://example.com:23333` |
+| `ManifestUrlTemplate` | `string` | Yes if `ManagementServerKind` is 0 | Manifest URL template | `https://example.com/manifest.json` |
+| `ClassIdentity` | `string` | No | Class Identifier | `1-101` |
 
-### 示例
+### Example
 
 ```json
 {
@@ -72,25 +72,25 @@ ClassIsland 集控配置文件的参考文档。
 
 <a id="mgmt-manifest"></a>
 
-## 集控清单
+## Management Manifest
 
-包含了要拉取的集控相关文件的信息和组织的相关信息。
+Contains information about centralized management files to be fetched, as well as organizational details.
 
-如果您正在手动修改此文件，请务必在修改了`ReVersionString`类型的属性后更新该属性的版本序号，否则 ClassIsland 实例可能不会更新相关信息。
+If you are manually modifying this file, be sure to update the version number of any `ReVersionString` properties after editing them. Otherwise, ClassIsland instances may not update the corresponding information.
 
 ### 属性
 
-| 属性 | 类型 | 必填？ | 说明 | 示例 |
+| Property | Type | Required? | Description | Example |
 | -- | -- | -- | -- | -- |
-| `ServerKind` | `int` | **是** | 服务器类型（`0`：静态托管的配置文件；`1`：集控服务器） | `0` |
-| `OrganizationName` | `string` | 否 | 组织名称 | `⌈黑塔⌋空间站` |
-| `ClassPlanSource` | [`ReVersionString`](#ReVersionString) | 否 | 课表文件 url 模板 | -- |
-| `TimeLayoutSource` | [`ReVersionString`](#ReVersionString) | 否 | 时间表文件 url 模板 | -- |
-| `SubjectsSource` | [`ReVersionString`](#ReVersionString) | 否 | 科目文件 url 模板 | -- |
-| `DefaultSettingsSource` | [`ReVersionString`](#ReVersionString) | 否 | 应用设置 url 模板 | -- |
-| `PolicySource` | [`ReVersionString`](#ReVersionString) | 否 | 策略文件 url 模板 | -- |
+| `ServerKind` | `int` | **Yes** | Server type (`0`: statically hosted configuration file; `1`: management server) | `0` |
+| `OrganizationName` | `string` | No | Organization name | `⌈黑塔⌋空间站` |
+| `ClassPlanSource` | [`ReVersionString`](#ReVersionString) | No | Timetable file URL template | -- |
+| `TimeLayoutSource` | [`ReVersionString`](#ReVersionString) | No | Time layout file URL template | -- |
+| `SubjectsSource` | [`ReVersionString`](#ReVersionString) | No | Subject file URL template | -- |
+| `DefaultSettingsSource` | [`ReVersionString`](#ReVersionString) | No | Application settings URL template | -- |
+| `PolicySource` | [`ReVersionString`](#ReVersionString) | No | Policy file URL template | -- |
 
-### 示例
+### Example
 
 ```json
 {
@@ -121,14 +121,14 @@ ClassIsland 集控配置文件的参考文档。
 
 <a id="mgmt-policy"></a>
 
-## 策略文件
+## Policy File
 
-控制 ClassIsland 行为的各个策略，详见[策略文件](policy.md)。
+Controls various ClassIsland behaviors. See [Policy File](policy.md) for more detailes
 
 <a id="mgmt-profile"></a>
 
-## 课表、时间表与科目文件
+## Timetable, Time Layout, and Subject Files
 
-存储课表、时间表与科目信息的文件，格式为档案文件格式。
+Files that store timetables, time layouts, and subjects. These follow the profile file format.
 
-您可以直接将含有这些信息的档案文件导出，并直接在清单引用这些文件。
+You can directly export a profile file containing this information and reference it in the manifest.

@@ -1,33 +1,34 @@
-# 常见问题
+# Frequently Asked Questions
 
-这些是用户通常可以自行解决的问题，您可以通过下方的目录或搜索功能快速检索您遇到的问题。
+These are common issues that users can usually resolve on their own. You can quickly find the problem you’re facing using the table of contents below or the search function.
 
-[TOC]
+[[TOC]]
 
-## 安装
+## Installation
 
-安装时遇到的问题。
+Issues during installation.
 
-### 提示“You must install or update .NET to run this application.”
+### Prompt “You must install or update .NET to run this application.”
 
 ![1723087458369](image/faq/1723087458369.png)
 
-出现这种弹窗一般是没安装 .NET 8 运行时。请点击【Download it now】或从[本链接](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.7-windows-x64-installer)下载 .NET 运行时，并运行下载的安装程序安装 .NET 运行时。完成后重新打开本软件即可。
+This popup usually appears because the .NET 8 runtime is not installed. Please click Download it now or download the .NET runtime from [this link](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.7-windows-x64-installer), then run the installer to install it. After installation, reopen the software and it should work.
 
-### 在 Windows 7 中启动后出现内存占用极高的问题
+### Memory Usage Extermely High After Launching in Windows 7
 
-解决方法见[在 Windows 7 中安装 ClassIsland](./setup.md#检查系统需求)。
+Consult the [Installing ClassIsland for Windows 7](setup.md#check-system-requirements) page for the solution.
 
-## 系统
+## System
 
-与系统相关的问题。
+Issues related to the system.
 
-### 设置开机自启后，开机时 ClassIsland 无法正常自启动
+### After setting ClassIsland to auto-start on boot, it fails to start automatically
 
-这可能是因为 ClassIsland 的自启动项被禁用了，或者被安全软件拦截。您可以在安全软件的相关功能页面检查是否拦截了 ClassIsland 的自启动项目，或者在任务管理器的【启动应用】页面检查相关启动项目是否被禁用。
+This may be because ClassIsland’s auto-start entry has been disabled or blocked by security software. You can check whether your security software is blocking ClassIsland’s startup entry, or go to the Startup Apps page in Task Manager to see if the entry has been disabled.
 
-## 配置文件
+## Configuration Files
 
-### 正常使用时，电脑/大屏重启后配置文件丢失/回档
+### During normal use, after the computer/display restarts, configuration files are lost or reverted
 
-这种情况可能是电脑意外断电，导致配置文件没有完全保存导致的。目前 ClassIsland 已尝试通过定期备份等方式尽量减小意外断电对配置文件的影响。如果您的配置文件不幸丢失，可以在应用目录下的`Backups`文件夹内找到定期创建的备份，并进行恢复。详细请参阅[应用数据备份](./backup.md#恢复备份)文章。
+This situation may occur if the computer lost power unexpectedly, causing configuration files not to be saved completely. Currently, ClassIsland attempts to reduce the impact of unexpected power loss on configuration files through periodic backups.
+If your configuration files are lost, you can find regularly created backups in the Backups folder under the application directory and restore them. For details, please refer to the [Application Data Backup](backup.md#恢复备份) page.

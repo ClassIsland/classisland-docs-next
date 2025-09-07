@@ -1,65 +1,65 @@
 ---
-title: 集控
+title: Centralized Management
 index: false
 icon: server
 category:
-  - 使用指南
+  - User Guide
 ---
 
-学校/组织的 IT 可以通过集控功能向学校内的 ClassIsland 实例统一分发课表、时间表和科目等信息，并且可以集中调整软件设置和限制部分功能的使用，提高管理的便利性。
+The IT department of a school/organization can use the Centralized Management feature to distribute timetables, time layouts, subjects, and other information to all ClassIsland instances in the school. It can also centrally adjust software settings and restrict certain features, improving management convenience.
 
 <a id="get-started"></a>
 
-## 开始使用
+## Getting Started
 
-本功能支持通过静态配置文件部署，也可以通过管理服务器部署。您可以根据情况自由选择部署方式。
+This feature supports deployment via static configuration files or via a management server. You can freely choose the deployment method depending on your needs
 
 <a id="get-started-static"></a>
 
-### 使用静态配置文件
+### Using Static Configuration Files
 
-您可以手动编写集控配置文件，并将其托管到静态网站上。
+You can manually create a centralized management configuration file and host it on a static website.
 
-[🚀入门教程](tutorial-create-management-config.md)
+[🚀Tutorial](tutorial-create-management-config.md)
 
-[📖参考文档](configure.md)
+[📖Feference Docs](configure.md)
 
 <a id="get-started-server"></a>
 
-### 集控服务器
+### Management Server
 
-_🚧正在开发_
+_🚧 In development_
 
 <a id="get-started-compare"></a>
 
-### 选哪个？
+### Which One to Choose?
 
 (WIP)
 
 <a id="loading-progress"></a>
 
-## 加载流程
+## Loading Process
 
-集控相关配置会按照以下流程进行加载，展开以查看详细信息。
+Centralized management configurations are loaded according to the following process. Expand to view details:
 
-::: details 展开流程图
+::: details Expand Flowchart
 ```mermaid
 graph TD
-  A(("应用启动")) --> B["加载本地集控配置"]
-  B --> C{"启用集控？"}
-  C -->|"是"| D["加载集控清单"]
-  D --> E{"连接类型？"}
-  E -->|"集控服务器"| F["建立gRPC连接"]
-  F --> G["监听服务端指令"] --> H
-  E -->|"静态配置文件"| H["加载策略"]
-  H --> I{"首次启动？"}
-  I -->|"是"| J["加载默认设置"] --> K
-  I -->|"否"| K(("加载档案"))
-  K --> L["依次加载并合并科目、档案与时间表"]
-  L --> M["保存对象版本信息"]
-  M --> N(("加载完成"))
-  C -->|"否"| N
+  A(("App Startup")) --> B["Load Local Management Config"]
+  B --> C{"Management Enabled?"}
+  C -->|"Yes"| D["Load Management Manifest"]
+  D --> E{"Connection Type?"}
+  E -->|"Management Server"| F["Establish gRPC Connection"]
+  F --> G["Listen for Server Commands"] --> H
+  E -->|"Static Config File"| H["Load Policies"]
+  H --> I{"First Startup?"}
+  I -->|"Yes"| J["Load Default Settings"] --> K
+  I -->|"No"| K(("Load Profile"))
+  K --> L["Sequentially Load and Merge Subjects, Profiles, and Time Layouts"]
+  L --> M["Save Object Version Information"]
+  M --> N(("Loading Complete"))
+  C -->|"No"| N
 ```
 :::
 
-获取到的配置文件（如清单、策略、课表等）会缓存在本地，并只在有更新时才会重新获取。在启用集控后，将强制加载管理档案，与普通档案不互通数据。
+The retrieved configuration files (such as manifests, policies, timetables, etc.) are cached locally and only re-fetched when updates are available. Once centralized management is enabled, the managed profile is forcibly loaded, and its data does not interoperate with ordinary profiles.
