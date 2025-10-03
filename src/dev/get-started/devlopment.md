@@ -10,6 +10,7 @@
 
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
 - [Visual Studio 2022](https://visualstudio.microsoft.com/)，包括【.NET 桌面开发】工作负载
+- [适用于 Windows 11 的 Windows SDK](https://developer.microsoft.com/zh-cn/windows/downloads/windows-sdk/)，版本10.0.26100
 - [Git](https://git-scm.com/)
 - [Powershell Core](https://github.com/PowerShell/PowerShell)
 
