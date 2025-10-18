@@ -62,6 +62,17 @@ cd ClassIsland
 git submodule update --init --recursive
 ```
 
+::: note 如果你操作超时：
+可以更改 `.gitmodules` 文件为：
+```
+[submodule "vendors/EdgeTtsSharp"]
+	path = vendors/EdgeTtsSharp
+	url = ssh://git@ssh.github.com:443/ClassIsland/EdgeTtsSharp.git
+```
+再次尝试拉取。
+请在提交代码前撤回相关文件更改
+:::
+
 克隆仓库后，默认处于 master 分支上，对应 ClassIsland 的稳定版本。建议在稳定版本的基础上开发插件，以获得较好的兼容性。如果您想签出到特定版本上，请使用对应版本的标签名（如 `1.5.0.2`）。
 
 ``` shell
