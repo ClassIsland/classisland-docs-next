@@ -32,6 +32,12 @@ git clone https://github.com/ClassIsland/ClassIsland.git
 git clone git@github.com:ClassIsland/ClassIsland.git
 ```
 
+如果你不能访问github.com，你也可以尝试：
+
+```shell
+git clone ssh://git@ssh.github.com:443/ClassIsland/ClassIsland.git
+```
+
 @tab GitHub CLI
 
 ```shell
@@ -48,6 +54,17 @@ gh repo clone ClassIsland/ClassIsland
 ``` shell
 git submodule update --init --recursive
 ```
+
+::: note 如果你操作超时：
+可以更改 `.gitmodules` 文件为：
+```
+[submodule "vendors/EdgeTtsSharp"]
+	path = vendors/EdgeTtsSharp
+	url = ssh://git@ssh.github.com:443/ClassIsland/EdgeTtsSharp.git
+```
+再次尝试拉取。
+请在提交代码前撤回相关文件更改
+:::
 
 ## 编译与运行
 
