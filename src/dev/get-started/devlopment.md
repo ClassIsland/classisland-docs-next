@@ -32,6 +32,12 @@ git clone https://github.com/ClassIsland/ClassIsland.git
 git clone git@github.com:ClassIsland/ClassIsland.git
 ```
 
+如果你不能访问github.com，你也可以尝试：
+
+```shell
+git clone ssh://git@ssh.github.com:443/ClassIsland/ClassIsland.git
+```
+
 @tab GitHub CLI
 
 ```shell
