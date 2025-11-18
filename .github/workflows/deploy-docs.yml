@@ -16,10 +16,10 @@ jobs:
       id-token: write   # to verify the deployment originates from an appropriate source
     
     concurrency:
-      group: "web-deploy"
+      group: "web-deploy-v1"
       cancel-in-progress: false
     environment:
-      name: classisland-web
+      name: classisland-web-v1
     name: "Build & Deploy"
     runs-on: ubuntu-latest
     steps:
