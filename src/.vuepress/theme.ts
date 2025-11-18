@@ -3,7 +3,7 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://docs.classisland.tech",
+  hostname: "https://docs-v1.classisland.tech",
 
   author: {
     name: "ClassIsland 社区",
@@ -153,6 +153,25 @@ export default hopeTheme({
     components: {
       components: ["Badge", "VPCard"],
     },
+    notice: [
+      {
+        path: "/",
+        title: "您正在查看 ClassIsland 旧版文档",
+        fullscreen: true,
+        confirm: true,
+        content: "本文档的部分内容相对 ClassIsland 最新版本已经过时。如果您使用新版（>=2.0）的 ClassIsland，请查阅新版文档。<br/>本通知只显示一次。",
+        actions: [
+          {
+            text: "前往新版文档",
+            link: "https://docs.classisland.tech/",
+            type: "primary",
+          },
+          {
+            text: "好"
+          }
+        ],
+      },
+    ],
 
     // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释
     // pwa: {

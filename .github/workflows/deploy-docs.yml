@@ -72,7 +72,7 @@ jobs:
       - name: 提交 IndexNow
         uses: bojieyang/indexnow-action@v1
         with:
-          sitemap-location: "https://docs.classisland.tech/sitemap.xml"  # change it
+          sitemap-location: "https://docs-v1.classisland.tech/sitemap.xml"  # change it
           endpoint: "www.bing.com"
           since: 1
           # minite, hour, day, week, month, year

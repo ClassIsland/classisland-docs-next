@@ -7,13 +7,13 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "ClassIsland 文档",
-      description: "ClassIsland 的文档",
+      title: "ClassIsland 1.7 文档（旧版）",
+      description: "ClassIsland 1.7 版本的文档",
     },
     "/en-us/": {
       lang: "en-US",
-      title: "ClassIsland Documentation",
-      description: "documentation of ClassIsland",
+      title: "ClassIsland 1.7 Documentation (Legacy)",
+      description: "documentation of ClassIsland 1.7",
     },
   },
   theme

@@ -9,13 +9,16 @@ heroImageStyle:
 # bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
   background-attachment: fixed
-heroText: ClassIsland 文档
+heroText: ClassIsland 1.7 文档（旧版）
 tagline: 适用于班级多媒体屏幕的课表的信息显示工具
 actions:
   - text: 使用说明
     icon: lightbulb
     link: ./app/
     type: primary
+
+  - text: 新版文档
+    link: https://docs.classisland.tech
 
   - text: 官网
     link: https://classisland.tech
@@ -24,6 +27,9 @@ actions:
     link: https://github.com/ClassIsland/ClassIsland
 
 ---
+
+> [!warning]
+> 本文档是面向 ClassIsland 1.7 版本的旧版文档，部分内容可能不适用于当前最新版本的 ClassIsland。请前往[新版文档](https://docs.classisland.tech)以查看最新的更改。
 
 欢迎来到 ClassIsland 的文档。
 
