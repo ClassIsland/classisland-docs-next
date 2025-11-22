@@ -55,7 +55,7 @@ gh repo clone ClassIsland/ClassIsland
 git submodule update --init --recursive
 ```
 
-::: note 如果你操作超时：
+::: note 如果您操作超时：
 可以更改 `.gitmodules` 文件为：
 ```
 [submodule "vendors/EdgeTtsSharp"]
@@ -63,7 +63,8 @@ git submodule update --init --recursive
 	url = ssh://git@ssh.github.com:443/ClassIsland/EdgeTtsSharp.git
 ```
 再次尝试拉取。
-请在提交代码前撤回相关文件更改
+请注意，该操作需要您拥有并正确配置SSH Key方可使用。
+请在提交代码前撤回对相关文件的更改。
 :::
 
 ## 编译与运行
