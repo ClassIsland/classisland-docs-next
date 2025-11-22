@@ -73,6 +73,7 @@ export default hopeTheme({
     editLink: "在 GitHub 上编辑此页",
   },
   pure: true,
+  focus: false,
   markdown: {
     align: true,
     attrs: true,
@@ -137,7 +138,6 @@ export default hopeTheme({
       notationFocus: true,
       notationHighlight: true,
     },
-    focus: false,
   },
   // 在这里配置主题提供的插件
   plugins: {
