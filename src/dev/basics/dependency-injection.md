@@ -68,7 +68,7 @@ public class Foo {
 - **临时（Transient）** ：每次获取服务时都将获取其的新实例。适用于如视图（View）、视图模型（ViewModel）等单次使用的服务。
 - **范围内（Scoped）**：可在作用域内获取，在单个作用域内生效，离开作用域后释放的服务。ClassIsland 在应用内目前没有使用作用域，暂不做进一步介绍。
 
-您可以使用 ServiceCollectionServiceExtensions.AddXXX（XXX 是生命周期）方法讲您的服务注册到主机上。应用内和插件中注册服务的方法有所差异，以下是具体介绍：
+您可以使用 ServiceCollectionServiceExtensions.AddXXX（XXX 是生命周期）方法将您的服务注册到主机上。应用内和插件中注册服务的方法有所差异，以下是具体介绍：
 
 :::: tabs
 @tab 插件
