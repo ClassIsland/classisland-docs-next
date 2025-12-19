@@ -4,7 +4,7 @@
 
 ## 设置开发环境
 
-在开始之前，您需要按照[设置 ClassIsland 插件开发环境](../get-started/devlopment-plugins.md)的指引设置插件开发环境。
+在开始之前，您需要按照[设置 ClassIsland 插件开发环境](../get-started/development-plugins.md)的指引设置插件开发环境。
 
 ## 创建项目
 
