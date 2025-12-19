@@ -23,7 +23,16 @@
 
 点击日志条目可以选中对应的日志，按住<kbd>Ctrl</kbd>或<kbd>Shift</kbd>可以多选日志。选中日志后，点击【复制选中】可以将选择的日志复制到剪贴板。
 
+
 ### 收集以前的日志
+
+1. 打开[【应用设置】](classisland://app/settings)。
+    ![打开应用设置](image/reporting-issue/image.png)
+2. 点击【更多选项…（右上角三个点）】->【打开日志目录…】打开日志存储目录。里面存放了近 30 天的日志数据，您可以根据需要发送给开发者。
+    ![打开日志文件夹](image/reporting-issue/image-1.png)
+    ![之前的日志文件](image/reporting-issue/image-2.png)
+
+### 收集以前的崩溃日志
 
 ::: note
 使用此方法只能收集【警告】以及以上等级的日志。
