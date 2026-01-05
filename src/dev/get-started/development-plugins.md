@@ -84,6 +84,7 @@ git checkout 1.5.0.2
 ``` shell
 git pull
 git submodule update --init --recursive
+cd ../
 ./tools/plugin/build.ps1
 ```
 
