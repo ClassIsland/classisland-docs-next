@@ -136,6 +136,7 @@ export const zhSidebar = sidebar({
             "create-project.md",
             "basics.md",
             "plugin-base.md",
+            "dependency.md",
             "publishing.md",
           ],
         },

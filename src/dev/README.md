@@ -66,17 +66,19 @@ ClassIsland 使用了如下技术栈。在参与 ClassIsland 开发或为 ClassI
     - [开始编写插件](./plugins/create-project.md)
     - [插件基础知识](./plugins/basics.md)
     - [插件入口类](./plugins/plugin-base.md)
+    - [插件依赖](./plugins/dependency.md)
     - [发布插件](./plugins/publishing.md)
 - [**UI**](./ui/README.md)
     - [图标表达式](./ui/iconexpr.md)
+    - 内置控件
 - [事件](events.md)
 - [Uri 导航](uri-navigation.md)
-- 内置控件
 - [组件](components.md)
 - [提醒](./notifications/index.md)
 - 扩展菜单
 - [设置页面](settings-page.md)
-- 档案附加设置
+- 档案
+    - 档案附加设置
 - [**跨进程通信**](./ipc/README.md)
     - [使用 IPC](./ipc/ipc.md)
     - [IPC 参考](./ipc/reference.md)

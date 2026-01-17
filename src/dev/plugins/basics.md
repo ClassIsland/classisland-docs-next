@@ -6,6 +6,8 @@
 
 默认情况下，不同的插件会被加载到不同的程序集加载上下文（[AssemblyLoadContext](https://learn.microsoft.com/zh-cn/dotnet/core/dependency-loading/understanding-assemblyloadcontext)）中。因此，不同插件间可以引入相同依赖库的不同版本，而不会产生冲突。
 
+如果要调用其它插件的类型，则需要将此插件[声明为依赖](./dependency.md)。
+
 ::: warning
 由于这个特性，当两个插件间包含具有相同名称的类型定义时，它们不是同一类型。当且仅当它们来自同一个 Assembly 实例时，它们的类型相同。详细请见[此文章](https://learn.microsoft.com/zh-cn/dotnet/core/dependency-loading/understanding-assemblyloadcontext#type-conversion-issues)。
 :::
