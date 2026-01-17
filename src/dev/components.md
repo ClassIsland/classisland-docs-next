@@ -8,7 +8,7 @@
 
 ## 定义组件
 
-组件实质上是 WPF 的用户控件，所以我们需要先创建一个用户控件。在创建好用户控件之后，修改如下高亮内容，将控件的基类修改成组件基类 `ComponentBase`：
+组件实质上是 Avalonia 的用户控件，所以我们需要先创建一个用户控件。在创建好用户控件之后，修改如下高亮内容，将控件的基类修改成组件基类 `ComponentBase`：
 
 ```xml title="MyComponent.xaml" hl_lines="1-2 8"
 <ci:ComponentBase
@@ -51,13 +51,13 @@ public partial class MyComponent : ComponentBase
 
 上面的代码声明了组件的 GUID 和名称。在加载组件配置时，会通过 GUID 进行识别。组件名称会在组件设置页面中显示。
 
-您也可以通过修改 `ComponentInfo` 属性，为您的组件指定图标和描述，它们会在组件设置页面中显示。例如：
+您也可以通过修改 `ComponentInfo` 属性，为您的组件指定图标和描述，它们会在组件设置页面中显示。其中图标参数接受一个[图标表达式](./ui/iconexpr.md)。例如：
 
 ```csharp hl_lines="4-5"
 [ComponentInfo(
     "66164856-794B-4243-87C2-78EFD3F49E7C",
     "我的组件",
-    PackIconKind.CalendarOutline,
+    "\uE9B0",
     "描述文本"
 )]
 ```

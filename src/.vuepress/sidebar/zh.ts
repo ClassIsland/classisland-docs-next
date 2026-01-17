@@ -139,6 +139,15 @@ export const zhSidebar = sidebar({
             "publishing.md",
           ],
         },
+        {
+          text: "UI",
+          collapsible: true,
+          prefix: "ui/",
+          children: [
+            "README.md",
+            "iconexpr.md",
+          ]
+        },
         "events.md",
         "uri-navigation.md",
         "components.md",
