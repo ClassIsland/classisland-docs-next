@@ -124,6 +124,7 @@ export const zhSidebar = sidebar({
           children: [
             "README.md",
             "dependency-injection.md",
+            "logging.md",
           ]
         },
         {
