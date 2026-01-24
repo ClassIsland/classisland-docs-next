@@ -6,7 +6,9 @@ category:
   - 开发指南
 ---
 
-这里是 ClassIsland 开发文档，包含了进行 ClassIsland 开发的技术细节。
+![Banner](image/README/DevBannerMain.webp)
+
+欢迎来到 ClassIsland 开发文档，这里包含了进行 ClassIsland 开发的技术细节。“无限可能，因你而在”——ClassIsland 及其相关生态正是由无数像您这样的开发者共同构建起来的，欢迎您以您喜欢的形式为 ClassIsland 本体或生态做出贡献！
 
 ::: note ClassIsland 有些代码编写时间较早，开发者彼时对 C# 开发还不是很熟悉。如果看到了一些奇奇怪怪的代码，还请多多包容。
 :::
