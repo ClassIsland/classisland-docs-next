@@ -174,6 +174,16 @@ export const zhSidebar = sidebar({
           ]
         },
         {
+          text: "行动",
+          collapsible: true,
+          prefix: "action/",
+          children: [
+            "register.md",
+            "action-provider.md",
+            "settings-control.md",
+          ]
+        },
+        {
           text: "跨进程通信",
           collapsible: true,
           prefix: "ipc/",
