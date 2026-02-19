@@ -30,7 +30,6 @@ export const enSidebar = sidebar({
           prefix: "migrate/",
           children: [
             "README.md",
-            "ecs.md",
           ],
         },
         "notifications.md",

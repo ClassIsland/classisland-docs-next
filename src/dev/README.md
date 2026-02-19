@@ -48,7 +48,7 @@ ClassIsland 使用了如下技术栈。在参与 ClassIsland 开发或为 ClassI
 调试菜单中的功能仅供测试使用，如果您不知道您在做什么，请不要随意使用！
 :::
 
-在[【应用设置】→【关于】](classisland://app/settings/about)中连续点击应用图标 10 次，即可开启[调试](classisland://app/settings/debug)和[笔刷](classisland://app/settings/debug_brushes)界面。
+在[【应用设置】→【关于】](classisland://app/settings/about)中连续点击banner上部应用图标 10 次，即可开启[调试](classisland://app/settings/debug)和[笔刷（仅旧版）](classisland://app/settings/debug_brushes)界面。
 
 ## 目录
 

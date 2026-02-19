@@ -66,7 +66,6 @@ classisland://app/settings/{page}/[...]
 | 关于 ClassIsland | about | 关于 |
 | 测试页面 | test-settings-page | 调试 |
 | 调试 | debug | 调试 |
-| 笔刷 | debug_brushes | 调试 |
 
 ### 自动化
 

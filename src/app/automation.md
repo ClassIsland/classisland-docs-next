@@ -22,11 +22,9 @@ tag:
 
 **自动化**是 ClassIsland 1.6 (Himeko) 的新增功能，旨在提供简单快捷的自动操作。
 
-::: tip 版本差异提示
+::: tip 贡献提示
 
-自动化、规则集和行动功能目前仅支持在 ClassIsland 1.6.X 或 1.7.0.X 版本使用，暂不支持在 ClassIsland 2.0 的测试版本使用。
-
-如果您对“自动化”相关功能有好的想法建议，欢迎在[#1152 ](https://github.com/ClassIsland/ClassIsland/discussions/1152)参加讨论。
+自动化、规则集和行动功能目前虽然已支持在 ClassIsland 2.0 的测试版本使用，但还是无法满足用户的一切需求。如果您对“自动化”相关功能有好的想法建议，欢迎在[#1152](https://github.com/ClassIsland/ClassIsland/discussions/1152)参加讨论。
 
 :::
 
@@ -36,13 +34,15 @@ tag:
 - 在数学课前，自动打开白板；
 - 放学后，自动关闭设备。
 
-如果需要更高级的自动化功能，您还可以搭配专业自动化软件使用，如 [zTasker](https://everauto.net/cn/index.html)、[Power Automate](https://www.microsoft.com/zh-cn/power-platform/products/power-automate)
+自动化可搭配插件获得更丰富的功能，如ExtraIsland，SuperAutoIsland，SystemTools等。
+
+如果需要更高级的自动化功能，您还可以搭配专业自动化软件使用，如 [zTasker](https://everauto.net/cn/index.html)、[Power Automate](https://www.microsoft.com/zh-cn/power-platform/products/power-automate)等。
 
 ::: warning
 
 自动化允许自动修改 ClassIsland 的各项设置，并调用外部程序，可能有一定安全风险。
 
-不当的自动化编写可能对正常教学造成影响，请勿滥用。
+不当的自动化编写可能对计算机系统或正常教学造成影响，请勿滥用。
 :::
 
 ## 概述
@@ -164,9 +164,7 @@ tag:
 
 ## 技术性细节
 
-1. 您可以拖动自动化进行排序，它们将会按照从上到下的顺序依次开始执行。行动的删除按钮也可以用鼠标拖拽，以实现对行动的排序。详见：[#645 ](https://github.com/ClassIsland/ClassIsland/issues/645)
-![拖动自动化以进行排序](image\automation\排序自动化.png)
-![排序行动|170x0](image\automation\排序行动.png)
+1. 您可以拖动自动化进行排序，它们将会按照从上到下的顺序依次开始执行。行动也可以用鼠标拖拽，以实现对行动的排序。v1的行动可使用删除按钮拖拽，详见：[#645](https://github.com/ClassIsland/ClassIsland/issues/645)
 
 2. 设置叠层会遵循先来后到的顺序依次往上叠加。因此，如果您希望某一行动始终生效，需要对其他自动化的规则集设置排除以进行规避。
 
@@ -186,4 +184,6 @@ start->有无规则集(yes,right)->是否符合规则集(no,right)->end
 start->有无规则集(no,bottom)->行动->end
 ```
 
-<!-- 该文档主要贡献者：HelloWRC、干冰DryIce、wang-lu-yuan、wjj-8283、nosoftcn等（不分先后） -->
+<!-- 该文档主要贡献者：HelloWRC、干冰DryIce、wang-lu-yuan、wjj-8283、nosoftcn、Yeson38等（不分先后） -->
+
+<!--v2的图片是我加的，如有不妥还请告知。from Yeson38-->

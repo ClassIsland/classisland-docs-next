@@ -13,13 +13,13 @@
 您可以通过以下方法打开日志窗口：
 
 1. 打开[【应用设置】](classisland://app/settings)。
-    ![1722675858382](../image/reporting-issue/1722675858382.png)
+    ![1722675858382](image/reporting-issue/image.png)
 2. 点击【更多选项…（右上角三个点）】->【日志…】即可打开日志窗口。
-    ![1722675865242](../image/reporting-issue/1722675865242.png)
+    ![1722675865242](image/reporting-issue/image-1.png)
 
 日志窗口会显示当前运行的最近 1000 条日志。默认情况下仅显示【警告】及以上级别的日志。您可以通过勾选日志等级筛选条件中的其它日志等级来查看其它等级的日志。您也可以在【搜索日志…】中输入要筛选的文本或类别来快速查看某一级别的日志。
 
-![1722676362150](../image/reporting-issue/1722676362150.png)
+![1722676362150](image/reporting-issue/image-2.png)
 
 点击日志条目可以选中对应的日志，按住<kbd>Ctrl</kbd>或<kbd>Shift</kbd>可以多选日志。选中日志后，点击【复制选中】可以将选择的日志复制到剪贴板。
 
@@ -30,7 +30,7 @@
     ![打开应用设置](image/reporting-issue/image.png)
 2. 点击【更多选项…（右上角三个点）】->【打开日志目录…】打开日志存储目录。里面存放了近 30 天的日志数据，您可以根据需要发送给开发者。
     ![打开日志文件夹](image/reporting-issue/image-1.png)
-    ![之前的日志文件](image/reporting-issue/image-2.png)
+    ![之前的日志文件](image/reporting-issue/image-3.png)
 
 ### 收集以前的崩溃日志
 
@@ -64,9 +64,9 @@
 诊断数据包含了应用设置、当前加载的档案、集控配置（如有）、系统环境和当前运行的日志（最多 1000 条）等信息。您可以按照以下的步骤导出诊断信息。
 
 1. 打开[【应用设置】](classisland://app/settings)。
-    ![1722675858382](../image/reporting-issue/1722675858382.png)
+    ![1722675858382](image/reporting-issue/image.png)
 2. 点击【更多选项…（右上角三个点）】->【导出诊断数据…】
-    ![1722676341109](../image/reporting-issue/1722676341109.png)
+    ![1722676341109](image/reporting-issue/image-1.png)
 3. 选择保存诊断数据的位置。
-    ![1722676336906](../image/reporting-issue/1722676336906.png)
+    ![1722676336906](image/reporting-issue/image-4.png)
 4. 稍等片刻，导出完成后应用会自动打开保存诊断数据的位置。
