@@ -1,60 +1,60 @@
-# 进阶功能
+---
+icon: fa-solid fa-code
+category:
+  - 使用指南
+tag:
+  - 应用
+  - 进阶功能
+  - 附加设置
+  - 提醒
+  - 天气
+  - 主题色提取
+  - 调试
+---
 
-本应用还有一部分的进阶操作，如果您对此感兴趣，可以继续了解。
+# Advanced
 
-## 附加设置
+There are some advanced operations in this application. If you are interested in this, you can continue to learn about it.
 
-应用中的一些设置可以在科目、时间点、课表和时间表中单独设置。在这些地方的设置会按照科目、时间点、课表、时间表的顺序应用。排在前面的项目的设置会最优先被使用。您可以进入这些元素的编辑页面，在【更多设置】一栏中编辑相关的设置。
+## Attached settings
 
-以下是具有附加设置的设置，在对应处打“√”即意味着这个设置可以在这个元素上单独进行设置。
+Some settings in the application can be set separately in subjects, time points, timetables and timetables. Know more in the column of [Attached Settings](./profile/attached-settings.md).
 
-| 设置名 | 科目 | 时间点 | 课表 | 时间表 |
-| -- | -- | -- | -- | -- |
-| 上下课提醒 | √ | √ | √ | √ |
-| 时间点附加信息 | √ | √ | √ | √ |
-| 时间点结束倒计时 | √ | √ | √ | √ |
-| 放学提醒 |  |  | √ | √ |
-| 气象预警提醒、天气预报 | | √ | |  |
+## Class reminder
 
-## 上下课提醒
+This application will send reminders during class and after class. You can go to[【应用设置】→【提醒】→【上课提醒】](classisland://app/settings/notification/08F0D9C3-C770-4093-A3D0-02F3D90C24BC)to adjust the setting of reminders for the first and last lesson in.
 
-本应用会在上课和下课时发出提醒。您可以在[【应用设置】→【提醒】→【上课提醒】](classisland://app/settings/notification/08F0D9C3-C770-4093-A3D0-02F3D90C24BC)中调整上下课提醒的设置。
+In addition, you can also set separate reminders for each subject, time point, schedule, and timetable.
 
-此外，您也可以为每个科目、时间点、课表和时间表单独设置上下课提醒的设置。
-
-## 天气
-
-本应用可以获取当地的天气信息，并在快速信息上显示。您可以在[【应用设置】→【天气】](classisland://app/settings/weather)中调整相关设置。
-
-在设置好城市等相关设置后，您可以在[【应用设置】→【提醒】](classisland://app/settings/notification/7625DE96-38AA-4B71-B478-3F156DD9458D)中开启天气预报和气象预警功能。
+After setting up the city and other related settings, you can go to[【应用设置】→【提醒】](classisland://app/settings/notification/7625DE96-38AA-4B71-B478-3F156DD9458D)to enable weather forecast and meteorological warning functions.
 
 ::: tip
-天气相关的提醒也支持附加设置，因此您也可以为特定的时间点开启或者关闭天气预报的提醒。建议默认关闭天气预报提醒，并为特定的时间点开启天气预报提醒。
+Weather related reminders also support additional settings, so you can turn on or off weather forecast reminders for specific time points. It is recommended to disable weather forecast reminders by default and enable them for specific time points.
 :::
 
-## 从壁纸提取主题色
+## Extract theme colors from wallpaper
 
-本应用可以从壁纸提取应用的主题色。此功能默认开启。您可以在[【应用设置】→【外观】](classisland://app/settings/appearance)中进一步调整。
+This application can extract the theme color of the application from the wallpaper. This feature is enabled by default. You can go to[【应用设置】→【外观】](classisland://app/settings/appearance)to make further adjustments.
 
-### 动态壁纸兼容
+### Compatible with dynamic wallpapers
 
-理论上本应用可以提取动态壁纸的主题色。以下是启用此功能的步骤：
+In theory, this application can extract the theme color of dynamic wallpapers. The following are the steps to enable this feature:
 
 ::: note
-在兼容模式下，应用会从注册表获取系统当前使用的壁纸。关闭后应用会从对应的壁纸窗口截图来提取壁纸主题色。
+In compatibility mode, the application will retrieve the wallpaper currently used by the system from the registry. After closing, the application will take a screenshot from the corresponding wallpaper window to extract the wallpaper theme color.
 :::
 
-1. 关闭兼容模式
-2. 点击【壁纸窗口类名】选项右侧的【浏览…】按钮，打开窗口选择界面
-3. 选择动态壁纸软件的壁纸层窗口，然后点击【确定】。
-4. 应用会使用这个窗口的截图来提取主题色。您也可以点击【预览提取结果】来检查应用是否正确对壁纸窗口截图。
+1. Turn off compatibility mode
+2. Click the "Browse..." button on the right side of the "Wallpaper Window Class Name" option to open the window selection interface
+3. Select the wallpaper layer window of the dynamic wallpaper software, and then click [OK].
+4. The application will use the screenshot of this window to extract the theme color. You can also click on 'Preview Extraction Results' to check if the application is taking the correct screenshot of the wallpaper window.
 
-如果使用的动态壁纸自带颜色变换效果，可以开启【自动提取壁纸主题色】功能。
+If the dynamic wallpaper used comes with a color change effect, you can enable the 'Auto Extract Wallpaper Theme Color' function.
 
-## 调试菜单
+## Debugging menu
 
-在[【应用设置】→【关于】](classisland://app/settings/about)中连续点击应用图标 10 次，即可开启[调试](classisland://app/settings/debug)和[笔刷](classisland://app/settings/debug_brushes)界面。
+In[【应用设置】→【关于】](classisland://app/settings/about), click the top application icon 10 times in a row to enable[调试](classisland://app/settings/debug)and debugging interface with other plugins.
 
-::: danger 注意！
-调试菜单中的功能仅供测试使用，如果您不知道您在做什么，请不要随意使用
+::: danger Attention!
+The functions in the debug menu are for testing purposes only. If you do not know what you are doing, please do not use them casually. This function can be disabled in centralized control management.
 :::

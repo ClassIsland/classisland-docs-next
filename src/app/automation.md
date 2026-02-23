@@ -24,7 +24,7 @@ tag:
 
 ::: tip 贡献提示
 
-自动化、规则集和行动功能目前虽然已支持在 ClassIsland 2.0 的测试版本使用，但还是无法满足用户的一切需求。如果您对“自动化”相关功能有好的想法建议，欢迎在[#1152](https://github.com/ClassIsland/ClassIsland/discussions/1152)参加讨论。
+自动化、规则集和行动功能目前虽然已支持在 ClassIsland 2.0 使用，但还是无法满足用户的一切需求。如果您对“自动化”相关功能有好的想法建议，欢迎在[#1152](https://github.com/ClassIsland/ClassIsland/discussions/1152)参加讨论。
 
 :::
 
