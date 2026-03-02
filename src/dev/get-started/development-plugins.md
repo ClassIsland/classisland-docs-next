@@ -8,7 +8,7 @@
 
 要在本地进行开发，**您需要安装以下负载和工具**：
 
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
+- [.NET 9.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/9.0)
 - [JetBrains Rider（建议）](https://www.jetbrains.com/zh-cn/rider/) 或 [Visual Studio 2022](https://visualstudio.microsoft.com/)，包括【.NET 桌面开发】工作负载
 - [Git](https://git-scm.com/)
 - [Powershell Core](https://github.com/PowerShell/PowerShell)
