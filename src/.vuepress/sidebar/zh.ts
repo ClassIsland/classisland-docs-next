@@ -30,16 +30,7 @@ export const zhSidebar = sidebar({
           ],
           icon: "fa-solid fa-file-lines"
         },
-        {
-          text: "迁移课表",
-          collapsible: true,
-          prefix: "migrate/",
-          children: [
-            "README.md",
-            "ecs.md",
-          ],
-          icon: "fa-solid fa-file-import"
-        },
+        "migrate.md",
         "component.md",
         "notifications.md",
         "weather.md",
