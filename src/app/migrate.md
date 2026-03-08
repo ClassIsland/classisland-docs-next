@@ -10,32 +10,35 @@ tag:
 
 # 迁移课表
 
-ClassIsland 提供一个转换配置文件用的在线工具，可以方便地将其他课程表软件的课表配置转换为 ClassIsland 档案文件。
+ClassIsland 软件内提供有导入入口，可以从CSES（仅课表）、Classisland 1.x、Class Widgets 1.2快捷导入课程表数据。
 
-转换工具已经部署在 [https://migrate.classisland.tech/](https://migrate.classisland.tech/) 上，可以直接访问使用。
+CSES:全名The Course Schedule Exchange Schema，一种通用的课程表交换格式，用于在不同软件之间交换课程表。
 
-## 软件支持情况
+<!--转换工具已经部署在 [https://migrate.classisland.tech/](https://migrate.classisland.tech/) 上，可以直接访问使用。-->
+## CSES导入方法
 
-目前已支持以下软件的导入：
+通过托盘菜单打开“档案编辑”页面，点击页面右上角的“导入/导出”按钮。
 
-| 软件名称 | 配置文件类型 | 配置文件说明 |
-| --- | --- | --- |
-| [ZongziTEK 黑板贴](https://github.com/STBBRD/ZongziTEK-Blackboard-Sticker/) | `timetable.json` | 支持导入全部信息。科目自动根据名称生成。 |
+![导入导出按钮](image/migrate/导入导出按钮.png)
 
+在该页面左侧边栏选中从 CSES 导入，选择 CSES 文件后，选择合适的导入模式，点击“导入”按钮即可完成导入。
 
-以下软件的导入程序正在制作：
+## ClassIsland 1.x 、Class Widgets 1.2 导入方法
 
-- [ ] 全能班辅
-- [ ] [Class Widgets](https://github.com/RinLit-233-shiroko/Class-Widgets/)
-- [ ] [Education Clock](https://github.com/Return-Log/Education-Clock/)
-- [ ] [ClassBoardSharp](https://github.com/Candlest/ClassBoardSharp)
+ClassIsland 1.x 和 Class Widgets 1.2 目前已经支持课表配置与应用设置的导入功能。
 
-以下软件没有计划支持：
+右键软件托盘，打开“应用设置“页面，如图。
 
-- [ClassTools](https://github.com/clansty/ClassTools/) 原因：缺时间表信息，无法导入。
+![应用设置按钮](image/migrate/应用设置按钮.png)
 
-## 开发者指南
+在应用设置页面的右上角菜单中，点选“数据迁移”选项，如图。
 
-欢迎各位开发者完善本程序。
+![迁移按钮](image/migrate/迁移按钮.png)
 
-本程序使用 Vue 3 + TypeScript 开发，使用 Vite 作为构建工具。需要注意的是，本程序强制要求使用 Node 20 及 Yarn 包管理进行开发。
+点击后，将出现数据迁移向导页面，如下图。
+
+![数据迁移页面](image/migrate/数据迁移页面.png)
+
+在该页面，选择迁移的来源，随后选择要迁移的数据（教程以 ClassIsland 1.x 为例），在下一页中选中ClassIsland 1.x 的可执行程序（从Class Widgets 1.2 迁移时则选中 Class Widgets 1.2 可执行程序所在的文件夹），点击“下一步”按钮即可完成迁移。
+
+![选择数据](image/migrate/选择数据.png)
