@@ -25,7 +25,7 @@ export const enSidebar = sidebar({
             "subject.md",
           ],
         },
-        "migrate.md",
+        "migrate/README.md",
         "notifications.md",
         "uri-navigation.md",
         "backup.md",
