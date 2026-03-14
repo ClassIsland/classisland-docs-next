@@ -36,7 +36,7 @@ graph TD
 
 ## 打开档案编辑器
 
-1. 打开托盘菜单，右键Classisland图标。
+1. 打开托盘菜单，右键 ClassIsland 图标。
 2. 点击【档案设置】按钮
 
     ![托盘菜单](image/README/托盘菜单.png)
