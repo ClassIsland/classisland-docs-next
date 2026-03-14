@@ -8,35 +8,49 @@ tag:
   - 课表迁移
 ---
 
-# 迁移课表
+# 迁移数据
 
-ClassIsland 提供一个转换配置文件用的在线工具，可以方便地将其他课程表软件的课表配置转换为 ClassIsland 档案文件。
+::: note 数据格式不兼容提示
+已经部署在 [https://migrate.classisland.tech/](https://migrate.classisland.tech/) 上，可以直接访问使用的转换工具仅支持Classisland 1 的数据文件格式，与Classisland 2 暂不兼容。欢迎各位开发者完善此程序（使用 Vue 3 + TypeScript 开发，使用 Vite 作为构建工具。需要注意的是，本程序强制要求使用 Node 20 及 Yarn 包管理进行开发）。
+:::
 
-转换工具已经部署在 [https://migrate.classisland.tech/](https://migrate.classisland.tech/) 上，可以直接访问使用。
+## 导入数据（支持CSES，Class Widget 1.2，Classisland 1.X）
 
-## 软件支持情况
+### 从设置页面导入（支持Class Widget 1.2，Classisland 1.7）
 
-目前已支持以下软件的导入：
+在初始化设置第一页下方点击“数据迁移”选项，或在设置界面右上角三点菜单中选择“数据迁移”。
 
-| 软件名称 | 配置文件类型 | 配置文件说明 |
-| --- | --- | --- |
-| [Electron Class Schedule](https://github.com/EnderWolf006/ElectronClassSchedule/) | `scheduleConfig.js` | 目前仅支持导入最多双周轮换 |
-| [ZongziTEK 黑板贴](https://github.com/STBBRD/ZongziTEK-Blackboard-Sticker/) | `timetable.json` | 支持导入全部信息。科目自动根据名称生成。 |
+![image](images/image.png)
+![image1](images/image1.png)
 
+选择您**现有的**数据源类型
 
-以下软件的导入程序正在制作：
+![image2](images/image2.png)
 
-- [ ] 全能班辅
-- [ ] [Class Widgets](https://github.com/RinLit-233-shiroko/Class-Widgets/)
-- [ ] [Education Clock](https://github.com/Return-Log/Education-Clock/)
-- [ ] [ClassBoardSharp](https://github.com/Candlest/ClassBoardSharp)
+选择要导入的数据（全新安装一般全选即可）
 
-以下软件没有计划支持：
+![image3](images/image3.png)
 
-- [ClassTools](https://github.com/clansty/ClassTools/) 原因：缺时间表信息，无法导入。
+按要求选择文件上传，上传完后重启Classisland即导入成功
 
-## 开发者指南
+![image4](images/image4.png)
 
-欢迎各位开发者完善本程序。
+### 从档案编辑导入（支持CSES，Class Widget 1.2，Classisland 1.X）
 
-本程序使用 Vue 3 + TypeScript 开发，使用 Vite 作为构建工具。需要注意的是，本程序强制要求使用 Node 20 及 Yarn 包管理进行开发。
+在档案编辑页面点击“导入/导出”按钮
+
+![image5](images/image5.png)
+
+选择您**现有的**数据源类型，选择数据源文件，并选择导入方式。点击导入按钮，待完成后重启。
+
+![image6](images/image6.png)
+
+### 从档案编辑导出（支持CSES）
+
+在档案编辑页面点击“导入/导出”按钮后在左侧选择“导出到CSES”
+
+![image5](images/image5.png)
+
+选择导出路径与文件名
+
+![image7](images/image7.png)

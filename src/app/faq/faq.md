@@ -22,7 +22,9 @@ ClassIsland 会在 Github Releases 发布新版本的“测试版本”（“预
 
 ![1723087458369](../image/faq/1723087458369.png)
 
-出现这种弹窗一般是没安装 .NET 8 运行时。请点击【Download it now】或从[本链接](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.7-windows-x64-installer)下载 .NET 运行时，并运行下载的安装程序安装 .NET 运行时。完成后重新打开本软件即可。
+出现这种弹窗一般是没安装 .NET 8 运行时。请点击【Download it now】或从[本链接](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.7-windows-x64-installer)下载 .NET 运行时，并运行下载的安装程序安装 .NET 运行时，完成后重新打开本软件即可。
+
+如因外部因素（如冰点还原等）无法安装运行时，可尝试下载使用Classisland 2中的“含运行时”（或“selfContained”）版本，无需另行安装运行时。
 
 ### 在 Windows 7 中启动后出现内存占用极高的问题
 

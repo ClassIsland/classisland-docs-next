@@ -36,7 +36,6 @@ export const zhSidebar = sidebar({
           prefix: "migrate/",
           children: [
             "README.md",
-            "ecs.md",
           ],
           icon: "fa-solid fa-file-import"
         },

@@ -35,7 +35,6 @@ exports.zhSidebar = vuepress_theme_hope_1.sidebar({
                     prefix: "migrate/",
                     children: [
                         "README.md",
-                        "ecs.md",
                     ],
                     icon: "fa-solid fa-file-import"
                 },

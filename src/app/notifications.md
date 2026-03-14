@@ -23,10 +23,6 @@ tag:
 
 ![1690357548114](image/basic/1690357548114.png)
 
-您可以点击主菜单中【清除所有提醒】按钮来清除当前显示的提醒（如图）。
-
-![1694923928375](image/Notifications/1694923928375.png)
-
 ## 提醒设置
 
 您可以在[【设置】->【提醒】](classisland://app/settings/notification)中调整相关提醒的设置。
@@ -59,8 +55,6 @@ tag:
 您可以十分便利地使用 ClassIsland 官方提供的公共TTS服务，您可以在【语音预设】按钮中找到预设的语音服务。
 
 ![2025-05-01_19-38-20](image/Notifications/2025-05-01_19-38-20.png)
-
-您可以在[ClassIsland 服务状态](https://status.classisland.tech/)查看TTS服务的运行状态。
 
 #### 自建GPT-SoVITS服务
 
