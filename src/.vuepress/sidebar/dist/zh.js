@@ -77,8 +77,8 @@ exports.zhSidebar = vuepress_theme_hope_1.sidebar({
                     text: "开始",
                     prefix: "get-started/",
                     children: [
-                        "devlopment.md",
-                        "devlopment-plugins.md",
+                        "development.md",
+                        "development-plugins.md",
                     ]
                 },
                 {

@@ -72,7 +72,7 @@ Thanks to the above contributors for providing the mirrors.
 
 ::: info Advanced
 
-If you want to experience the latest features, you can download the latest builds from [GitHub Actions](https://github.com/ClassIsland/ClassIsland/actions/workflows/build_release.yml). If you want to build ClassIsland yourself, please refer to the [development documentation](../dev/get-started/devlopment.md).
+If you want to experience the latest features, you can download the latest builds from [GitHub Actions](https://github.com/ClassIsland/ClassIsland/actions/workflows/build_release.yml). If you want to build ClassIsland yourself, please refer to the [development documentation](../dev/get-started/development.md).
 :::
 
 ### Full Version vs Trimmed Version

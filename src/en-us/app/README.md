@@ -33,7 +33,7 @@ If you are interested in some advanced features of this software, you can also r
 If you encounter problems while using ClassIsland, you can refer to the following documents to troubleshoot.
 
 - [FAQ](./faq/faq.md): Issues that users can usually resolve on their own.
-- [How to Get Debug Information](./reporting-issue.md): Methods for collecting logs and other debug information when reporting issues.
+- [How to Get Debug Information](faq/reporting-issue.md): Methods for collecting logs and other debug information when reporting issues.
 
 ## Feedback
 
