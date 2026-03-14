@@ -6,7 +6,7 @@
 本文章所涉及内容仍在开发中，随时可能发生变动。请注意关注文档更变。
 :::
 
-在开始之前，您需要按照[设置 ClassIsland 插件开发环境](../get-started/devlopment-plugins.md)的指引设置插件开发环境。
+在开始之前，您需要按照[设置 ClassIsland 插件开发环境](../get-started/development-plugins.md)的指引设置插件开发环境。
 
 ## 使用模板
 
@@ -182,7 +182,7 @@ using System.Windows;
 ![1721876856393](image/create-project/1721876856393.png)
 2. 新建【可执行文件】启动项目。
 ![1721876883260](image/create-project/1721876883260.png)
-3. 在【可执行文件】一栏中填写在[配置插件开发环境](../get-started/devlopment-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径
+3. 在【可执行文件】一栏中填写在[配置插件开发环境](../get-started/development-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径
 4. 将【工作目录】一栏设置为 ClassIsland 可执行文件路径的文件夹。
 5. 在【命令行参数】一栏填入以下命令行参数，让 ClassIsland 启动时从当前插件的输出目录中加载插件：
 ```plaintext
@@ -209,9 +209,9 @@ using System.Windows;
 }
 ```
 
-1. 将这里替换为在[配置插件开发环境](../get-started/devlopment-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径。
+1. 将这里替换为在[配置插件开发环境](../get-started/development-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径。
 2. 将参数替换为你当前插件项目的输出目录，如 `E:\\Coding\\ExamplePlugins\\HelloWorldPlugin\\bin\\Debug\\net8.0-windows`
-3. 将这里替换为[配置插件开发环境](../get-started/devlopment-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径的文件夹。
+3. 将这里替换为[配置插件开发环境](../get-started/development-plugins.md#克隆并构建-classisland)中构建的 ClassIsland 可执行文件路径的文件夹。
 :::
 
 以上配置步骤完成后，关闭【启动配置文件】窗口，然后切换到刚刚添加的启动配置文件，启动调试。如果没有差错，您可以看到 ClassIsland 正常启动，并弹出了由插件显示的提示框。
