@@ -61,6 +61,7 @@
 ```json title="manifest.json"
 {
     "ServerKind": 0,
+    "CoreVersion": "2.0.0.0",
     "OrganizationName": "Hello"
 }
 ```
