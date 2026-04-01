@@ -25,14 +25,7 @@ export const enSidebar = sidebar({
             "subject.md",
           ],
         },
-        {
-          text: "Migrate Schedule",
-          prefix: "migrate/",
-          children: [
-            "README.md",
-            "ecs.md",
-          ],
-        },
+        "migrate/README.md",
         "notifications.md",
         "uri-navigation.md",
         "backup.md",

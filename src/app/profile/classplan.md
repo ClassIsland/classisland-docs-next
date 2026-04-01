@@ -1,4 +1,6 @@
 ﻿---
+title: 课表
+description: 介绍课表的使用方法。
 icon: fa-solid fa-chart-simple
 category:
   - 使用指南

@@ -29,7 +29,9 @@ footer: |
   <img src="https://www.beian.gov.cn/img/new/gongan.png" >
   <a href="https://beian.miit.gov.cn/" target="_blank" >津ICP备2025035356号</a>
 ---
-
+:::warning
+This document is currently not maintained. If you need reference, please refer to the Chinese version.
+:::
 Welcome to the ClassIsland documentation.
 
 ClassIsland (`class island`) is a schedule information display tool for classroom multimedia screens, allowing you to see various information at a glance. The name of this application is inspired by the Dynamic Island feature of iOS.
