@@ -1,4 +1,4 @@
-# Installation and Getting Started
+# Installation & Getting Started
 
 This article will introduce how to install and start using ClassIsland.
 
@@ -13,7 +13,10 @@ First, ensure your device meets the following recommended requirements:
 ::: details Installing ClassIsland on Windows 7
 
 > [!caution]
-> **Using ClassIsland on Windows 7 is not recommended.** If you insist on using ClassIsland on Windows 7, **be sure to follow the steps below** to complete the environment setup, otherwise, you may encounter **serious memory leak issues**. (ClassIsland#91)
+> **Using ClassIsland on Windows 7 is not recommended.** If you insist on using ClassIsland on Windows 7, **be sure to follow the steps below** to complete the environment setup, otherwise, you may encounter **serious memory leak issues([ClassIsland#91](https://github.com/ClassIsland/ClassIsland/issues/91))**. 
+
+> [!caution]
+> If you previously enabled ClassIsland to run on Windows 7 by setting Environment Variables or running a Repair Tool, please follow the instructions in [this article](https://docs.classisland.tech/en-us/app/appendix/revert-win7-patching.html) to roll back the repair, as this method may cause incompatibility with some .NET Core applications.
 
 Additionally, **Microsoft support for Windows 7 ended on 2020/1/14** [^1]. If you encounter system-related issues on Windows 7, **the developers may not address them.** Some features may also be unavailable on systems below Windows 10. If you accept these limitations, please continue reading.
 
@@ -24,7 +27,25 @@ Additionally, **Microsoft support for Windows 7 ended on 2020/1/14** [^1]. If yo
     For Windows 7, the following additional dependencies are required:
 
     - Microsoft Visual C++ 2015-2019 Redistributable [64-bit](https://aka.ms/vs/16/release/vc_redist.x64.exe) / [32-bit](https://aka.ms/vs/16/release/vc_redist.x86.exe)
-    - KB3063858 [64-bit](https://www.microsoft.com/download/details.aspx?id=47442) / [32-bit](https://www.microsoft.com/download/details.aspx?id=47409)
+    - Windows Update KB3063858 [64-bit](https://www.microsoft.com/download/details.aspx?id=47442) / [32-bit](https://www.microsoft.com/download/details.aspx?id=47409)
+
+2. Install [.NET 6.0.36 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+
+3. Go to the [ClassIsland Official Website](classisland.tech/download) to download the *Windows 7 Compatible Version* of Classisland.
+
+::: OUTDATED Method
+
+> [!important]
+> **This method has been DEPRECATED**, and it's NOT responsible for continuing to use the Development Team.
+
+1. **Install Dependencies**
+
+    You need to install additional dependencies according to your OS version as guided [here](https://learn.microsoft.com/en-us/dotnet/core/install/windows?tabs=net80#additional-deps).
+
+    For Windows 7, the following additional dependencies are required:
+
+    - Microsoft Visual C++ 2015-2019 Redistributable [64-bit](https://aka.ms/vs/16/release/vc_redist.x64.exe) / [32-bit](https://aka.ms/vs/16/release/vc_redist.x86.exe)
+    - Windows Update KB3063858 [64-bit](https://www.microsoft.com/download/details.aspx?id=47442) / [32-bit](https://www.microsoft.com/download/details.aspx?id=47409)
 
 2. **Address Memory Leak Issues**
 
@@ -44,6 +65,8 @@ Additionally, **Microsoft support for Windows 7 ended on 2020/1/14** [^1]. If yo
 
 :::
 
+:::
+
 ## Download the Application
 
 For regular users, you can download the software from the following channels. Please choose the appropriate channel based on your network environment.
@@ -51,7 +74,7 @@ For regular users, you can download the software from the following channels. Pl
 ::: warning
 The beta version includes the latest features but may also contain incomplete and unstable features. Please use with caution.
 
-| Download Channel/Version | **🚀Stable Version** <br/>[![GitHub Release](https://img.shields.io/github/v/release/HelloWRC/ClassIsland?style=flat-square&logo=GitHub&color=%233fb950)](https://github.com/HelloWRC/ClassIsland/releases/latest)  | 🚧Beta Version<br/>[![GitHub Release](https://img.shields.io/github/v/release/HelloWRC/ClassIsland?include_prereleases&style=flat-square&logo=GitHub&label=BETA)](https://github.com/HelloWRC/ClassIsland/releases/) |
+| Download Channel / Version | **🚀Stable Version** <br/>[![GitHub Release](https://img.shields.io/github/v/release/HelloWRC/ClassIsland?style=flat-square&logo=GitHub&color=%233fb950)](https://github.com/HelloWRC/ClassIsland/releases/latest)  | 🚧Beta Version<br/>[![GitHub Release](https://img.shields.io/github/v/release/HelloWRC/ClassIsland?include_prereleases&style=flat-square&logo=GitHub&label=BETA)](https://github.com/HelloWRC/ClassIsland/releases/) |
 | -- | -- | -- |
 | GitHub | [**GitHub Download**](https://github.com/HelloWRC/ClassIsland/releases/latest) | [GitHub Download](https://github.com/HelloWRC/ClassIsland/releases) |
 | AppCenter | [**AppCenter Download**](https://install.appcenter.ms/users/hellowrc/apps/classisland/distribution_groups/public/releases/latest) | [AppCenter Download](https://install.appcenter.ms/users/hellowrc/apps/classisland/distribution_groups/publicbeta/releases/latest) |
@@ -83,6 +106,13 @@ If you download from GitHub, you can choose to download the full version or the 
 The AppCenter download channel only provides the full version.
 :::
 
+### About .NET 6 Compatible Version
+In order for ClassIsland to run on lower versions of Windows 10, we made .NET 6 Compatible Version. This compatible version will be synced from time to time with the upstream main repository. You can view the compatible version of the repository [here](https://github.com/ClassIsland/ClassIsland-net6/).
+
+The following features are not available in Compatible Version:
+
+- Plugins
+
 ## Extract the Software
 
 After downloading, extract the software package to an **independent folder (the path cannot contain Chinese characters [^2])** and run the software to start using it.
@@ -95,13 +125,13 @@ This software will store all configurations in this folder. After configuration,
 
 ## Encountering Issues?
 
-If you encounter issues during installation, please refer to the FAQ article. If the issue cannot be resolved, you can [seek help in the community](../community/README.md).
+If you encounter issues during installation, please refer to the FAQ article. If the issue cannot be resolved, you can [Seek Help in the Community](../community/README.md).
 
 ## Getting Started
 
 On the first launch, there will be a short welcome guide to help you complete the basic setup of the software and demonstrate some basic operations.
 
-You can also watch the [getting started tutorial video](https://www.bilibili.com/video/BV1fA4m1A7uZ/) to quickly get started with the software. If you want to learn more about the software, you can continue reading this document.
+You can also watch the [Getting Started Tutorial Video](https://www.bilibili.com/video/BV1fA4m1A7uZ/) to quickly get started with the software. If you want to learn more about the software, you can continue reading this document.
 
-[^1]: Windows 7 lifecycle policy: <https://learn.microsoft.com/en-us/lifecycle/products/windows-7>. Windows 7 ESU support ended on 2023/1/10.
+[^1]: Windows 7 Lifecycle Policy: <https://learn.microsoft.com/en-us/lifecycle/products/windows-7>. Windows 7 ESU support ended on 2023/1/10.
 [^2]: May cause the application to get stuck during updates.
