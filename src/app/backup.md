@@ -13,7 +13,7 @@ tag:
 
 本文章主要描述 ClassIsland 内置的备份功能，以及如何手动备份和恢复应用数据。
 
-![1724066299317](image/backup/1724066299317.png)
+![备份页](image/backup/备份页.png)
 
 ClassIsland 内置了应用数据备份功能，可以在[【应用设置】->【存储】](classisland://app/settings/storage)中查看和调整相关设置。
 
@@ -39,4 +39,4 @@ ClassIsland 在版本更新时，会自动把应用数据被分到`./Backups/Upd
 
 如果出现配置文件损坏/丢失等情况，您可以在设置窗口右上角找到“重启到恢复模式”，以恢复备份。
 
-![2.0:重启到恢复模式](image/backup/2.0重启到恢复模式.png)
+![重启到恢复模式](image/backup/重启到恢复模式.png)
