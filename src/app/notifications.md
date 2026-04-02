@@ -15,23 +15,23 @@ tag:
 
 应用在一些特定时间点会发出醒目提醒。如会在上课前指定的时间发出上课准备提醒，及在下课时发出提醒并预告下节课程。（如下图）
 
-![1690357490894](image/basic/1690357490894.png)
+![下课提醒](image/notifications/下课提醒.png)
 
-![1690357510377](image/basic/1690357510377.png)
+![课间休息提醒](image/notifications/课间休息提醒.png)
 
-![1690357561703](image/basic/1690357561703.png)
+![即将上课提醒](image/notifications/即将上课提醒.png)
 
-![1690357548114](image/basic/1690357548114.png)
+![上课提醒](image/notifications/上课提醒.png)
 
 您可以点击主菜单中【清除所有提醒】按钮来清除当前显示的提醒（如图）。
 
-![1694923928375](image/Notifications/1694923928375.png)
+![清除全部提醒](image/notifications/清除全部提醒.png)
 
 ## 提醒设置
 
 您可以在[【设置】->【提醒】](classisland://app/settings/notification)中调整相关提醒的设置。
 
-![2.0:提醒设置](\image\Notifications\2.0提醒设置.png)
+![提醒设置](\image\notifications\提醒设置.png)
 
 ## 提醒优先级
 
@@ -43,7 +43,7 @@ tag:
 
 您可以在[【设置】->【提醒】->【高级设置】](classisland://app/settings/notification)调整相关设置。
 
-![1712379341205](image/ChangeLog/1712379341205.png)
+![高级设置](image/notifications/高级设置.png)
 
 您也可以为每个提醒提供方设置单独的设置。设置时需要启用【对此提醒来源启用特殊高级设置】。这些设置会按照【在设置界面为每个提醒提供方设置】->【提醒提供方在发送提醒时要求的设置】->【全局设置】的顺序应用。
 
@@ -53,12 +53,9 @@ tag:
 
 ### GPT-SoVITS服务
 
-> [!tip] 
-> 此功能在1.6.0.0及以上版本中可用。
-
 您可以十分便利地使用 ClassIsland 官方提供的公共TTS服务，您可以在【语音预设】按钮中找到预设的语音服务。
 
-![2025-05-01_19-38-20](image/Notifications/2025-05-01_19-38-20.png)
+![SoVITS预设](image/notifications/SoVITS预设.png)
 
 您可以在[ClassIsland 服务状态](https://status.classisland.tech/)查看TTS服务的运行状态。
 
@@ -80,7 +77,7 @@ tag:
 > [!tip]
 > 如果您使用过 web ui 中的"打开推理界面"功能，`api_v2.py`将会优先使用`GPT-SoVITS/configs/tts_infer.yaml`中的配置，您可以将其删除或是修改。
 
-![2025-05-01_20-10-49](image/Notifications/2025-05-01_20-10-49.png)
+![SoVITS设置](image/notifications/SoVITS设置.png)
 
 按照需要在 ClassIsland 中填写相应的配置项，其中【语音名称】用于将不同模型的缓存文件区分开，您可以填写一个独特的名称以确保缓存文件不会走错地方。
 
