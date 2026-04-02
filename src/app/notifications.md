@@ -31,7 +31,7 @@ tag:
 
 您可以在[【设置】->【提醒】](classisland://app/settings/notification)中调整相关提醒的设置。
 
-![提醒设置](\image\notifications\提醒设置.png)
+![提醒设置](image/notifications/提醒设置.png)
 
 ## 提醒优先级
 
@@ -62,7 +62,7 @@ tag:
 #### 自建GPT-SoVITS服务
 
 > [!warning]
-> GPT-SoVITS 并不是 ClassIsland 官方服务， ClassIsland 不提供任何技术支持，也不为此服务的安全性和可用性作任何保证。
+> GPT-SoVITS 并不是 ClassIsland 官方服务，ClassIsland 不提供任何技术支持，也不为此服务的安全性和可用性作任何保证。
 > 
 > 接下来的内容可能较困难，请自行评估自建TTS服务的可行性与必要性。
 >
