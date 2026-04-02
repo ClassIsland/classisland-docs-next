@@ -14,7 +14,7 @@ tag:
 
 :::
 
-ClassIsland1.5及以上版本支持了插件功能，您可以在[设置—【插件】](classisland://app/settings/classisland.plugins/)的“插件市场”页面中寻找插件安装使用。
+ClassIsland提供了插件功能，您可以在设置—[插件](classisland://app/settings/classisland.plugins/)的“插件市场”页面中寻找插件安装使用。
 
 ::: warning 第三方服务
 
@@ -28,8 +28,32 @@ ClassIsland开发团队不对使用插件及其功能造成的问题负责。
 
 ::: warning 版本差异提示
 
-ClassIsland 1.x 和 2.x 版本使用了完全不同的框架。分别适用于这两个大版本的插件相互完全不兼容。
+ClassIsland 1.x 和 2.x 版本使用了完全不同的框架。分别适用于这两个大版本的插件相互完全不兼容，目前插件市场采用了分类的方法，所以部分在ClassIsland 1.x 版本中可用的插件在2.x版本中可能不可用。
 
-目前ClassIsland 2.x 还在测试开发阶段，可以使用的插件较少，请仔细阅读插件的说明文件（README.md），以免产生严重的错误而影响应用的运行和使用。
+目前ClassIsland 2.x 还在测试开发阶段，可以使用的插件较少，请仔细阅读插件的说明文件`README.md`，以免产生严重的错误而影响应用的运行和使用。
 
+:::
+
+## 插件市场
+
+插件市场中展示了由 ClassIsland 社区开发者提供的插件，您可以在其中寻找并安装插件以扩展应用的功能。
+
+![插件市场](image/plugin/插件市场.png)
+
+由于插件市场需要连接Github，如果由于网络问题无法连接Github或连接不稳定，您可以在更多选项-管理插件源尝试更换插件源为ghproxy或moeyy后刷新重试。
+
+![管理插件源](image/plugin/管理插件源.png)
+
+![更换插件源](image/plugin/更换插件源.png)
+
+## 管理插件
+
+您可以在设置—[插件](classisland://app/settings/classisland.plugins/)的“已安装插件”页面中管理已安装的插件。
+
+插件存在更新时，点击更新按钮即可更新；点击插件后，如果想要禁用或卸载插件，在右侧取消勾选即可禁用插件，点击卸载按钮即可卸载插件。
+
+![插件管理](image/plugin/插件管理.png)
+
+::: tip
+安装、更新或卸载插件后，需要重启应用以使更改生效。
 :::
