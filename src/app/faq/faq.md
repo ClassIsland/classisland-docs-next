@@ -24,9 +24,9 @@ ClassIsland 会在 Github Releases 发布新版本的“测试版本”（“预
 
 出现这种弹窗一般是没安装 .NET 8 运行时。请点击【Download it now】或从[本链接](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.7-windows-x64-installer)下载 .NET 运行时，并运行下载的安装程序安装 .NET 运行时。完成后重新打开本软件即可。
 
-### 在 Windows 7 中启动后出现内存占用极高的问题
+### 关于在 Windows 7 系统的安装与使用
 
-解决方法见[在 Windows 7 中安装 ClassIsland](../setup.md#检查系统需求)。
+我们已停止对 Windows 7 的支持；如需在 Windows 7 上使用 ClassIsland，请参考[在 Windows 7 中安装 ClassIsland](../setup.md#检查系统需求)。
 
 ## 系统
 
@@ -36,7 +36,7 @@ ClassIsland 会在 Github Releases 发布新版本的“测试版本”（“预
 
 这可能是因为 ClassIsland 的自启动项被禁用了，或者被安全软件拦截。您可以在安全软件的相关功能页面检查是否拦截了 ClassIsland 的自启动项目，或者在任务管理器的【启动应用】页面检查相关启动项目是否被禁用。
 
-如果您在【兼容性设置】中设置了以管理员身份运行 ClassIsland，可能也无法通过应用内置的自启动设置自启动。您可以通过安装[以管理员身份自启动](https://github.com/ClassIsland/StartUpAsAdmin)插件解决这个问题。
+如果您在【兼容性设置】中设置了以管理员身份运行 ClassIsland，可能也无法通过应用内置的自启动设置自启动。您可以通过安装[以管理员身份自启动](https://github.com/ClassIsland/StartUpAsAdmin)插件创建任务计划解决这个问题。
 
 ### ClassIsland 无法置顶到某些窗口上
 
@@ -61,4 +61,4 @@ ClassIsland 会在 Github Releases 发布新版本的“测试版本”（“预
 
 ### 正常使用时，电脑/大屏重启后配置文件丢失/回档
 
-这种情况可能是电脑意外断电，导致配置文件没有完全保存导致的。目前 ClassIsland 已尝试通过定期备份等方式尽量减小意外断电对配置文件的影响。如果您的配置文件不幸丢失，可以在应用目录下的`Backups`文件夹内找到定期创建的备份，并进行恢复。详细请参阅[应用数据备份](../backup.md#恢复备份)文章。
+这种情况可能是电脑意外断电，导致配置文件没有完全保存导致的。目前 ClassIsland 已尝试通过定期备份等方式尽量减小意外断电对配置文件的影响。如果您的配置文件不幸丢失或损坏，可以在应用目录下的`Backups`文件夹内找到定期创建的备份，并进行恢复；或者通过应用内置的恢复模式恢复此前的自动备份。详细请参阅[应用数据备份](../backup.md#恢复备份)文章。
