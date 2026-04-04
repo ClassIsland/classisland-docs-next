@@ -18,9 +18,9 @@ ClassIsland 支持在应用内通过 Uri 进行导航，同时也在系统注册
 
 ClassIsland 默认的 Uri 导航协议是 `classisland://`。应用内置的导航路径在 `classisland://app/` 下，插件扩展的导航路径一般在 `classisland://plugins/` 下。
 
-## 注册 Uri 协议
+## 注册 Url 协议
 
-您可以在[【应用设置】->【基本】](classisland://app/settings/general) 中启用【注册 Uri 协议】选项以注册 Uri 导航协议。
+您可以在[【应用设置】->【基本】](classisland://app/settings/general) 中启用【注册 Url 协议】选项以注册 Url 导航协议。
 
 ![Uri导航](image/uri-navigation/Uri导航.png)
 
