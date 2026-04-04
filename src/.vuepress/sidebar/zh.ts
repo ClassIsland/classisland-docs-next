@@ -53,7 +53,17 @@ export const zhSidebar = sidebar({
           icon: "fa-solid fa-file-lines"
         },
         "migrate.md",
-        "component.md",
+        {
+          text: "组件与编辑",
+          collapsible: true,
+          expanded: true,
+          prefix: "component/",
+          children: [
+            "README.md",
+            "editmode.md",
+          ],
+          icon: "fa-solid fa-copy"
+        },
         "notifications.md",
         "weather.md",
         "automation.md",
