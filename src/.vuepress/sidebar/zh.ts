@@ -15,6 +15,7 @@ export const zhSidebar = sidebar({
       children: [
         "README.md",
         "deploy.md",
+        "basic.md",
         {
           text: "档案设置",
           collapsible: true,
