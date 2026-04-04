@@ -15,7 +15,6 @@ category:
 ![](image/classplan/Pasted%20image%2020260404211340.png)
 
 
-
 在课表中，可以给对应时间表中每个上课类型的时间点设置一个上课的科目。科目来源于在【科目】选项卡中定义的科目（详见文章“[科目](https://docs.classisland.tech/app/profile/subject.html)”）。
 ![](image/classplan/Pasted%20image%2020260404180158.png)
 
