@@ -11,3 +11,7 @@ out/**
 
 .cache/
 dist/*
+
+/.vscode
+/src/.obsidian
+/.idea
