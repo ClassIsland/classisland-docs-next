@@ -14,8 +14,20 @@ export const zhSidebar = sidebar({
       text: "快速上手",
       children: [
         "README.md",
-        "deploy.md"
+        "deploy.md",
+        {
+          text: "档案设置",
+          collapsible: true,
+          expanded: true,
+          prefix: "profile/",
+          children: [
+            "classplan.md",
+            "rotating-schedule.md",
+          ],
+          icon: "fa-solid fa-file-lines"
+        },
       ],
+
     },
   ],
   "/app/": [
