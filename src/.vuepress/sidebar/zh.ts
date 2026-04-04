@@ -8,6 +8,16 @@ export const zhSidebar = sidebar({
       link: "index.md",
     },
   ],
+  "/get-started/": [
+    {
+      icon: "fa-solid fa-book",
+      text: "快速上手",
+      children: [
+        "README.md",
+        "deploy.md"
+      ],
+    },
+  ],
   "/app/": [
     {
       icon: "fa-solid fa-lightbulb",

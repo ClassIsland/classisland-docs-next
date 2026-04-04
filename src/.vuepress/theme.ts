@@ -152,7 +152,7 @@ export default hopeTheme({
     // },
     slimsearch: true,
     components: {
-      components: ["Badge", "VPCard"],
+      components: ["Badge", "VPCard", "VPBanner"],
     },
 
     // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释
