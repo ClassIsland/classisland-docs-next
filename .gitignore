@@ -10,6 +10,7 @@ out/**
 */__pycache__/**
 
 .cache/
+dist/*
 
 /.vscode
 /src/.obsidian
