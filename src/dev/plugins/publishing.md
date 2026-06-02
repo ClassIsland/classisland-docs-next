@@ -58,13 +58,17 @@ Compress-Archive -Path "（你的插件编译输出目录，如 E:\xxx\MyPlugin\
 
 以下是需要补充的信息：
 
-| 属性名 | 类型 | 必填？ | 说明 | 示例
+| 属性名 | 类型 | 必填？ | 说明 | 示例 | 
 | -- | -- | -- | -- | -- |
-| repoOwner | `string` | **是** | 插件的 GitHub 仓库所有者 | ClassIsland
-| repoName | `string` | **是** | 插件的 GitHub 仓库名称 | ExamplePlugins
-| assetsRoot | `string` | **是** | 插件的资源根目录，格式为`<默认分支>/<插件项目相对存储库的路径>` | master/ExamplePlugin
-| artifactName | `string` | 否 | 指定插件 Release 中给用户要下载的插件包的工件名称，否则索引生成器将匹配第一个以`.cipx`为后缀的工件 | plugin.cipx
-| tagPattern | `string` | 否 | 查找最新发行版时要匹配的 Tag 模式。如果设置，将查找匹配符合这个模式的 Tag，否则将使用最新的符合格式的 Tag | 1.\*.\*\*
+| repoOwner | `string` | **是** | 插件的 GitHub 仓库所有者 | `ClassIsland` |
+| repoName | `string` | **是** | 插件的 GitHub 仓库名称 | `ExamplePlugins` |
+| assetsRoot | `string` | **是** | 插件的资源根目录，格式为`<默认分支>/<插件项目相对存储库的路径>` | `master/ExamplePlugin` |
+| artifactName | `string` | 否 | 指定插件 Release 中给用户要下载的插件包的工件名称，否则索引生成器将匹配第一个以`.cipx`为后缀的工件 | `plugin.cipx` |
+| tagPattern | `string` | 否 | 查找最新发行版时要匹配的 Tag 模式。如果设置，将查找匹配符合这个模式的 Tag，否则将使用最新的符合格式的 Tag | `1.*.*.*` |
+| version | `string` | 是 | 插件版本号 | `1.0.0.0` |
+| apiVersion | `string` | 是 | 指定插件所支持的最低插件加载器版本。ClassIsland 2.0起将拒绝加载此字段低于`2.0.0.0`的插件。 | `2.0.0.0` |
+| author | `string` | 是 | 插件作者 | `无名氏` | 
+| supportedOSPlatforms | `List` | 否 | 插件所支持的操作系统平台。倘若在未声明所支持的操作系统平台上浏览此插件，则在插件市场上浏览时和安装时会显示一条警告信息，但不会阻止用户安装。若此字段未声明，则在Windows、Linux、macOS平台上不显示警告。 | `[Windows, Linux, OSX]` |
 
 例如：
 
@@ -79,7 +83,13 @@ repoName: ExamplePlugins
 assetsRoot: master/HelloWorldPlugin
 artifactName: plugin.cipx
 tagPattern: 1.*.**
-
+version: 0.0.0.0
+apiVersion: 2.0.0.0
+author: 无名氏
+supportedOSPlatforms:
+- Windows
+- Linux
+- OSX
 ```
 
 您还需要将打包后的插件上传到**您的插件的仓库**的 Release 中，并添加 MD5 校验信息。创建 Release 时的 Tag 必须严格遵循 `a.b.c.d` 的格式（如 `1.2.3.4`），不能添加其它额外内容，否则索引生成工具可能因无法正确识别版本名而无法生成您的插件的索引。
