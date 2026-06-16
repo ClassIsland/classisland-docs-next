@@ -84,6 +84,7 @@ ClassIsland 集控配置文件的参考文档。
 | -- | -- | -- | -- | -- |
 | `ServerKind` | `int` | **是** | 服务器类型（`0`：静态托管的配置文件；`1`：集控服务器） | `0` |
 | `OrganizationName` | `string` | 否 | 组织名称 | `⌈黑塔⌋空间站` |
+| `CoreVersion` | `string` | 是 | 集控服务核心版本 | `2.0.0.0` |
 | `ClassPlanSource` | [`ReVersionString`](#ReVersionString) | 否 | 课表文件 url 模板 | -- |
 | `TimeLayoutSource` | [`ReVersionString`](#ReVersionString) | 否 | 时间表文件 url 模板 | -- |
 | `SubjectsSource` | [`ReVersionString`](#ReVersionString) | 否 | 科目文件 url 模板 | -- |
@@ -115,6 +116,7 @@ ClassIsland 集控配置文件的参考文档。
         "Version": 2
     },
     "ServerKind": 0,
+    "CoreVersion": "2.0.0.0",
     "OrganizationName": "Test Organization"
 }
 ```
