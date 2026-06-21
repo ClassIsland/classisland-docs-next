@@ -38,7 +38,8 @@ ClassIsland 使用了如下技术栈。在参与 ClassIsland 开发或为 ClassI
 
 ## 开始
 
-- [配置 ClassIsland **本体**开发环境](./get-started/development.md)
+- [配置 ClassIsland **本体**开发环境（Windows）](./get-started/development-app-windows.md)
+- [配置 ClassIsland **本体**开发环境（macOS）](./get-started/development-app-macos.md)
 - [配置 ClassIsland **插件**开发环境](./get-started/development-plugins.md)
 - [了解有关 ClassIsland 开发的基础知识](basics/README.md)
 
@@ -59,7 +60,8 @@ ClassIsland 使用了如下技术栈。在参与 ClassIsland 开发或为 ClassI
 本章节包含以下内容：
 
 - **开始**
-    - [配置 ClassIsland **本体**开发环境](./get-started/development.md)
+    - [配置 ClassIsland **本体**开发环境（Windows）](./get-started/development-app-windows.md)
+    - [配置 ClassIsland **本体**开发环境（macOS）](./get-started/development-app-macos.md)
     - [配置 ClassIsland **插件**开发环境](./get-started/development-plugins.md)
 - [**基础知识**](basics/README.md)
     - [依赖注入](basics/dependency-injection.md)

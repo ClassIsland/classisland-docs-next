@@ -90,3 +90,6 @@ git submodule update --init --recursive
 ## 开始开发插件
 
 一切准备工作就绪后，继续阅读文章[开始编写插件](../plugins/create-project.md)，开始您的插件开发之旅吧！
+
+> [!warning]
+> 在非 Windows 环境下，.NET Framework 4.7.2 （net472）的目标框架不可用。要使插件在 macOS 或 Linux 中运行，请使用 .NET 8 或 .NET 9。
