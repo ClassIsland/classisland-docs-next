@@ -50,6 +50,20 @@ gh repo clone ClassIsland/ClassIsland
 git submodule update --init --recursive
 ```
 
+## 一键配置脚本
+
+可通过 `tools/plugin/build_macos.command` 脚本检查配置并完成环境初始化，完成如下操作：
+
+检查系统版本是否满足最低要求 macOS 12 Monterey 及推荐的 macOS 14 Sonoma 及更⾼的系统版本；
+
+是否安装了.NET 8.0 SDK 及 .NET 9.0 SDK，如果没有则自动安装；
+
+检查是否获取了 Xcode 或 Xcode-beta；
+
+检查是否安装了 Command Line Tools，如果没有则自动安装；
+
+检查是否安装了 .NET macOS ⼯作负荷，如果没有则自动安装。
+
 ## 开发
 
 ### 前置条件
@@ -78,6 +92,13 @@ dotnet build ClassIsland.Desktop/ClassIsland.Desktop.csproj -c Debug
 dotnet run --project ClassIsland.Desktop/ClassIsland.Desktop.csproj
 ```
 
+在 [#1876](https://github.com/ClassIsland/ClassIsland/pull/1876) 以后，同样可以通过 Visual Studio Code 的“运行和调试“面板下转到 `Run ClassIsland.Desktop (Debug)` 构建项目。
+
+> [!WARNING]  
+> `dotnet run` 会启动子进程，导致 Debugger 附着错误目标，故断点调试功能不可用。
+>
+> 要使用断点调试功能，建议使用 `launch.json` 直接启动项目。
+
 ### 关于 App 公证与门禁机制
 
 由于 macOS 的 GateKeeper 保护机制，系统默认将不会允许打开未经过公证（Notarization）的 App。要绕过 GateKeeper 进行调试，转到“终端”并运行如下的 Bash 代码：
@@ -88,7 +109,8 @@ sudo spctl --master-disable
 
 并转到**系统设置 → 隐私与安全性**，选择“任何来源”。
 
-要详细了解 macOS 中的门禁和运行时保护，请参阅[这篇文章](https://support.apple.com/zh-cn/guide/security/sec5599b66df/)。
+> [!CAUTION]
+> 允许“任何来源”会降低系统安全性。要详细了解 macOS 中的门禁和运行时保护，请参阅[这篇文章](https://support.apple.com/zh-cn/guide/security/sec5599b66df/)。
 
 ### 关于 Mac 上的 .NET Framework
 
