@@ -1,11 +1,10 @@
-# 配置 ClassIsland **本体**开发环境
+# 在 Windows 配置 ClassIsland **本体**开发环境
 
 ## 开发环境
 
 **首先确保您的系统满足以下要求：**
 
 - Windows 10 1803 及以上的操作系统，x86_64 或 ARM 架构
-- 最低系统要求 macOS 12 Monterey，推荐 macOS 14 Sonoma 及更高的系统版本
 
 对于 Windows PC，要在本地进行开发，**您需要安装以下负载和工具**：
 
@@ -13,14 +12,6 @@
 - [JetBrains Rider（建议）](https://www.jetbrains.com/zh-cn/rider/) 或 [Visual Studio 2022](https://visualstudio.microsoft.com/)，包括【.NET 桌面开发】工作负载
 - [Git](https://git-scm.com/)
 - [Powershell Core](https://github.com/PowerShell/PowerShell)
-
-对于 Mac，要在本地进行开发，**您需要安装以下负载和工具**：
-
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
-- [Visual Studio Code](https://code.visualstudio.com) 或 [JetBrains Rider](https://www.jetbrains.com/zh-cn/rider/)
-- [Xcode 及命令行工具](https://developer.apple.com/cn/xcode/resources/)
-- .NET macOS 工作负荷
-- [Git](https://git-scm.com/)
 
 ## 拉取代码
 
@@ -76,21 +67,3 @@ git submodule update --init --recursive
 1. 在 Visual Studio 中打开解决方案 `ClassIsland.sln`
 2. 将项目 `ClassIsland` 设置为启动项目
 3. 点击【启动】即可编译项目，并开始调试。
-
-
-
-对于 Mac，可以通过脚本配置开发环境。
-
-> [!tip]
-> 在较新版本的 macOS 上，运行脚本可能需要授予访问权限。
-
-导航到``/ClassIsland/tools/plugin``，运行``build_macos.command``
-
-脚本配置安装所需的环境。
-
-安装环境配置完成后，可以在 Visual Studio Code 或 JetBrains Rider 中正常编译和运行 ClassIsland。
-
-1. 在 Visual Studio Code 或 JetBrains Rider 中打开解决方案 `ClassIsland.Filter.MacOs.slnf`
-
-2. 修改、编译与运行代码
-
