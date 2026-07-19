@@ -87,6 +87,10 @@ git submodule update --init --recursive
 ./tools/plugin/build.ps1
 ```
 
+## 配置编码智能体
+
+参见[使用编码智能体开发？](using-coding-agent.md)章节。
+
 ## 开始开发插件
 
 一切准备工作就绪后，继续阅读文章[开始编写插件](../plugins/create-project.md)，开始您的插件开发之旅吧！

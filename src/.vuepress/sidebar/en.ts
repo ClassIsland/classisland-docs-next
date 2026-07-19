@@ -65,6 +65,7 @@ export const enSidebar = sidebar({
           children: [
             "development.md",
             "development-plugins.md",
+            "using-coding-agent.md",
           ],
         },
         {

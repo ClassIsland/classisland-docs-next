@@ -134,6 +134,7 @@ export const zhSidebar = sidebar({
           children: [
             "development.md",
             "development-plugins.md",
+            "using-coding-agent.md",
           ],
         },
         {
