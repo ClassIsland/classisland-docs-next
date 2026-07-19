@@ -54,45 +54,55 @@ Compress-Archive -Path "（你的插件编译输出目录，如 E:\xxx\MyPlugin\
 
 不符合以上条件的插件仍然能在本项目的插件 SDK 的开源许可（LGPLv3）下以其它形式自由分发，但不能上架插件市场。
 
-要将插件上架到插件市场，您需要在在原来的插件清单的基础上，补充相关信息，并将补充后的插件清单文件上传到[插件源仓库]中。
+要将插件上架到插件市场，您需要在原来的插件清单的基础上，补充并确认好插件清单信息，并将补充后的插件清单文件上传到[插件源仓库]中。
 
-以下是需要补充的信息：
+以下是完整的插件清单信息：
 
 | 属性名 | 类型 | 必填？ | 说明 | 示例 | 
 | -- | -- | -- | -- | -- |
-| repoOwner | `string` | **是** | 插件的 GitHub 仓库所有者 | `ClassIsland` |
-| repoName | `string` | **是** | 插件的 GitHub 仓库名称 | `ExamplePlugins` |
-| assetsRoot | `string` | **是** | 插件的资源根目录，格式为`<默认分支>/<插件项目相对存储库的路径>` | `master/ExamplePlugin` |
-| artifactName | `string` | 否 | 指定插件 Release 中给用户要下载的插件包的工件名称，否则索引生成器将匹配第一个以`.cipx`为后缀的工件 | `plugin.cipx` |
-| tagPattern | `string` | 否 | 查找最新发行版时要匹配的 Tag 模式。如果设置，将查找匹配符合这个模式的 Tag，否则将使用最新的符合格式的 Tag | `1.*.*.*` |
-| version | `string` | 是 | 插件版本号 | `1.0.0.0` |
-| apiVersion | `string` | 是 | 指定插件所支持的最低插件加载器版本。ClassIsland 2.0起将拒绝加载此字段低于`2.0.0.0`的插件。 | `2.0.0.0` |
-| author | `string` | 是 | 插件作者 | `无名氏` | 
-| supportedOSPlatforms | `List` | 否 | 插件所支持的操作系统平台。倘若在未声明所支持的操作系统平台上浏览此插件，则在插件市场上浏览时和安装时会显示一条警告信息，但不会阻止用户安装。若此字段未声明，则在Windows、Linux、macOS平台上不显示警告。 | `[Windows, Linux, OSX]` |
+| id | `string` | 是 | 插件的唯一 id。<br/>建议格式为 `作者英文名.插件英文名`，纯英文无空格，一旦发布不应修改。 | `authorName.pluginName` |
+| name | `string` | 是 | 插件名称。 |
+| author | `string` | 是 | 插件作者名称。<br/>可为中文，可含空格。 |
+| description | `string` | 是 | 插件描述。 |
+| url | `string` | 是 | 插件主页 Url。 | `https://github.com/AuthorName/PluginName` |
+| repoOwner | `string` | 是 | 插件的 GitHub 仓库所有者。 | `AuthorName` |
+| repoName | `string` | 是 | 插件的 GitHub 仓库名称。 | `PluginName` |
+| apiVersion | `Version` | 是 | 此插件面向的 ClassIsland 版本。<br/>此插件将只能在高于此版本的 ClassIsland 上工作。对于面向 ClassIsland 2.x 的插件，必须填高于 `2.0.0.0` 的版本号。 | `2.1.0.0` |
+| assetsRoot | `string` | 是 | 插件的资源根目录。<br/>必须与 Github 仓库的 Url 一致，格式为`<默认分支>/<插件项目相对存储库的路径>`。插件图标和自述需放置在该目录下。 | `master/ExamplePlugin` |
+| entranceAssembly | `string` | 是 | 插件入口程序集。<br/>在加载插件时将从这个程序集中查找插件入口点。必须与构建完成后插件目录中的实际文件名一致。 | `PluginName.dll` |
+| icon | `string` | 否 | 插件图标文件名，默认为`icon.png`。 |
+| readme | `string` | 否 | 插件自述文件文件名，默认为`README.md`。 |
+| artifactName | `string` | 否 | 指定插件 Release 中给用户要下载的插件包的工件名称，否则索引生成器将匹配第一个以`.cipx`为后缀的工件。 | `plugin.cipx` |
+| tagPattern | `string` | 否 | 查找最新发行版时要匹配的 Tag 模式。<br/>如果设置，将查找匹配符合这个模式的 Tag，否则将使用最新的符合格式的 Tag。 | `1.*.*.*` |
+| supportedOSPlatforms | `List` | 否 | 标识插件所支持的操作系统平台。<br/>仅会警告用户操作系统不受支持，不会拒绝安装插件。 | `[Windows, Linux, OSX]` |
 
 例如：
 
 ```yaml title="classisland.example.yml" hl_lines="6-10"
-id: classisland.example
-name: 示例插件
-description: 插件描述
-entranceAssembly: "ClassIsland.ExamplePlugin.dll"
-url: https://github.com/ClassIsland/ClassIsland
-repoOwner: ClassIsland
-repoName: ExamplePlugins
-assetsRoot: master/HelloWorldPlugin
-artifactName: plugin.cipx
-tagPattern: 1.*.**
-version: 0.0.0.0
-apiVersion: 2.0.0.0
+id: authorName.pluginName
+name: 插件名称
 author: 无名氏
-supportedOSPlatforms:
-- Windows
-- Linux
-- OSX
+description: 插件描述。
+url: https://github.com/AuthorName/PluginName
+repoOwner: AuthorName
+repoName: PluginName
+apiVersion: 2.1.0.0
+assetsRoot: master/PluginName
+entranceAssembly: "PluginName.dll"
+tagPattern: 1.*.**
+supportedOSPlatforms: [Windows]
 ```
 
+确认插件清单中 assetsRoot 是否填写正确：
+
+- https://github.com/{repoOwner}/{repoName}/blob/{assetsRoot}/README.md 应为插件自述文件。
+- https://github.com/{repoOwner}/{repoName}/blob/{assetsRoot}/icon.png 应为插件图标。
+
+<br/>
+
 您还需要将打包后的插件上传到**您的插件的仓库**的 Release 中，并添加 MD5 校验信息。创建 Release 时的 Tag 必须严格遵循 `a.b.c.d` 的格式（如 `1.2.3.4`），不能添加其它额外内容，否则索引生成工具可能因无法正确识别版本名而无法生成您的插件的索引。
+
+**添加 MD5 校验信息**
 
 > [!note]
 > 如果您使用了一键打包，默认情况下已自动生成 MD5 校验信息，可以跳过此步骤。
@@ -111,15 +121,15 @@ supportedOSPlatforms:
 
 @tab 手动添加
 
-1. 利用 7z 等工具计算插件包的 MD5。
+1. 利用 7z 等工具计算 .cipx 插件包文件的 MD5。
 2. 上传插件包到 Releases，并按以下格式在发行日志中加入校验信息：
    ```markdown
-   <!-- CLASSISLAND_PKG_MD5 {"插件包文件名": "得到的 MD5"} -->
+   <!-- CLASSISLAND_PKG_MD5 {"插件包文件名.cipx": "得到的 MD5"} -->
    ```
    其中被注释标签包裹的 json 对象是一个以文件名为键，MD5 值为值的字典。如果有多个文件，可以扩充此字典。
 :::
 
-补充后的插件清单文件需要重命名为插件 id，并上传到[插件源仓库]根目录下的[`index/plugins-v2`](https://github.com/ClassIsland/PluginIndex/tree/main/index/plugins-v2)文件夹中。
+补充后的插件清单文件需要 **重命名为 `插件id.yaml`**，并上传到[插件源仓库]根目录下的[`index/plugins-v2`](https://github.com/ClassIsland/PluginIndex/tree/main/index/plugins-v2)文件夹中。
 
 > [!note]
 > 您按照本方法上架的插件只会出现在 2.x 的插件市场中。要了解如何将您的插件上架到 1.x 的插件市场，[请见下文](#同时发布兼容-classisland-1x-和-classisland-2x-的插件)。

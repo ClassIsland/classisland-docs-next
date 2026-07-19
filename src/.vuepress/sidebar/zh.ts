@@ -176,6 +176,7 @@ export const zhSidebar = sidebar({
             "iconexpr.md",
           ]
         },
+        "contributor-attribution.md",
         "events.md",
         "uri-navigation.md",
         "components.md",
