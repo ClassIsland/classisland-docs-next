@@ -22,14 +22,6 @@ tag:
 
 **自动化**是 ClassIsland 1.6 (Himeko) 的新增功能，旨在提供简单快捷的自动操作。
 
-::: tip 版本差异提示
-
-自动化、规则集和行动功能目前仅支持在 ClassIsland 1.6.X 或 1.7.0.X 版本使用，暂不支持在 ClassIsland 2.0 的测试版本使用。
-
-如果您对“自动化”相关功能有好的想法建议，欢迎在[#1152 ](https://github.com/ClassIsland/ClassIsland/discussions/1152)参加讨论。
-
-:::
-
 比如，您可以…
 
 - 在视频展台开启时，自动将主界面移到屏幕右上角，并仅显示当前课程的倒计时；

@@ -70,3 +70,9 @@
 3. 选择保存诊断数据的位置。
     ![1722676336906](../image/reporting-issue/1722676336906.png)
 4. 稍等片刻，导出完成后应用会自动打开保存诊断数据的位置。
+
+### 若启动崩溃如何获取诊断数据
+
+自[ClassIsland 2.1.0.1](https://github.com/ClassIsland/ClassIsland/releases/tag/2.1.0.1)版本起，ClassIsland诊断模式将在启动时自动导出一份文件名以`ClassIsland_DiagnosticData_`开头的zip压缩文件诊断数据至用户桌面文件夹。
+
+您可以通过向`ClassIsland.Desktop`传入`-d`或`--diagnostic`来启用诊断模式。
