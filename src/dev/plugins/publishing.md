@@ -65,7 +65,7 @@ Compress-Archive -Path "（你的插件编译输出目录，如 E:\xxx\MyPlugin\
 | assetsRoot | `string` | **是** | 插件的资源根目录，格式为`<默认分支>/<插件项目相对存储库的路径>` | `master/ExamplePlugin` |
 | artifactName | `string` | 否 | 指定插件 Release 中给用户要下载的插件包的工件名称，否则索引生成器将匹配第一个以`.cipx`为后缀的工件 | `plugin.cipx` |
 | tagPattern | `string` | 否 | 查找最新发行版时要匹配的 Tag 模式。如果设置，将查找匹配符合这个模式的 Tag，否则将使用最新的符合格式的 Tag | `1.*.*.*` |
-| version | `string` | 是 | 插件版本号 | `1.0.0.0` |
+| version | `string` | 否 | 插件版本号 | `1.0.0.0` |
 | apiVersion | `string` | 是 | 指定插件所支持的最低插件加载器版本。ClassIsland 2.0起将拒绝加载此字段低于`2.0.0.0`的插件。 | `2.0.0.0` |
 | author | `string` | 是 | 插件作者 | `无名氏` | 
 | supportedOSPlatforms | `List` | 否 | 插件所支持的操作系统平台。倘若在未声明所支持的操作系统平台上浏览此插件，则在插件市场上浏览时和安装时会显示一条警告信息，但不会阻止用户安装。若此字段未声明，则在Windows、Linux、macOS平台上不显示警告。 | `[Windows, Linux, OSX]` |
