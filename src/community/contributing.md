@@ -52,6 +52,20 @@ icon: code-commit
 
     文档汉字与数字和字母间应该有空格（可以使用 VS Code 插件 AutoCorrect 自动实现此格式化），且在提交审核前应该至少使用 markdownlint 格式化一遍，否则您的 Pull Request 可能会被打回更改。
 
+- 善用富文本
+
+    使用 Markdown 自带的**粗体**、_斜体_等样式以及
+    
+    :::info 信息
+    像这样的 VuePress 引用框
+    :::
+    
+    对于组织文本、强调内容很有帮助。善用它们可以提升文档的质量，让用户一目了然地看到最重要的信息以及需要注意的内容。
+
+- 善用 AI
+
+    不推荐使用 AI 辅助编写全部文档。AI 生成的文档不仅有令人晕头转向的文风，有些地方也不尽正确。若要使用 AI 编写文档，请务必在提交前人工核实事实是否有误，并手动修改语句不通顺处，确保用户能够一目了然地看懂文档。不过，你可以让使用 AI 执行检查错别字等任务，让最终的文档更好更优质。
+
 ## 合并更改
 
 您可以向本项目发起 [Pull Request](https://github.com/ClassIsland/classisland-docs-next/pulls) 来合并您的更改。在发起 Pull Request 时，请简要地描述您做的更改。
@@ -60,4 +74,4 @@ icon: code-commit
 
 ## 还有疑问？
 
-您可以[加入 QQ 群](https://qm.qq.com/q/4NsDQKiAuQ)与开发者和其他用户讨论。
+您可以加入 [QQ 群 #1](https://qm.qq.com/q/4NsDQKiAuQ) / [QQ 群 #2](https://qm.qq.com/q/MhWCvrk7mu) 与开发者和其他用户讨论。
