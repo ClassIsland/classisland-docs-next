@@ -28,7 +28,13 @@ category:
 
 ### 集控服务器
 
+#### 官方版集控服务器
+
 _🚧正在开发_
+
+#### 社区版集控服务器
+
+[🚀CIMS.py](./cims.py.md)
 
 <a id="get-started-compare"></a>
 
